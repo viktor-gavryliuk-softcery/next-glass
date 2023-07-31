@@ -11,7 +11,7 @@ interface FaceProps {
     children: ReactElement;
 }
 
-const cubeSize = 5.001;
+const cubeSize = 5.1;
 
 const Face = ({ children, position, rotation }: FaceProps) => {
     const [hidden, setHidden] = useState(false); // Change the type to boolean and set an initial value
