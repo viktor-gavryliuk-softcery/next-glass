@@ -1,10 +1,49 @@
+import { ReactElement, useState } from 'react';
 import { Html } from '@react-three/drei';
 import Image from 'next/image';
+
 // backdrop-blur-lg bg-white/30
 
-const Front = () => <Html position={[0, 0, 5.01]} transform occlude >
+// Define an interface for the props of Face component
+interface FaceProps {
+    position: [number, number, number];
+    rotation?: number;
+    children: ReactElement;
+}
 
-    <div className="flex flex-col gap-2 justify-center px-3 h-96 w-96 ">
+const cubeSize = 5.001;
+
+const Face = ({ children, position, rotation }: FaceProps) => {
+    const [hidden, setHidden] = useState(false); // Change the type to boolean and set an initial value
+
+    // Define the onOcclude function to handle occlusion events
+    const handleOcclude = (visible: boolean) => {
+        setHidden(!visible); // Update the state based on occlusion status
+        return null
+    };
+
+    return (
+        <Html position={position}
+            rotation-y={rotation}
+            transform
+            castShadow
+            receiveShadow
+            occlude
+            onOcclude={() => handleOcclude(hidden)}
+            style={{
+                filter: hidden ? 'blur(4px)' : 'none'
+            }}>
+            <div className="w-96 h-96 px-3 ">
+                {children}
+            </div>
+        </Html>
+    )
+}
+
+const degreesToRadians = (degrees: number): number => degrees * (Math.PI / 180);
+
+const Front = () => <Face position={[0, 0, -cubeSize]} rotation={degreesToRadians(180)}>
+    <div className="flex flex-col gap-2 justify-center face">
         <div className='flex gap-2'>
             <div className="">
                 <Image src="/cases.jpg" alt="cases" className='tile' width={250} height={250} />
@@ -18,32 +57,33 @@ const Front = () => <Html position={[0, 0, 5.01]} transform occlude >
             <Image src="/service.png" alt="services" className='tile' width={250} height={250} />
         </div>
     </div>
-</Html>
+</Face>
 
-const Right = () => <Html position={[5.01, 0, 0]} transform occlude rotation-y={1.55} >
-    <div className='grid grid-cols-12 grid-rows-2 gap-2 py-10 px-3 h-96 w-96 '>
-        <div className="col-span-5 bg-black tile ">
-        </div>
-        <div className="col-span-7 bg-violet-600 tile ">
-        </div>
-        <div className="col-span-7 ">
-            <Image src="/nft.jpg" alt="nft" className='tile' width={250} height={250} />
-        </div>
-        <div className="col-span-5 ">
-            <Image src="/feedback.jpg" alt="nft" className='tile' width={250} height={250} />
-        </div>
 
-    </div>
-</Html>
-
-const Back = () => <Html position={[-5.01, 0, 0]} transform occlude rotation-y={4.7} >
-    <div className='py-10 px-3 h-96 w-96 '>
+const Right = () => <Face position={[-cubeSize, 0, 0]} rotation={degreesToRadians(270)}>
+    <div className='py-10 face'>
         <Image src="/metabody.jpg" alt="meta" className='tile' width={250} height={250} />
     </div>
-</Html>
+</Face>
 
-const Left = () => <Html position={[0, 0, -5.01]} transform occlude rotation-y={3.13}>
-    <div className='grid grid-cols-12 grid-rows-2 gap-2 py-10 px-3 h-96 w-96'>
+const Back = () => <Face position={[0, 0, cubeSize]} rotation={degreesToRadians(0)}>
+    <div className='grid grid-cols-12 grid-rows-2 gap-2 py-10 face'>
+        <div className="col-span-5 bg-black tile ">
+        </div>
+        <div className="col-span-7 bg-[#9425dc] tile ">
+        </div>
+        <div className="col-span-7 ">
+            <Image src="/nft.jpg" alt="nft" className='tile' width={250} height={250} />
+        </div>
+        <div className="col-span-5 ">
+            <Image src="/feedback.jpg" alt="nft" className='tile' width={250} height={250} />
+        </div>
+    </div>
+</Face>
+
+const Left = () => <Face position={[cubeSize, 0, 0]} rotation={degreesToRadians(90)}>
+
+    <div className='grid grid-cols-12 grid-rows-2 gap-2 py-10 face'>
         <div className="col-span-5 bg-black tile ">
         </div>
         <div className="col-span-7 bg-violet-600 tile ">
@@ -54,10 +94,13 @@ const Left = () => <Html position={[0, 0, -5.01]} transform occlude rotation-y={
         <div className="col-span-5 ">
             <Image src="/feedback.jpg" alt="nft" className='tile' width={250} height={250} />
         </div>
-
     </div>
+</Face>
 
-</Html>
+
+
+
+
 
 
 export { Front, Right, Back, Left };
