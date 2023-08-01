@@ -11,7 +11,7 @@ const Scene = () => {
             <Canvas camera={{ position: [0, 0, 16] }} dpr={[1, 2]}>
                 <ambientLight intensity={1.0} />
                 <Cube />
-                {/* <OrbitControls /> */}
+                <OrbitControls />
             </Canvas>
         </div>
     );
