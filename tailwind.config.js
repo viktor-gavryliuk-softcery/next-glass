@@ -5,6 +5,17 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {},
+  theme: {
+    extend: {
+      colors: {
+        'my-lime': '#bdff00'
+      },
+      fontFamily: {
+        black: ['var(--font-grotesk)'],
+        sans: ['var(--font-montserrat)'],
+      }
+    }
+
+  },
   plugins: [],
 };

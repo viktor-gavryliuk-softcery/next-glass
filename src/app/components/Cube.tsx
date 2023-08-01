@@ -8,8 +8,8 @@ import { v4 as uuidv4 } from "uuid";
 
 import { Front, Right, Back, Left } from './Faces';
 
-import vertexShader from '@/app/shaders/vertexShader'
-import fragmentShader from '@/app/shaders/fragmentShader'
+import vertexShader from '@/shaders/vertexShader'
+import fragmentShader from '@/shaders/fragmentShader'
 
 export const Cube = () => {
     // This reference gives us direct access to our mesh
