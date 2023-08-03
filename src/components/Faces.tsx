@@ -1,4 +1,4 @@
-import { ReactElement, useState } from 'react';
+import { ReactElement, useState, useEffect } from 'react';
 import { Html } from '@react-three/drei';
 import Image from 'next/image';
 
@@ -14,12 +14,14 @@ interface FaceProps {
 const cubeSize = 5.01;
 
 const Face = ({ children, position, rotation }: FaceProps) => {
-    const [hidden, setHidden] = useState(false); // Change the type to boolean and set an initial value
+    const [hidden, setHidden] = useState<boolean>(false); // Change the type to boolean and set an initial value
+
+    // useEffect(() => setHidden(false), [])
 
     // Define the onOcclude function to handle occlusion events
-    const handleOcclude = (visible: boolean) => {
-        setHidden(!visible); // Update the state based on occlusion status
-        return null
+    const handleOcclude = () => {
+        setHidden(!hidden); // Update the state based on occlusion status
+        return null;
     };
 
     return (
@@ -28,8 +30,8 @@ const Face = ({ children, position, rotation }: FaceProps) => {
             transform
             castShadow
             receiveShadow
-            occlude
-            onOcclude={() => handleOcclude(hidden)}
+            // occlude
+            onOcclude={handleOcclude}
             style={{
                 filter: hidden ? 'blur(4px)' : 'none'
             }}>
@@ -61,28 +63,6 @@ const Front = () => <Face position={[0, 0, -cubeSize]} rotation={degreesToRadian
 
 
 const Right = () => <Face position={[-cubeSize, 0, 0]} rotation={degreesToRadians(270)}>
-    <div className='py-10 face'>
-        <Image src="/metabody.jpg" alt="meta" className='tile' width={250} height={250} />
-    </div>
-</Face>
-
-const Back = () => <Face position={[0, 0, cubeSize]} rotation={degreesToRadians(0)}>
-    <div className='grid grid-cols-12 grid-rows-2 gap-2 py-10 face'>
-        <div className="col-span-5 bg-black tile ">
-        </div>
-        <div className="col-span-7 bg-[#9425dc] tile ">
-        </div>
-        <div className="col-span-7 ">
-            <Image src="/nft.jpg" alt="nft" className='tile' width={250} height={250} />
-        </div>
-        <div className="col-span-5 ">
-            <Image src="/feedback.jpg" alt="nft" className='tile' width={250} height={250} />
-        </div>
-    </div>
-</Face>
-
-const Left = () => <Face position={[cubeSize, 0, 0]} rotation={degreesToRadians(90)}>
-
     <div className='grid grid-cols-12 grid-rows-2 gap-2 py-10 face'>
         <div className="col-span-5 bg-black tile ">
         </div>
@@ -94,6 +74,20 @@ const Left = () => <Face position={[cubeSize, 0, 0]} rotation={degreesToRadians(
         <div className="col-span-5 ">
             <Image src="/feedback.jpg" alt="nft" className='tile' width={250} height={250} />
         </div>
+    </div>
+</Face>
+
+const Back = () => <Face position={[0, 0, cubeSize]} rotation={degreesToRadians(0)}>
+    <div className='py-10 face'>
+        <Image src="/metabody.jpg" alt="meta" className='tile' width={250} height={250} />
+    </div>
+</Face>
+
+const Left = () => <Face position={[cubeSize, 0, 0]} rotation={degreesToRadians(90)}>
+    <div className='grid grid-cols-11 grid-rows-2 gap-2 py-10 face'>
+        <div className="col-span-4 bg-black tile "></div>
+        <div className="col-span-7 bg-[#d2d1d1] tile "></div>
+        <div className="col-span-11 bg-[#6107c7] tile"></div>
     </div>
 </Face>
 

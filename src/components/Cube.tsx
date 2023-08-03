@@ -1,16 +1,17 @@
 
 'use client';
-import { RoundedBox, useFBO } from "@react-three/drei";
+import { RoundedBox, useFBO, MeshTransmissionMaterial } from "@react-three/drei";
 import { useRef, useMemo, useEffect } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { v4 as uuidv4 } from "uuid";
-import { folder, useControls } from "leva";
 
 import { Front, Right, Back, Left } from './Faces';
+import { useControls, folder } from "leva";
 
 import vertexShader from '@/shaders/vertexShader'
 import fragmentShader from '@/shaders/fragmentShader'
+import GlassFace from "./GlassFace";
 
 export const Cube = () => {
     // This reference gives us direct access to our mesh
@@ -38,52 +39,53 @@ export const Cube = () => {
 
     const {
         shininess, diffuseness, fresnelPower, iorR, iorY, iorG, iorC, iorB, iorP, saturation, chromaticAberration, refraction
-    } /* = {
-        shininess: 15,
-        diffuseness: 0.2,
+    } = {
+        shininess: 20,
+        diffuseness: 0.3,
         fresnelPower: 8,
         iorR: 1,
-        iorY: 2.14,
-        iorG: 2.27,
-        iorC: 1.22,
-        iorB: 1.22,
-        iorP: 1,
-        saturation: 1.14,
-        chromaticAberration: 0.5,
-        refraction: 0.25
-    }; */
-        = useControls({
-            diffuseness: {
-                value: 0.2
-            },
-            shininess: {
-                value: 15.0
-            },
-            fresnelPower: {
-                value: 8.0
-            },
-            ior: folder({
-                iorR: { min: 1.0, max: 2.333, step: 0.001, value: 1.15 },
-                iorY: { min: 1.0, max: 2.333, step: 0.001, value: 1.16 },
-                iorG: { min: 1.0, max: 2.333, step: 0.001, value: 1.18 },
-                iorC: { min: 1.0, max: 2.333, step: 0.001, value: 1.22 },
-                iorB: { min: 1.0, max: 2.333, step: 0.001, value: 1.22 },
-                iorP: { min: 1.0, max: 2.333, step: 0.001, value: 1.22 }
-            }),
-            saturation: { value: 1.14, min: 1, max: 1.25, step: 0.01 },
-            chromaticAberration: {
-                value: 0.5,
-                min: 0,
-                max: 1.5,
-                step: 0.01
-            },
-            refraction: {
-                value: 0.25,
-                min: 0,
-                max: 1,
-                step: 0.01
-            }
-        });
+        iorY: 1,
+        iorG: 1.27,
+        iorC: 1,
+        iorB: 1,
+        iorP: 1.8,
+        saturation: 1.04,
+        chromaticAberration: 0.95,
+        refraction: 0.75
+    };
+    /*  } = useControls({
+         diffuseness: {
+             value: 0.2
+         },
+         shininess: {
+             value: 15.0
+         },
+         fresnelPower: {
+             value: 8.0
+         },
+         ior: folder({
+             iorR: { min: 1.0, max: 2.333, step: 0.001, value: 1.15 },
+             iorY: { min: 1.0, max: 2.333, step: 0.001, value: 1.16 },
+             iorG: { min: 1.0, max: 2.333, step: 0.001, value: 1.18 },
+             iorC: { min: 1.0, max: 2.333, step: 0.001, value: 1.22 },
+             iorB: { min: 1.0, max: 2.333, step: 0.001, value: 1.22 },
+             iorP: { min: 1.0, max: 2.333, step: 0.001, value: 1.22 }
+         }),
+         saturation: { value: 1.14, min: 1, max: 1.25, step: 0.01 },
+         chromaticAberration: {
+             value: 0.5,
+             min: 0,
+             max: 1.5,
+             step: 0.01
+         },
+         refraction: {
+             value: 0.25,
+             min: 0,
+             max: 1,
+             step: 0.01
+         }
+     }); */
+
     const uniforms = useMemo(
         () => ({
             uTexture: {
@@ -124,10 +126,10 @@ export const Cube = () => {
 
         group.current.rotation.y = -((scrollPosition.current * Math.PI) * 2) + 10;
 
-        const t = clock.getElapsedTime()
+        // const t = clock.getElapsedTime()
 
-        group.current.rotation.y = THREE.MathUtils.lerp(group.current.rotation.y, Math.sin(t / 4) / 10, 0.1)
-        group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, (-2 + Math.sin(t / 2)) / 2, 0.01)
+        // group.current.rotation.y = THREE.MathUtils.lerp(group.current.rotation.y, Math.sin(t / 4) / 10, 0.1)
+        // group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, (-2 + Math.sin(t / 2)) / 2, 0.01)
 
         mesh.current.visible = false;
 
@@ -185,13 +187,14 @@ export const Cube = () => {
                     <meshBasicMaterial color="white" />
                 </mesh>
             </group>
-            <RoundedBox ref={mesh} args={[10, 10, 10]} radius={0.1}>
+            <RoundedBox ref={mesh} args={[10, 10, 10]} radius={0.1} >
                 <shaderMaterial
                     key={uuidv4()}
                     vertexShader={vertexShader}
                     fragmentShader={fragmentShader}
                     uniforms={uniforms} />
             </RoundedBox>
+
             <Front />
             <Right />
             <Back />
