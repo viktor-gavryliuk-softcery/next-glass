@@ -1,14 +1,35 @@
-import Image from "next/image"
-import Link from "next/link"
-import CustomBurgerIcon from "./CustomBurgerIcon"
+'use client'
+import React, { useState } from 'react';
+import * as Dialog from '@radix-ui/react-dialog';
+import CustomBurgerIcon from './CustomBurgerIcon';
 
-export default () => {
+import VectorLogo from './VectorLogo';
+import Menu from './Menu';
+
+const Header = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const handleBurgerClick = () => {
+        setIsMenuOpen(!isMenuOpen);
+        console.log('toggle menu');
+
+    };
     return (
-        <header className="fixed top-0 left-0 w-full bg-transparent border-red-500 z-10 flex justify-center align-middle py-4 ">
-            <Link href={'/'} >
-                <Image src={'/logo.svg'} width={100} height={100} alt="logo" className="h-12" />
-            </Link>
-            <CustomBurgerIcon />
-        </header>
+        <header className="fixed top-0 left-0 w-full bg-transparent z-30 flex justify-center align-middle py-4 ">
+            <Dialog.Root open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+                <VectorLogo isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+
+                <CustomBurgerIcon isMenuOpen={isMenuOpen} />
+
+                <Dialog.Portal>
+                    <Dialog.Content asChild onInteractOutside={(e) => { e.preventDefault() }}>
+                        <Menu isMenuOpen={isMenuOpen} />
+                    </Dialog.Content>
+                </Dialog.Portal>
+            </Dialog.Root>
+
+        </header >
     )
 }
+
+export default Header; 

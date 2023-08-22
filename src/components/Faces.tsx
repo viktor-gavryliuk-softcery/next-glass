@@ -1,6 +1,8 @@
 import { ReactElement, useState, useEffect } from 'react';
 import { Html } from '@react-three/drei';
 import Image from 'next/image';
+import Link from 'next/link';
+
 
 // backdrop-blur-lg bg-white/30
 
@@ -11,7 +13,7 @@ interface FaceProps {
     children: ReactElement;
 }
 
-const cubeSize = 5.01;
+const cubeSize = 5.05;
 
 const Face = ({ children, position, rotation }: FaceProps) => {
     const [hidden, setHidden] = useState<boolean>(false); // Change the type to boolean and set an initial value
@@ -30,10 +32,11 @@ const Face = ({ children, position, rotation }: FaceProps) => {
             transform
             castShadow
             receiveShadow
-            // occlude
+            occlude
             onOcclude={handleOcclude}
             style={{
-                filter: hidden ? 'blur(4px)' : 'none'
+                filter: hidden ? 'blur(4px)' : 'none',
+                pointerEvents: hidden ? 'none' : 'auto',
             }}>
             <div className="w-96 h-96 px-3 ">
                 {children}
@@ -44,15 +47,15 @@ const Face = ({ children, position, rotation }: FaceProps) => {
 
 const degreesToRadians = (degrees: number): number => degrees * (Math.PI / 180);
 
-const Front = () => <Face position={[0, 0, -cubeSize]} rotation={degreesToRadians(180)}>
+const Front = () => <Face position={[0, 0, -cubeSize]} rotation={degreesToRadians(180)} >
     <div className="flex flex-col gap-2 justify-center face">
         <div className='flex gap-2'>
             <div className="">
                 <Image src="/cases.jpg" alt="cases" className='tile' width={250} height={250} />
             </div>
-            <div className="">
+            <Link href='/team'>
                 <Image src="/team.jpg" alt="team" className='tile' width={250} height={250} />
-            </div>
+            </Link>
         </div>
 
         <div>

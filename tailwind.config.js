@@ -8,7 +8,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'my-lime': '#bdff00'
+        'my-lime': '#bdff00',
+        'my-bg': '#121212'
       },
       fontFamily: {
         black: ['var(--font-grotesk)'],
