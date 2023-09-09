@@ -9,11 +9,6 @@ import Menu from './Menu';
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const handleBurgerClick = () => {
-        setIsMenuOpen(!isMenuOpen);
-        console.log('toggle menu');
-
-    };
     return (
         <header className="fixed top-0 left-0 w-full bg-transparent z-30 flex justify-center align-middle py-4 ">
             <Dialog.Root open={isMenuOpen} onOpenChange={setIsMenuOpen}>
