@@ -71,7 +71,10 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
 
             >
                 <div className='fixed top-0 left-0 w-full h-screen  bg-white flex items-stretch'>
-                    <img src="/octodaddy.jpg" alt="octodaddy" className='h-full fixed top-0 right-0 object-cover object-right' />
+                    {/* <img src="/octodaddy.jpg" alt="octodaddy"  /> */}
+                    <video autoPlay loop height="100%" width="100%" className='min-h-full min-w-full fixed top-0 right-0 object-cover object-right'>
+                        <source src="/octopus.mp4" type="video/mp4" />
+                    </video>
                     <div className='z-20  my-20 w-full flex items-center text-black px-[7vw]'>
                         <ul className=' max-w-5xl flex flex-col items-start justify-start '>
                             {nav.map((link, index, arr) => (
