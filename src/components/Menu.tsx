@@ -72,9 +72,10 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
             >
                 <div className='fixed top-0 left-0 w-full h-screen  bg-white flex items-stretch'>
                     {/* <img src="/octodaddy.jpg" alt="octodaddy"  /> */}
-                    <video autoPlay loop height="100%" width="100%" className='min-h-full min-w-full fixed top-0 right-0 object-cover object-right'>
+                    <img src="/octopus.gif" alt="octodaddy" className='min-h-full min-w-full fixed top-0 right-0 object-cover object-right' />
+                    {/* <video autoPlay loop height="100%" width="100%" className='min-h-full min-w-full fixed top-0 right-0 object-cover object-right'>
                         <source src="/octopus.mp4" type="video/mp4" />
-                    </video>
+                    </video> */}
                     <div className='z-20  my-20 w-full flex items-center text-black px-[7vw]'>
                         <ul className=' max-w-5xl flex flex-col items-start justify-start '>
                             {nav.map((link, index, arr) => (
@@ -106,7 +107,7 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
                             <div className='bg-my-bg w-2 md:w-3 h-2 md:h-3 mr-3 md:mr-10' />
 
                             {socials.map(link => (
-                                <a href={link.href} className='uppercase  mr-2 md:mr-5 text-md md:text-2xl'>{link.name}</a>
+                                <a href={link.href} className='uppercase mr-2 md:mr-5 text-md md:text-2xl'>{link.name}</a>
                             ))}
                         </div>
 
