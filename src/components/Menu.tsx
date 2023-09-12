@@ -84,7 +84,7 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
                                     <Dialog.Close asChild>
                                         <Link
                                             href={link.href}
-                                            className='flex items-center gap-3 uppercase text-5xl md:text-7xl  transition-all overflow-hidden'>
+                                            className='flex items-center gap-3 uppercase text-4xl sm:text-5xl lg:text-6xl  transition-all overflow-hidden'>
                                             <div className='bg-my-bg w-2 md:w-3 h-2 md:h-3 rounded-full' />
 
                                             <motion.span
@@ -96,18 +96,17 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
                                         </Link>
                                     </Dialog.Close>
                                     {index != arr.length - 1 ?
-                                        <div className={` bg-my-bg w-[2px] z-20 h-10 rounded relative top-[0.1rem] left-1`} />
+                                        <div className={` bg-my-bg w-[2px] z-20 md:h-10 h-6 max-h-[5vh] rounded relative top-[0.1rem] left-1`} />
                                         :
                                         ''}
                                 </li>
                             ))}
 
                         </ul>
-                        <div className="socials absolute bottom-10 md:left-20 left-7 flex items-center">
+                        <div className="socials absolute bottom-[6vh] md:left-20 left-7 flex items-center">
                             <div className='bg-my-bg w-2 md:w-3 h-2 md:h-3 mr-3 md:mr-10' />
-
                             {socials.map(link => (
-                                <a href={link.href} className='uppercase mr-2 md:mr-5 text-md md:text-2xl'>{link.name}</a>
+                                <a href={link.href} className='uppercase mr-2 md:mr-4 text-md md:text-2xl'>{link.name}</a>
                             ))}
                         </div>
 
