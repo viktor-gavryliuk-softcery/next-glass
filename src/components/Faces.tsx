@@ -58,9 +58,9 @@ const Front = () => <Face position={[0, 0, -cubeSize]} rotation={degreesToRadian
             </Link>
         </div>
 
-        <div>
+        <Link href='/service'>
             <Image src="/service.png" alt="services" className='tile' width={250} height={250} />
-        </div>
+        </Link>
     </div>
 </Face>
 

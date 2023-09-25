@@ -10,11 +10,13 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <header className="fixed top-0 left-0 w-full bg-transparent z-30 flex justify-center align-middle py-4 ">
+        <header className="fixed top-0 left-0 w-full bg-transparent z-30 pointer-events-none flex justify-center align-middle py-4 ">
             <Dialog.Root open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-                <VectorLogo isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+                <div className="pointer-events-auto">
+                    <VectorLogo isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
 
-                <CustomBurgerIcon isMenuOpen={isMenuOpen} />
+                    <CustomBurgerIcon isMenuOpen={isMenuOpen} />
+                </div>
 
                 <Dialog.Portal>
                     <Dialog.Content asChild onInteractOutside={(e) => { e.preventDefault() }}>
