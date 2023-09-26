@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { bebas_neue, montserrat } from '@/app/fonts';
 import Link from 'next/link';
 import { Contact } from '@/components/Contact';
+import FooterLinks from '@/components/FooterLinks';
 
 const serviceBlockData = [
     { key: 'smm', serviceName: "SMM", href: 'service/smm', className: 'sm:col-span-5 lg:col-span-3' },
@@ -56,6 +57,8 @@ export default function Services() {
 
             </div>
             <div className="bg-my-bg py-6">
+                <FooterLinks />
+
                 <Footer />
             </div>
         </main>
