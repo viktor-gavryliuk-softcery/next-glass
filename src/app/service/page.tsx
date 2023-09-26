@@ -6,19 +6,20 @@ import Link from 'next/link';
 import { Contact } from '@/components/Contact';
 
 const serviceBlockData = [
-    { serviceName: "SMM", href: 'service/smm', className: 'sm:col-span-5 lg:col-span-3' },
-    { serviceName: "Display/Target Advertisement", href: 'service/target', className: 'sm:col-span-7 lg:col-span-5' },
-    { serviceName: "Consultation & Advisory", href: 'service/consultation', className: 'sm:col-span-7 lg:col-span-4' },
-    { serviceName: "Content Strategy Creation & Execution", href: 'service/strategy', className: 'sm:col-span-5 lg:col-span-5' },
-    { serviceName: "Community Management", href: 'service/community', className: 'sm:col-span-5 lg:col-span-3' },
-    { serviceName: "Influence Marketing & PR", href: 'service/pr', className: 'sm:col-span-7 lg:col-span-4' },
+    { key: 'smm', serviceName: "SMM", href: 'service/smm', className: 'sm:col-span-5 lg:col-span-3' },
+    { key: 'target', serviceName: "Display/Target Advertisement", href: 'service/target', className: 'sm:col-span-7 lg:col-span-5' },
+    { key: 'consultation', serviceName: "Consultation & Advisory", href: 'service/consultation', className: 'sm:col-span-7 lg:col-span-4' },
+    { key: 'strategy', serviceName: "Content Strategy Creation & Execution", href: 'service/strategy', className: 'sm:col-span-5 lg:col-span-5' },
+    { key: 'community', serviceName: "Community Management", href: 'service/community', className: 'sm:col-span-5 lg:col-span-3' },
+    { key: 'pr', serviceName: "Influence Marketing & PR", href: 'service/pr', className: 'sm:col-span-7 lg:col-span-4' },
 ]
 
-const ServiceLink = ({ className, serviceName, href }: { className: string, serviceName: string, href: string }) => {
-    return <Link href={href} className={`${className} col-span-12 h-96 bg-neutral-300 hover:bg-lime-400 rounded-xl flex items-end p-6 transition-all`}>
+const ServiceLink = ({ className, serviceName, href, slug: key }: { className: string, serviceName: string, href: string, slug: string }) => {
+    return <Link href={href} className={`${className} col-span-12 relative h-72 bg-neutral-300 rounded-xl flex items-end p-6 transition-all overflow-hidden`}>
         <div className='flex items-center gap-3'>
-            <Image src='/services/smm.svg' width={60} height={60} alt='Srvice Icon' className="bg-black rounded-lg p-2" />
-            <h3 className={`${bebas_neue.className} text-2xl lg:text-4xl text-black leading-none`}>{serviceName}</h3>
+            <Image src={`/services/${key}.svg`} width={60} height={60} alt='Service Icon' className="relative z-10 bg-black rounded-lg p-2 h-14 w-14" />
+            <Image src={`/services/${key}.jpg`} width={400} height={290} alt='Srvice Background' className="absolute top-0 left-0 h-full w-full object-cover" />
+            <h3 className={`${bebas_neue.className} relative z-10 text-2xl xl:text-4xl text-black leading-none`}>{serviceName}</h3>
         </div>
     </Link>
 }
@@ -46,12 +47,12 @@ export default function Services() {
                 <div className="grid grid-cols-12 gap-4">
 
                     {serviceBlockData.map(link => (
-                        <ServiceLink href={link.href} className={link.className} serviceName={link.serviceName} />
+                        <ServiceLink href={link.href} className={link.className} serviceName={link.serviceName} slug={link.key} />
                     ))}
 
                 </div>
 
-                <Contact />
+                <Contact variant='light' />
 
             </div>
             <div className="bg-my-bg py-6">
