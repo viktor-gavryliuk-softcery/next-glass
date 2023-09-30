@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { montserrat } from './fonts'
 
 import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 
 import './globals.css';
 
@@ -22,7 +21,7 @@ export default function RootLayout({
       <body className='bg-my-bg'>
         <Header />
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   )

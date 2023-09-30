@@ -2,7 +2,7 @@ import Link from "next/link";
 import { montserrat } from '../app/fonts'
 
 export default function Footer() {
-    return <footer className={`fixed bottom-0 left-0 w-full ${montserrat.className} bg-my-bg`}>
+    return <footer className={`w-full ${montserrat.className} `}>
         <div className="text-sm sm:text-base border-t-2 border-slate-200 max-w-7xl  mx-auto flex flex-col-reverse md:flex-row justify-center align-middle sm:justify-between py-3 md:py-5 px-5 md:px-24 gap-1">
             <div className="flex align-middle justify-center">
                 <p className="text-center flex items-center ">2023 ADS CONTROL. All rights reserved</p>
