@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef } from 'react';
+import React from 'react';
 import { motion, useScroll, useTransform } from "framer-motion";
 
 type PageTitle = {
@@ -8,9 +8,7 @@ type PageTitle = {
 
 const PageTitle = ({ children }: PageTitle) => {
 
-
-    const { scrollYProgress } = useScroll({
-    });
+    const { scrollYProgress } = useScroll({});
 
     const opacityProgress = useTransform(scrollYProgress, [0, 0.1], [1, 0])
 

@@ -1,14 +1,14 @@
 'use client'
-import serviceData from '../serviceData'; // Replace with the correct path to your serviceData file
-import { notFound, usePathname } from 'next/navigation';
+
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 import { bebas_neue, montserrat } from '@/app/fonts';
 import { Contact } from '@/components/Contact';
 import Footer from '@/components/Footer';
 import FooterLinks from '@/components/FooterLinks';
 
-import type { iServiceItem, iServiceData } from '../serviceData';
+import { useServiceSlug } from './useServiceSlug';
+
+import type { iServiceItem } from '../serviceData';
 
 const ServiceCard = ({ name, details, number }: iServiceItem) => {
     return <div className="flex-1 flex flex-col justify-between bg-neutral-800 p-12 min-h-fit w-full lg:min-w-[49%] box-border ">
@@ -21,36 +21,9 @@ const ServiceCard = ({ name, details, number }: iServiceItem) => {
     </div>
 }
 
-
 export default function Page({ params }: { params: { slug: string } }) {
 
-    //put to outer hook
-    const pathname = usePathname()
-
-    const [SPData, SetSPData] = useState<iServiceData | undefined>({} as iServiceData);
-
-    function extractKey(path: string) {
-        const parts = path.split('/');
-
-        return parts[2];
-    }
-
-    function isSlugValid() {
-        return serviceData.some((data) => data.key === extractKey(pathname));
-    }
-
-    useEffect(() => {
-        if (!isSlugValid()) {
-            notFound();
-        }
-        else {
-            SetSPData(serviceData.find(sd => sd.key === extractKey(pathname)));
-        }
-
-    }, [SPData])
-
-
-
+    const ServiceData = useServiceSlug()
 
     return (
         <>
@@ -59,7 +32,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                     Service
                 </Link>
                 <img src="/navArrow.svg" alt="arrow" />
-                {SPData?.name}
+                {ServiceData?.name}
             </div>
             <div className="flex items-center justify-center w-full h-screen absolute -z-10">
                 <h1 className={`text-[29vw] text-[#191919] uppercase ${bebas_neue.className}`}>
@@ -69,17 +42,17 @@ export default function Page({ params }: { params: { slug: string } }) {
 
             <div className="flex flex-col justify-end w-full h-[65vh] lg:h-[65vh] p-6 box-border">
                 <h2 className={`text-[6.5vw] top-[5.4vw] text-white tracking-wide uppercase leading-none text-center ${bebas_neue.className}`}>
-                    {SPData?.name}
+                    {ServiceData?.name}
                 </h2>
-                <p className={`text-sm top-[3vw] text-white max-w-3xl md:max-w-5xl w-full mx-auto text-left`}>
-                    {SPData?.description}
+                <p className={`text-sm top-[3vw] text-white max-w-3xl md:max-w-5xl w-full mx-auto text-center`}>
+                    {ServiceData?.description}
                 </p>
             </div>
 
             <div className="max-w-6xl flex mx-auto gap-4 flex-wrap p-4">
                 {
-                    SPData?.serviceItems &&
-                    SPData?.serviceItems.map((sdi, idx) => (
+                    ServiceData?.serviceItems &&
+                    ServiceData?.serviceItems.map((sdi, idx) => (
                         <ServiceCard number={`0${idx + 1}`} name={sdi.name} details={sdi.details} />
                     ))
                 }

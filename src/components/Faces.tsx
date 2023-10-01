@@ -69,7 +69,7 @@ const Right = () => <Face position={[-cubeSize, 0, 0]} rotation={degreesToRadian
     <div className='grid grid-cols-12 grid-rows-2 gap-2 py-10 face'>
         <div className="col-span-5 bg-black tile ">
         </div>
-        <div className="col-span-7 bg-violet-600 tile ">
+        <div className="col-span-7 bg-violet tile ">
         </div>
         <div className="col-span-7 ">
             <Image src="/nft.jpg" alt="nft" className='tile' width={250} height={250} />

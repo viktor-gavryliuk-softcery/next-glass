@@ -18,12 +18,12 @@ export const fontGrotesk = localFont({
     variable: "--font-grotesk",
     src: [
         {
-            path: './cy-grotesk.otf',
+            path: '../fonts/cy-grotesk.otf',
             weight: '400',
             style: 'normal'
         },
         {
-            path: './cy-grotesk-grand-dark.otf',
+            path: '../fonts/cy-grotesk-grand-dark.otf',
             weight: '900',
             style: 'black'
         }

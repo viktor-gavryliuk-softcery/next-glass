@@ -19,7 +19,7 @@ export default function Home() {
         <h1 className={`text-4xl lg:text-7xl  text-slate-200 uppercase  ${fontGrotesk.className}`}>
           marketing
           <br />
-          for <span className='text-my-lime'>web3</span>
+          for <span className='text-lime'>web3</span>
         </h1>
       </PageTitle>
       <div className="fixed w-screen bottom-0">
