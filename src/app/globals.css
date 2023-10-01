@@ -5,6 +5,7 @@
 :root {
   color-scheme: dark;
   /* scrollbar-gutter: stable; */
+  transition: all 150ms ease-in-out;
 }
 header {
   /* overflow-x: hidden; */
@@ -15,7 +16,7 @@ header {
 .burger-icon {
   position: fixed;
   right: calc(1.5rem - calc(100vw - 100%));
-  transition: all 300 ease-in-out;
+  transition: all 500 ease-in-out;
 }
 
 .tile {
@@ -23,7 +24,7 @@ header {
 }
 
 .tile:hover {
-  @apply hover:shadow hover:shadow-violet-600;
+  @apply hover:shadow hover:shadow-violet;
   transform: scale(1.03);
 }
 
