@@ -23,6 +23,7 @@ const ServiceLink = ({ className, serviceName, slug, bgColor: variant, hoveredTe
             <Image src={`/services/${slug}Blur.png`} width={400} height={290} alt='Service Blur' className={`absolute top-0 right-0 h-full object-cover transition-all duration-500 ${isHovered ? '' : 'opacity-0'}`} />
             <Image src={`/services/${slug}BlurLight.png`} width={400} height={290} alt='Service Blur' className={`absolute top-0 right-0 h-full object-cover transition-all duration-500 ${isHovered ? 'opacity-0' : ''}`} />
             <Image src={`/services/link.svg`} width={40} height={40} alt='Service Arrow' className={`absolute top-4 right-4 h-8 w-8 transition-all duration-500 ${isHovered ? '' : 'opacity-0'}`} color='black' />
+            <h3 className={`${bebas_neue.className} relative z-10 text-2xl xl:text-4xl ${isHovered ? `text-${hoveredText}` : 'text-black'} leading-none`}>{serviceName}</h3>
         </div>
     </Link >;
 };
