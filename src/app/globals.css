@@ -5,7 +5,6 @@
 :root {
   color-scheme: dark;
   /* scrollbar-gutter: stable; */
-  transition: all 150ms ease-in-out;
 }
 header {
   /* overflow-x: hidden; */
@@ -30,4 +29,9 @@ header {
 
 .face {
   @apply h-full w-full;
+}
+
+.service-icon {
+  border-radius: 8px;
+  @apply w-16 h-16 relative z-10 p-2 min-w-[4rem];
 }

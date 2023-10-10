@@ -106,7 +106,7 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
                         <div className="socials absolute bottom-[6vh] md:left-20 left-7 flex items-center">
                             <div className='bg-my-bg w-2 md:w-3 h-2 md:h-3 mr-3 md:mr-10' />
                             {socials.map(link => (
-                                <a href={link.href} className='uppercase mr-2 md:mr-4 text-md md:text-2xl'>{link.name}</a>
+                                <Link href={link.href} target="_blank" rel="noopener noreferrer" className='uppercase mr-2 md:mr-4 text-md md:text-2xl'>{link.name}</Link>
                             ))}
                         </div>
 
