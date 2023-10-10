@@ -34,7 +34,7 @@ export default function Services() {
     return (
         <main className='w-full bg-[#f5f5f4]'>
             <div className="w-full bg-my-bg rounded-b-3xl">
-                <div className="flex items-center justify-center w-full absolute max-w-screen overflow-hidden ">
+                <div className="flex items-center justify-center w-full h-screen absolute max-w-screen overflow-hidden ">
                     <Image src='/servicesGlass.png' width={1920} height={1080} alt='service glass' className=' object-cover' />
                 </div>
 
