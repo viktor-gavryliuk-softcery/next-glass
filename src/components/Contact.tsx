@@ -5,6 +5,7 @@ import emailjs from '@emailjs/browser';
 import { useForm, SubmitHandler } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from 'yup';
+import Link from "next/link";
 
 type Inputs = {
     name: string
@@ -50,13 +51,17 @@ export const Contact = (
     }
 
 
-    return <div className="grid grid-cols-2 gap-4 mt-20">
-        <div className="col-span-2 lg:col-span-1 h-96 rounded-xl grid grid-cols-2 gap-4">
-            <div className='col-span-1 bg-neutral-400 rounded-xl'></div>
-            <div className='col-span-1 bg-violet rounded-xl'></div>
+    return <div className="grid grid-cols-2 gap-4 my-20">
+        <div className="col-span-2 md:col-span-1 grid grid-rows-2 gap-4">
+            <Link target="_blank" rel="noopener noreferrer" href="https://t.me/adscontrol_bot" className='col-span-1 bg-black rounded-3xl'>
+                <img src="/telegram.png" alt="telegram link image" className="h-full w-full object-cover object-left rounded-3xl" />
+            </Link>
+            <Link target="_blank" rel="noopener noreferrer" href="https://calendly.com/adscontrol/sayhello" className='col-span-1 bg-violet rounded-3xl'>
+                <img src="/calendly.png" alt="calendly link image" className="h-full w-full object-cover object-left rounded-3xl" />
+            </Link>
 
         </div>
-        <div className="col-span-2 lg:col-span-1 h-96  rounded-xl flex flex-col justify-between">
+        <div className="col-span-2 md:col-span-1 flex flex-col justify-between">
             <h2 className={`${bebas_neue.className} text-${color} text-6xl max-w-xs`}>Get in touch with us</h2>
             <p className={`text-sm text-${color}`}>and become confident in your... </p>
 
