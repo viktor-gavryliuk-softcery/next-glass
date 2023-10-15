@@ -29,7 +29,7 @@ export default function Page({ params }: { params: { slug: string } }) {
         <>
             <div className="absolute top-8 left-8 text-sm flex gap-2 z-10">
                 <Link href='/service' className='text-neutral-600'>
-                    Service
+                    Services
                 </Link>
                 <img src="/navArrow.svg" alt="arrow" />
                 {ServiceData?.name}

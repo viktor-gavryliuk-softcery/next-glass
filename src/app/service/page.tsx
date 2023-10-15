@@ -7,6 +7,8 @@ import { Contact } from '@/components/Contact';
 import FooterLinks from '@/components/FooterLinks';
 import ServiceLink from '@/components/ServiceLink';
 
+import Tilt from 'react-parallax-tilt';
+
 export type linkBgVariant = 'black' | 'violet' | 'lime';
 export type hoveredTextVariant = 'black' | 'white' | 'lime';
 export type hoveredArrowVariant = "#ffffff" | "#000000" | "#bdff00";
@@ -34,15 +36,24 @@ export default function Services() {
     return (
         <main className='w-full bg-[#f5f5f4]'>
             <div className="w-full bg-my-bg rounded-b-3xl">
-                <div className="flex items-center justify-center w-full h-screen absolute max-w-screen overflow-hidden ">
-                    <Image src='/servicesGlass.png' width={1920} height={1080} alt='service glass' className=' object-cover' />
-                </div>
+                <Tilt className="parallax-effect"
+                    perspective={2500}
+                    gyroscope={true}
+                    tiltMaxAngleX={15}
+                    tiltMaxAngleY={15}
+                    trackOnWindow={true}>
+                    <div className="flex items-center justify-center w-full h-screen absolute max-w-screen overflow-hidden inner-element">
+                        <Image src='/servicesGlass.png' width={1920} height={1080} alt='service glass' className=' object-cover' />
+                    </div>
+                </Tilt>
 
-                <div className="flex w-full h-screen justify-center items-center">
+                {/* <Tilt className="parallax-effect" perspective={1800}> */}
+                <div className="flex w-full h-screen justify-center items-center inner-element">
                     <h1 className={`text-[30vw] text-white uppercase ${bebas_neue.className}`}>
-                        Service
+                        Services
                     </h1>
                 </div>
+                {/* </Tilt> */}
             </div>
             <div className="p-10 mx-auto max-w-7xl">
                 <div className="flex xl:flex-row flex-col items-center flex-nowrap justify-stretch w-full mb-10">
