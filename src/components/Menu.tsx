@@ -14,8 +14,8 @@ const nav = [
         href: '/team'
     },
     {
-        name: 'service',
-        href: '/service'
+        name: 'services',
+        href: '/services'
     },
     {
         name: 'nft (soon)',
