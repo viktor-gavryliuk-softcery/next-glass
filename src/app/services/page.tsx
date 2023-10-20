@@ -32,18 +32,76 @@ const serviceBlockData: ServiceBlockDataType[] = [
     { key: 'pr', variant: 'lime', serviceName: "Influence Marketing & PR", className: 'sm:col-span-7 lg:col-span-4', hoveredText: 'black', hoveredArrow: "#bdff00" },
 ]
 
+const tiltProps = [
+    {
+        perspective: 1000,
+        gyroscope: true,
+        tiltMaxAngleX: 15,
+        tiltMaxAngleY: 15,
+        trackOnWindow: true,
+        imageSrc: '/particle1.png',
+    },
+    {
+        perspective: 1500,
+        gyroscope: true,
+        tiltMaxAngleX: 25,
+        tiltMaxAngleY: 25,
+        trackOnWindow: true,
+        imageSrc: '/particle2.png',
+    },
+    {
+        perspective: 3000,
+        gyroscope: true,
+        tiltMaxAngleX: 35,
+        tiltMaxAngleY: 35,
+        trackOnWindow: true,
+        imageSrc: '/particle3.png',
+    },
+    {
+        perspective: 1000,
+        gyroscope: true,
+        tiltMaxAngleX: 30,
+        tiltMaxAngleY: 15,
+        trackOnWindow: true,
+        imageSrc: '/particle4.png',
+    },
+    {
+        perspective: 4500,
+        gyroscope: true,
+        tiltMaxAngleX: 35,
+        tiltMaxAngleY: 35,
+        trackOnWindow: true,
+        imageSrc: '/particle5.png',
+    },
+];
+
 export default function Services() {
     return (
         <main className='w-full bg-[#f5f5f4]'>
-            <div className="w-full bg-my-bg rounded-b-3xl">
+            <div className="w-full bg-my-bg rounded-b-3xl relative overflow-hidden">
+
+
+                {tiltProps.map((props) => (
+                    <Tilt
+                        tiltReverse={true}
+                        className="parallax-effect"
+                        {...props}>
+                        <div className="flex items-center justify-center w-full h-screen absolute max-w-screen overflow-hidden inner-element">
+                            <Image src={props.imageSrc} width={1920} height={1080} draggable="false" alt='service glass' className=' object-cover' />
+                        </div>
+                    </Tilt>
+                ))}
                 <Tilt className="parallax-effect"
                     perspective={2500}
                     gyroscope={true}
-                    tiltMaxAngleX={15}
-                    tiltMaxAngleY={15}
-                    trackOnWindow={true}>
+                    tiltMaxAngleX={0}
+                    tiltMaxAngleY={10}
+                    trackOnWindow={true}
+                    tiltReverse={true}
+
+                >
                     <div className="flex items-center justify-center w-full h-screen absolute max-w-screen overflow-hidden inner-element">
-                        <Image src='/servicesGlass.png' width={1920} height={1080} alt='service glass' className=' object-cover' />
+                        <Image src='/servicesGlass.png' width={1920} height={1080} draggable="false" alt='service glass' className=' object-cover' />
                     </div>
                 </Tilt>
 
@@ -56,9 +114,14 @@ export default function Services() {
                 {/* </Tilt> */}
             </div>
             <div className="p-10 mx-auto max-w-7xl">
-                <div className="flex xl:flex-row flex-col items-center flex-nowrap justify-stretch w-full mb-10">
-                    <h2 className={`${bebas_neue.className} text-black text-5xl md:text-7xl xl:mr-5 flex-1`}>Full Service Marketing</h2>
-                    <h2 className={`${montserrat.className} rounded-xl text-center bg-black uppercase text-xl md:text-3xl md:p-4 p-3 flex-1`}>from $4000 + 10% of ad spend</h2>
+                <div className="flex xl:flex-row flex-col items-center flex-nowrap justify-stretch w-full mb-10 gap-y-5">
+                    <h2 className={`${bebas_neue.className} text-black text-5xl md:text-7xl xl:mr-5 flex-1`}>FULL MARKETING SERVICE</h2>
+                    <button onClick={() => {
+                        //@ts-ignore
+                        Calendly.initPopupWidget({ url: 'https://calendly.com/adscontrol/sayhello' });
+                        return false;
+                    }}
+                        className={`${montserrat.className} rounded-xl text-center bg-black uppercase text-xl md:text-3xl md:p-4 p-3 flex-1`}>GET A PRICE</button>
                 </div>
                 <div className="grid grid-cols-12 gap-4 ">
 
@@ -76,6 +139,6 @@ export default function Services() {
 
                 <Footer />
             </div>
-        </main>
+        </main >
     )
 }

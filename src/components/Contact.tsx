@@ -53,17 +53,18 @@ export const Contact = (
 
     return <div className="grid grid-cols-2 gap-4 my-20">
         <div className="col-span-2 md:col-span-1 grid grid-rows-2 gap-4">
-            <Link target="_blank" rel="noopener noreferrer" href="https://t.me/adscontrol_bot" className='col-span-1 bg-black rounded-3xl'>
+            <Link target="_blank" rel="noopener noreferrer" href="https://t.me/adscontrol_bot" className='col-span-1 bg-black rounded-3xl hover:shadow-lg hover:shadow-[#55b0da] transition-all'>
                 <img src="/telegram.png" alt="telegram link image" className="h-full w-full object-cover object-left rounded-3xl" />
             </Link>
-            <Link target="_blank" rel="noopener noreferrer" href="https://calendly.com/adscontrol/sayhello" className='col-span-1 bg-violet rounded-3xl'>
-                <img src="/calendly.png" alt="calendly link image" className="h-full w-full object-cover object-left rounded-3xl" />
+
+            <Link target="_blank" rel="noopener noreferrer" href="https://calendly.com/adscontrol/sayhello" className='col-span-1 bg-violet rounded-3xl hover:shadow-lg hover:shadow-[#7900ff] transition-all'>
+                <img src="/calendly.png" alt="calendly link image" className="h-full w-full object-cover object-left rounded-3xl " />
             </Link>
 
         </div>
         <div className="col-span-2 md:col-span-1 flex flex-col justify-between">
             <h2 className={`${bebas_neue.className} text-${color} text-6xl max-w-xs`}>Get in touch with us</h2>
-            <p className={`text-sm text-${color}`}>and become confident in your... </p>
+            <p className={`text-sm text-${color}`}>and be sure we'll contact you</p>
 
             <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col md:flex-row gap-6 items-stretch py-2">
 
@@ -82,7 +83,7 @@ export const Contact = (
                 <button className="flex-1 md:w-1/3 p-4 h-12 flex items-center justify-center rounded-md bg-lime text-black text-sm">Get a proposal</button>
 
             </form>
-            <p className={`text-xs text-${color}`}>Pelig lesk nylåhen netir vön fonotyp pock. Presam nirtad det dida nisat, i astrok. Neren ere syssna, trelig soda muren att faheten dukongar pongen. Kepp rerabunade fägt.</p>
+            <p className={`text-xs text-${color}`}>Fill in the form to contact us via email</p>
         </div>
     </div>;
 };
