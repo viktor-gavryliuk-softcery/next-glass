@@ -25,7 +25,6 @@ export default function RootLayout({
       <body className='bg-my-bg'>
         <Header />
         {children}
-        {/* <Footer /> */}
       </body>
     </html>
   )
