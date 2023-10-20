@@ -35,3 +35,11 @@ header {
   border-radius: 8px;
   @apply w-16 h-16 relative z-10 p-2 min-w-[4rem];
 }
+
+.parallax-effect {
+  transform-style: preserve-3d;
+
+  .inner-element {
+    transform: translateZ(20px);
+  }
+}

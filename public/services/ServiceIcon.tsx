@@ -5,7 +5,7 @@ import Community from './community';
 import Pr from './pr';
 import Consultation from './consultation';
 
-const ServiceIcon = ({ slug, isHovered, color }: { slug: string, isHovered: boolean, color: string }) => {
+const ServiceIcon = ({ slug, isHovered }: { slug: string, isHovered: boolean }) => {
     {/* <Image src={`/services/${slug}.svg`} width={60} height={60} alt='Service Icon' className={`relative z-10 bg-${isHovered ? hoveredText : 'black'}  service-icon service-icon`} /> */ }
 
     const ChooseSVGIcon = () => {

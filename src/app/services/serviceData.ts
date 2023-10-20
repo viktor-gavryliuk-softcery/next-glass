@@ -2,6 +2,7 @@ export interface iServiceItem {
     name: string;
     details?: string;
     number?: string;
+    key?: string;
 }
 
 export interface iServiceData {

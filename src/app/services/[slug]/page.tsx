@@ -21,15 +21,15 @@ const ServiceCard = ({ name, details, number }: iServiceItem) => {
     </div>
 }
 
-export default function Page({ params }: { params: { slug: string } }) {
+export default function Page() {
 
     const ServiceData = useServiceSlug()
 
     return (
         <>
-            <div className="absolute top-8 left-8 text-sm flex gap-2 z-10">
-                <Link href='/service' className='text-neutral-600'>
-                    Service
+            <div className="absolute top-8 left-8 text-sm gap-2 z-10 hidden md:flex">
+                <Link href='/services' className='text-neutral-600'>
+                    Services
                 </Link>
                 <img src="/navArrow.svg" alt="arrow" />
                 {ServiceData?.name}
@@ -53,7 +53,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                 {
                     ServiceData?.serviceItems &&
                     ServiceData?.serviceItems.map((sdi, idx) => (
-                        <ServiceCard number={`0${idx + 1}`} name={sdi.name} details={sdi.details} />
+                        <ServiceCard number={`0${idx + 1}`} name={sdi.name} details={sdi.details} key={sdi.name} />
                     ))
                 }
             </div>

@@ -18,6 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={montserrat.className}>
+      <head>
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" ></link>
+        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+      </head>
       <body className='bg-my-bg'>
         <Header />
         {children}
