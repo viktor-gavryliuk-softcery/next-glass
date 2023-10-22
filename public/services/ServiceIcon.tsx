@@ -1,5 +1,5 @@
 import Strategy from './strategy';
-import Target from './target';
+import Ppc from './ppc';
 import Smm from './smm';
 import Community from './community';
 import Pr from './pr';
@@ -12,8 +12,8 @@ const ServiceIcon = ({ slug, isHovered }: { slug: string, isHovered: boolean }) 
         switch (slug) {
             case 'smm':
                 return <Smm className={`bg-${isHovered ? 'white' : 'black'} service-icon`} color={isHovered ? 'black' : '#D8D8D8'} viewBox='-3 0 53 48' />;
-            case 'target':
-                return <Target className={`bg-black service-icon`} color={isHovered ? '#bdff00' : '#D8D8D8'} viewBox='0 0 56 56' />;
+            case 'ppc':
+                return <Ppc className={`bg-black service-icon`} color={isHovered ? '#bdff00' : '#D8D8D8'} viewBox='0 0 56 56' />;
             case 'community':
                 return <Community className={`bg-${isHovered ? 'white' : 'black'} service-icon`} color={isHovered ? 'black' : '#D8D8D8'} viewBox='-2 -8 68 68' />
             case 'pr':
@@ -29,4 +29,4 @@ const ServiceIcon = ({ slug, isHovered }: { slug: string, isHovered: boolean }) 
 }
 
 export default ServiceIcon;
-export { Strategy, Target, Smm, Community, Pr, Consultation };
+export { Strategy, Ppc, Smm, Community, Pr, Consultation };

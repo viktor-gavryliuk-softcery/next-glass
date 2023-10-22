@@ -1,6 +1,6 @@
 'use client'
 import { bebas_neue } from "@/app/fonts";
-
+import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { useForm, SubmitHandler } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
@@ -22,6 +22,9 @@ export const Contact = (
     { variant }: { variant: 'dark' | "light" }
 ) => {
     const color = variant === 'dark' ? 'white' : 'black';
+
+    const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+
 
     const {
         register,
@@ -45,6 +48,7 @@ export const Contact = (
             process.env.NEXT_PUBLIC_PUBLIC_KEY as string)
             .then((response) => {
                 console.log('SUCCESS!', response.status, response.text);
+                setIsFormSubmitted(true);
             }, (err) => {
                 console.log('FAILED...', err);
             }).finally(() => reset())
@@ -62,28 +66,43 @@ export const Contact = (
             </Link>
 
         </div>
+
         <div className="col-span-2 md:col-span-1 flex flex-col justify-between">
-            <h2 className={`${bebas_neue.className} text-${color} text-6xl max-w-xs`}>Get in touch with us</h2>
-            <p className={`text-sm text-${color}`}>and be sure we'll contact you</p>
+            {/* form sender block */}
 
-            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col md:flex-row gap-6 items-stretch py-2">
+            <h3 className={`${bebas_neue.className} text-${color} text-6xl max-w-xs`}>Get in touch with us</h3>
+            <p className={`text-sm text-${color}`}>Talk to a web3 experts today and get featured as our next big SUCCESS!</p>
+            {isFormSubmitted ?
+                <>
+                    <h4 className={`${bebas_neue.className} text-violet text-4xl h-20`}>We will contact You within 24 hours</h4>
+                </>
+                :
+                <>
+                    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col md:flex-row gap-6 items-stretch py-2">
 
-                <div className="flex flex-col flex-1 md:w-1/3 ">
-                    <input {...register("email")} type="email"
-                        placeholder="Email" className={`h-12 p-4 rounded-md bg-transparent border-${color} border-2 ring-0 focus:outline-${color} outline-offset-1 outline-${color} text-${color}`} />
-                    <p className="text-red-500  p-1">{errors.email?.message}</p>
-                </div>
+                        <div className="flex flex-col flex-1 md:w-1/3 ">
+                            <input {...register("email")} type="email"
+                                placeholder="Email" className={`h-12 p-4 rounded-md bg-transparent border-${color} border-2 ring-0 focus:outline-${color} outline-offset-1 outline-${color} text-${color}`} />
+                            <p className="text-red-500  p-1">{errors.email?.message}</p>
+                        </div>
 
-                <div className="flex flex-col flex-1 md:w-1/3 ">
-                    <input {...register("name")}
-                        placeholder="Name" className={`h-12 p-4 rounded-md bg-transparent border-${color} border-2 ring-0 focus:outline-${color} outline-offset-1 outline-${color} text-${color}`} />
-                    <p className="text-red-500 p-1">{errors.name?.message}</p>
-                </div>
+                        <div className="flex flex-col flex-1 md:w-1/3 ">
+                            <input {...register("name")}
+                                placeholder="Name" className={`h-12 p-4 rounded-md bg-transparent border-${color} border-2 ring-0 focus:outline-${color} outline-offset-1 outline-${color} text-${color}`} />
+                            <p className="text-red-500 p-1">{errors.name?.message}</p>
+                        </div>
 
-                <button className="flex-1 md:w-1/3 p-4 h-12 flex items-center justify-center rounded-md bg-lime text-black text-sm">Get a proposal</button>
+                        <button className="flex-1 md:w-1/3 p-4 h-12 flex items-center justify-center rounded-md bg-lime text-black text-sm">Get a proposal</button>
 
-            </form>
-            <p className={`text-xs text-${color}`}>Fill in the form to contact us via email</p>
+                    </form>
+                </>
+            }
+            <p className={`text-xs text-${color}`}>
+                Launch Your success journey now
+                <br />
+                Join our growing list of happy clients
+            </p>
+
         </div>
-    </div>;
+    </div >;
 };

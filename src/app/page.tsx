@@ -25,7 +25,6 @@ export default function Home() {
       <div className="fixed w-screen bottom-0">
         <Footer />
       </div>
-
     </main>
   )
 }

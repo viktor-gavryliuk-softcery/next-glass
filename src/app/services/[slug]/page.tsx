@@ -35,15 +35,15 @@ export default function Page() {
                 {ServiceData?.name}
             </div>
             <div className="flex items-center justify-center w-full h-screen absolute -z-10">
-                <h1 className={`text-[29vw] text-[#191919] uppercase ${bebas_neue.className}`}>
+                <h2 className={`text-[29vw] text-[#191919] uppercase ${bebas_neue.className}`}>
                     Service
-                </h1>
+                </h2>
             </div>
 
             <div className="flex flex-col justify-end w-full h-[65vh] lg:h-[65vh] p-6 box-border">
-                <h2 className={`text-[6.5vw] top-[5.4vw] text-white tracking-wide uppercase leading-none text-center ${bebas_neue.className}`}>
+                <h1 className={`text-[5.2vw] top-[5.4vw] text-white tracking-wide uppercase leading-none text-center ${bebas_neue.className}`}>
                     {ServiceData?.name}
-                </h2>
+                </h1>
                 <p className={`text-sm top-[3vw] text-white max-w-3xl md:max-w-5xl w-full mx-auto text-center`}>
                     {ServiceData?.description}
                 </p>

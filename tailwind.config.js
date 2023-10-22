@@ -10,7 +10,7 @@ module.exports = {
       colors: {
         'lime': '#bdff00',
         'my-bg': '#121212',
-        'violet': '#8B4AF6'
+        'violet': '#7800FF'
       },
 
     }
