@@ -25,21 +25,25 @@ const nav = [
 
 const socials = [
     {
-        name: 'linkedin',
+        name: 'LinkedIn',
         href: 'https://www.linkedin.com/company/adscontrol/'
     },
     {
-        name: 'inst',
+        name: 'Instagram',
         href: 'https://instagram.com/ads.control?igshid=YmMyMTA2M2Y='
     },
     {
-        name: 'twitter',
+        name: 'Twitter',
         href: 'https://twitter.com/adscontrol?s=21&t=P7HYfqBbYDIO-55Aso148Q'
     },
     {
-        name: 'telegram',
+        name: 'Telegram',
         href: 'https://t.me/adscontrolweb3'
     },
+    {
+        name: 'TikTok',
+        href: 'https://www.tiktok.com/@ads.control?_t=8b4cfebxk05&_r=1'
+    }
 ]
 
 type MenuProps = {
@@ -70,13 +74,10 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
                 transition={{ duration: 0.3 }}
 
             >
-                <div className='fixed z-20 top-0 left-0 w-full h-screen  bg-white flex items-stretch'>
-                    {/* <img src="/octodaddy.jpg" alt="octodaddy"  /> */}
-                    <img src="/octopus.gif" alt="octodaddy" className='min-h-full min-w-full fixed top-0 right-0 object-cover object-right' />
-                    {/* <video autoPlay loop height="100%" width="100%" className='min-h-full min-w-full fixed top-0 right-0 object-cover object-right'>
-                        <source src="/octopus.mp4" type="video/mp4" />
-                    </video> */}
-                    <div className='z-50  my-20 w-full flex items-center text-black px-[7vw]'>
+                <div className='fixed z-20 top-0 left-0 w-full h-screen  bg-neutral-300 flex items-stretch'>
+                    <img src="/octopus.gif" alt="octodaddy" className='min-h-full min-w-full fixed top-0 right-0 object-cover object-right hidden xl:block' />
+
+                    <div className='z-50  my-20 w-full flex items-center text-my-bg px-[7vw]'>
                         <ul className=' max-w-5xl flex flex-col items-start justify-start '>
                             {nav.map((link, index, arr) => (
                                 <li className='relative'
@@ -105,8 +106,13 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
                         </ul>
                         <div className="socials absolute bottom-[6vh] md:left-20 left-7 flex items-center">
                             <div className='bg-my-bg w-2 md:w-3 h-2 md:h-3 mr-3 md:mr-10' />
+
                             {socials.map(link => (
-                                <Link href={link.href} target="_blank" rel="noopener noreferrer" className='uppercase mr-2 md:mr-4 text-md md:text-2xl'>{link.name}</Link>
+                                <Link href={link.href} target="_blank" rel="noopener noreferrer" className='uppercase mr-2 md:mr-4 text-md md:text-2xl text-black'>
+                                    {/* {link.name} */}
+                                    <img src={`/socials/${link.name}Dark.svg`} alt={link.name} className='h-16 w-auto' />
+
+                                </Link>
                             ))}
                         </div>
 

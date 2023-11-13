@@ -2,13 +2,14 @@
 import Image from 'next/image';
 import Footer from '@/components/Footer';
 
-import { bebas_neue, montserrat } from '@/app/fonts';
+import { bebas_neue, montserrat, fontGrotesk } from '@/app/fonts';
 import { Contact } from '@/components/Contact';
 import FooterLinks from '@/components/FooterLinks';
 import ServiceLink from '@/components/ServiceLink';
 
 import Marquee from "react-fast-marquee";
 import Tilt from 'react-parallax-tilt';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 export type linkBgVariant = 'black' | 'violet' | 'lime';
 export type hoveredTextVariant = 'black' | 'white' | 'lime';
@@ -77,11 +78,14 @@ const tiltProps = [
 ];
 
 export default function Services() {
+    const { scrollYProgress } = useScroll({});
+
+    const y = useTransform(scrollYProgress, [0, 1], [0, -800]);
     return (
         <main className='w-full bg-[#f5f5f4] overflow-hidden'>
             <div className="w-full bg-my-bg rounded-b-3xl relative z-10 overflow-hidden">
 
-
+                {/* 
                 {tiltProps.map((props) => (
                     <Tilt
                         tiltReverse={true}
@@ -104,31 +108,44 @@ export default function Services() {
                     <div className="flex items-center justify-center w-full h-screen absolute max-w-screen overflow-hidden inner-element">
                         <Image src='/servicesGlass.png' width={1920} height={1080} draggable="false" alt='service glass' className=' object-cover' />
                     </div>
-                </Tilt>
+                </Tilt> */}
 
-                <div className="flex w-full h-screen justify-center items-center inner-element">
+
+                <div className="flex items-center justify-center w-full h-screen absolute max-w-screen overflow-hidden inner-element">
+                    <img src='/services.gif' draggable="false" alt='cases octopus' className='h-screen object-cover' />
+                </div>
+
+                <motion.div className="flex w-full h-screen justify-center relative items-center inner-element" style={{ y }}>
+                    <h1 className={`text-[10vw] text-white uppercase ${fontGrotesk.className}`} >
+                        Services
+                    </h1>
+                </motion.div>
+
+
+
+                {/* <div className="flex w-full h-screen justify-center items-center inner-element">
                     <h2 className={`text-[30vw] text-white uppercase ${bebas_neue.className}`}>
                         Services
                     </h2>
-                </div>
+                </div> */}
             </div>
 
             <div className="relative shadow-2xl shadow-neutral-700 bg-lime text-black text-xl md:text-3xl lg:text-4xl uppercase py-2 rotate-[30deg] top-[65vh] w-[150vw] -left-[25vw] z-0">
-                <Marquee autoFill={true} speed={200} >
+                <Marquee autoFill={true} speed={150} >
                     <h1>
                         {"web3 crypto cex design metaverse pr nft defi fintech influence marketing dex \b"}
                     </h1>
                 </Marquee>
             </div>
             <div className="relative shadow-2xl shadow-neutral-700  bg-violet text-white text-xl md:text-3xl lg:text-4xl uppercase py-2 -rotate-[25deg] top-[75vh] w-[150vw] -left-[25vw] z-0">
-                <Marquee autoFill={true} speed={230} >
+                <Marquee autoFill={true} speed={130} >
                     {"web3 crypto cex design metaverse pr nft defi fintech influence marketing dex \b"}
                 </Marquee>
             </div>
 
             <div className="p-10 mx-auto max-w-7xl relatize z-10">
                 <div className=" z-10 relative flex xl:flex-row flex-col items-center flex-nowrap justify-stretch w-full mb-10 gap-y-5">
-                    <h2 className={`${bebas_neue.className} text-black text-5xl md:text-7xl xl:mr-5 flex-1`}>FULL MARKETING SERVICE</h2>
+                    <h2 className={`${bebas_neue.className} text-black text-5xl md:text-7xl xl:mr-5 flex-1 text-center`}>FULL MARKETING SERVICE</h2>
                     <button onClick={() => {
                         //@ts-ignore
                         Calendly.initPopupWidget({ url: 'https://calendly.com/adscontrol/sayhello' });

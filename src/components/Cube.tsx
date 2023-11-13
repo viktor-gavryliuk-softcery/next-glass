@@ -125,10 +125,10 @@ export const Cube = () => {
 
         group.current.rotation.y = -((scrollPosition.current * Math.PI) * 2) + 10;
 
-        // const t = clock.getElapsedTime()
+        const t = clock.getElapsedTime()
 
         // group.current.rotation.y = THREE.MathUtils.lerp(group.current.rotation.y, Math.sin(t / 4) / 10, 0.1)
-        // group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, (-2 + Math.sin(t / 2)) / 2, 0.01)
+        group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, (Math.sin(t / 4)) / 2, 0.01)
 
         mesh.current.visible = false;
 

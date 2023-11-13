@@ -49,10 +49,10 @@ const degreesToRadians = (degrees: number): number => degrees * (Math.PI / 180);
 const Front = () => <Face position={[0, 0, -cubeSize]} rotation={degreesToRadians(180)} >
     <div className="flex flex-col gap-2 justify-center face">
         <div className='flex gap-2'>
-            <Link href='/'>
+            <Link href='/cases'>
                 <img src="/cases.jpg" alt="cases" draggable="false" className='tile' /* width={250} height={250} */ />
             </Link>
-            <Link href='/team'>
+            <Link href='/'>
                 <img src="/team.jpg" alt="team" draggable="false" className='tile' /* width={250} height={250} */ />
             </Link>
         </div>
@@ -66,9 +66,12 @@ const Front = () => <Face position={[0, 0, -cubeSize]} rotation={degreesToRadian
 
 const Right = () => <Face position={[-cubeSize, 0, 0]} rotation={degreesToRadians(270)}>
     <div className='grid grid-cols-12 grid-rows-2 gap-2 py-10 face'>
-        <div className="col-span-5 bg-black tile ">
+        <div className="col-span-6">
+            <img src="/contacts.png" alt="contacts" draggable="false" className='tile' />
         </div>
-        <div className="col-span-7 bg-violet tile ">
+        <div className="col-span-6">
+            <img src="/vacancies.png" alt="vacancies" draggable="false" className='tile' />
+
         </div>
         <div className="col-span-7 ">
             <img src="/nft.jpg" alt="nft" draggable="false" className='tile' /* width={250} height={250} */ />
@@ -81,15 +84,21 @@ const Right = () => <Face position={[-cubeSize, 0, 0]} rotation={degreesToRadian
 
 const Back = () => <Face position={[0, 0, cubeSize]} rotation={degreesToRadians(0)}>
     <div className='py-10 face'>
-        <img src="/metabody.jpg" alt="meta" draggable="false" className='tile' /* width={250} height={250} */ />
+        <img src="/1inch.png" alt="1inch" draggable="false" className='tile' /* width={250} height={250} */ />
     </div>
 </Face>
 
 const Left = () => <Face position={[cubeSize, 0, 0]} rotation={degreesToRadians(90)}>
     <div className='grid grid-cols-11 grid-rows-2 gap-2 py-10 face'>
-        <div className="col-span-4 bg-black tile "></div>
-        <div className="col-span-7 bg-[#d2d1d1] tile "></div>
-        <div className="col-span-11 bg-[#6107c7] tile"></div>
+        <div className="col-span-11 bg-[#6107c7] tile">
+            <img src="/partners.png" alt="partners" className='tile' draggable={false} />
+        </div>
+        <div className="col-span-5">
+            <img src="/faq.png" alt="faq" className='tile' draggable={false} />
+        </div>
+        <div className="col-span-6">
+            <img src="/bookACall.png" alt="bookACall" className='tile' draggable={false} />
+        </div>
     </div>
 </Face>
 
