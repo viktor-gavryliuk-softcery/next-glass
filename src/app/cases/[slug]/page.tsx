@@ -59,18 +59,20 @@ export default function Page() {
                             <div className="col-span-3 md:col-span-1 grid grid-cols-1 gap-5">
                                 <div className="col-span-1 bg-black hover:bg-white border-2 border-black hover:text-black transition-all duration-500 rounded-3xl rounded-tl-[70px] items-center justify-center flex flex-col p-4">
                                     <h4 className={`${bebas_neue.className} text-5xl md:text-[5vw] lg:text-7xl text-center`}>THEME</h4>
-                                    <p className='text-xl text-center '>dex</p>
+                                    <p className='text-xl text-center '>{CaseData?.theme}</p>
                                 </div>
-                                <div className="col-span-1 bg-black hover:bg-white border-2 border-black hover:text-black transition-all duration-500 rounded-3xl rounded-bl-[70px] flex flex-col items-center justify-center p-4 md:py-0 ">
+                                <Link href={'/services'} className="col-span-1 bg-black hover:bg-white border-2 border-black hover:text-black transition-all duration-500 rounded-3xl rounded-bl-[70px] flex flex-col items-center justify-center p-4 md:py-0 ">
                                     <h4 className={`${bebas_neue.className} text-5xl md:text-[5vw] lg:text-7xl text-center `}>Services</h4>
                                     <p className='md:text-md'>
-                                        Community management
-                                        <br />
-                                        Target Ads
-                                        <br />
-                                        Influencer marketing
+                                        {CaseData?.services?.map(service => (
+                                            <>
+                                                {service}
+                                                <br />
+                                            </>
+                                        ))}
+
                                     </p>
-                                </div>
+                                </Link>
 
                             </div>
 
@@ -110,11 +112,6 @@ export default function Page() {
                 </div>
 
             </div>
-
-
-
-
-
 
             <div className="bg-my-bg py-6 relative">
                 <FooterLinks />

@@ -19,7 +19,7 @@ header {
 }
 
 .tile {
-  @apply w-full h-full cursor-pointer rounded transition-all;
+  @apply w-full h-full cursor-pointer rounded transition-all object-cover;
 }
 
 .tile:hover {
@@ -45,6 +45,6 @@ header {
 }
 
 .case-mobile {
-  @apply w-full rounded-2xl col-span-4 sticky flex flex-col justify-between gap-4 p-4 h-56;
+  @apply w-full rounded-2xl col-span-4 sticky flex flex-col justify-between gap-4 p-4 min-h-max;
   box-shadow: 0px -4px 10px #000000c9;
 }

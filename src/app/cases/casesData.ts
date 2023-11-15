@@ -36,7 +36,9 @@ const casesData: caseProps[] = [
 
         Discover the story of 1INCH's crypto marketing success with ADS CONTROL, a partnership that exemplifies excellence in the crypto space.`,
         budget: '$20.000',
-        duration: '4 months'
+        duration: '4 months',
+        theme: 'dex',
+        services: ['influencer marketing', 'target ads', 'PR']
     },
     {
         name: 'WhiteBit',
@@ -50,7 +52,9 @@ const casesData: caseProps[] = [
         results: `WhiteBit exchange experienced heightened engagement and user growth in [GEO]. The campaign spotlighted ADS CONTROL's expertise in driving crypto trends, while welcoming new users to the world of cryptocurrency.`,
         impact: `The ADS CONTROL x WhiteBit partnership exemplifies effective crypto marketing, merging authenticity and strategy. This case serves as a testament to ADS CONTROL's ability to shape market perceptions and onboard new crypto enthusiasts.`,
         budget: '$10.000',
-        duration: '3 months'
+        duration: '3 months',
+        theme: 'Exchange',
+        services: ['influencer marketing', 'target ads', 'PR']
     },
     {
         name: 'Bohemian Bulldogs',
@@ -66,7 +70,9 @@ const casesData: caseProps[] = [
 
         Explore the journey of Bohemian Bulldogs NFT Collection, a testament to the power of strategic marketing in the NFT world, and discover how we can help your project thrive in this exciting space.`,
         budget: '$10.000',
-        duration: '3 months'
+        duration: '3 months',
+        theme: 'NFT Collection',
+        services: ['Full marketing service']
     },
     {
         name: 'cryptoinfluencers',
@@ -85,7 +91,9 @@ const casesData: caseProps[] = [
         special: {
             title: "Our Pioneering Role",
             data: `CRYPTOINFLUENCERS plays a pivotal role in the influencer marketing landscape, and we were honored to be their marketing partner. We assembled an extensive network of influencers, enabling us to guarantee fruitful partnerships that aligned with our client's project goals. We meticulously negotiated with top-tier influencers, ensuring that our client's brand received the visibility and impact it deserved.`
-        }
+        },
+        theme: 'PR Agency',
+        services: ['Social Media Management', 'Display/Target Advertisement']
     },
     {
         name: 'Heroes Battle Arena',
@@ -107,7 +115,9 @@ const casesData: caseProps[] = [
         special: {
             title: "A Revolutionary Quest",
             data: `Heroes Battle Arena is not your typical RPG; it's a visionary project that ushers in a new era of gaming. In a world where players can earn while they play, this Multichain RPG promises thrilling battles, unique NFT armies, powerful magic stones, and the very presence of Gods. It's a quest for both seasoned gamers and newcomers, offering a zero start investment opportunity.`
-        }
+        },
+        theme: 'NFT Collection',
+        services: ['Full marketing service']
     },
     {
         name: 'Metacossacs',
@@ -129,7 +139,9 @@ const casesData: caseProps[] = [
         special: {
             title: 'A noble mission',
             data: `Metacossacs is more than just an NFT project; it is a beacon of hope for those affected by the war in Ukraine. With a core mission to extend a helping hand to the affected communities, Metacossacs blends the world of NFTs with a purpose-driven approach. It encourages individuals with a shared vision to join hands and contribute to a brighter future.`
-        }
+        },
+        theme: 'NFT Collection',
+        services: ['Full marketing service']
 
     },
     {
@@ -145,7 +157,10 @@ const casesData: caseProps[] = [
 
         impact: `METABODY's journey serves as a testament to the fusion of artistry, technology, and marketing. It exemplifies how a responsible approach to a metaverse project can yield incredible results. METABODY invites users to explore a world where animation breathes life into the metaverse, creating a realm that is as close to reality as one can imagine.`,
         duration: '2 months',
-        budget: '$3.000'
+        budget: '$3.000',
+        theme: 'Metaverse',
+        services: ['Social Media Management', 'Display/Target Advertisement']
+
     },
 ];
 
