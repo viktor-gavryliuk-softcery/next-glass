@@ -33,12 +33,12 @@ const socials = [
         href: 'https://instagram.com/ads.control?igshid=YmMyMTA2M2Y='
     },
     {
-        name: 'Twitter',
+        name: 'X-Twitter',
         href: 'https://twitter.com/adscontrol?s=21&t=P7HYfqBbYDIO-55Aso148Q'
     },
     {
         name: 'Telegram',
-        href: 'https://t.me/adscontrolweb3'
+        href: 'https://t.me/adscontrol_manager'
     },
     {
         name: 'TikTok',
@@ -110,7 +110,7 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
                             {socials.map(link => (
                                 <Link href={link.href} target="_blank" rel="noopener noreferrer" className='uppercase mr-2 md:mr-4 text-md md:text-2xl text-black'>
                                     {/* {link.name} */}
-                                    <img src={`/socials/${link.name}Dark.svg`} alt={link.name} className='h-16 w-auto' />
+                                    <img src={`/social/${link.name}_black.svg`} alt={link.name} className='h-12 w-auto' />
 
                                 </Link>
                             ))}

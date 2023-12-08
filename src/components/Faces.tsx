@@ -37,7 +37,7 @@ const Face = ({ children, position, rotation }: FaceProps) => {
                 filter: hidden ? 'blur(4px)' : 'none',
                 pointerEvents: hidden ? 'none' : 'auto',
             }}>
-            <div className="w-96 h-96 px-3 ">
+            <div className="w-96 h-96 px-3">
                 {children}
             </div>
         </Html>
@@ -47,7 +47,7 @@ const Face = ({ children, position, rotation }: FaceProps) => {
 const degreesToRadians = (degrees: number): number => degrees * (Math.PI / 180);
 
 const Front = () => <Face position={[0, 0, -cubeSize]} rotation={degreesToRadians(180)} >
-    <div className="flex flex-col gap-2 justify-center face">
+    <div className="flex flex-col gap-2 justify-start pt-8 face">
         <div className='flex gap-2'>
             <Link href='/cases'>
                 <img src="/cases.jpg" alt="cases" draggable="false" className='tile' /* width={250} height={250} */ />
@@ -65,7 +65,7 @@ const Front = () => <Face position={[0, 0, -cubeSize]} rotation={degreesToRadian
 
 
 const Right = () => <Face position={[-cubeSize, 0, 0]} rotation={degreesToRadians(270)}>
-    <div className='grid grid-cols-12 grid-rows-2 gap-2 py-10 face'>
+    <div className='grid grid-cols-12 grid-rows-2 gap-2 py-10 justify-start pt-8 face'>
         <div className="col-span-6">
             <img src="/contacts.png" alt="contacts" draggable="false" className='tile' />
         </div>
@@ -83,13 +83,13 @@ const Right = () => <Face position={[-cubeSize, 0, 0]} rotation={degreesToRadian
 </Face>
 
 const Back = () => <Face position={[0, 0, cubeSize]} rotation={degreesToRadians(0)}>
-    <div className='py-10 face'>
+    <div className='py-10 justify-start pt-8 face'>
         <img src="/1inch.png" alt="1inch" draggable="false" className='tile' /* width={250} height={250} */ />
     </div>
 </Face>
 
 const Left = () => <Face position={[cubeSize, 0, 0]} rotation={degreesToRadians(90)}>
-    <div className='grid grid-cols-11 grid-rows-2 gap-2 py-10 face'>
+    <div className='grid grid-cols-11 grid-rows-2 gap-2 py-10 justify-start pt-8 face'>
         <div className="col-span-11 bg-[#6107c7] tile">
             <img src="/partners.png" alt="partners" className='tile' draggable={false} />
         </div>

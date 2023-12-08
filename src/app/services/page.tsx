@@ -148,7 +148,7 @@ export default function Services() {
                     <h2 className={`${bebas_neue.className} text-black text-5xl md:text-7xl xl:mr-5 flex-1 text-center`}>FULL MARKETING SERVICE</h2>
                     <button onClick={() => {
                         //@ts-ignore
-                        Calendly.initPopupWidget({ url: 'https://calendly.com/adscontrol/sayhello' });
+                        Calendly.initPopupWidget({ url: 'https://calendly.com/adscontrolinfo/30min' });
                         return false;
                     }}
                         className={`${montserrat.className} rounded-md text-center bg-black hover:bg-lime hover:text-black hover:scale-105 transition-all hover:shadow-lg hover:shadow-[#8abd00] hover:font-semibold uppercase text-xl md:text-3xl md:p-4 p-3 flex-1`}>GET A PRICE</button>
