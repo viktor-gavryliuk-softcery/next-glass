@@ -104,7 +104,7 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
                             ))}
 
                         </ul>
-                        <div className="socials absolute bottom-[6vh] md:left-20 left-7 flex items-center">
+                        <div className="socials absolute bottom-[12vh] md:left-20 left-7 flex items-center">
                             <div className='bg-my-bg w-2 md:w-3 h-2 md:h-3 mr-3 md:mr-10' />
 
                             {socials.map(link => (
