@@ -57,21 +57,15 @@ export const Contact = (
 
     return <div className="grid grid-cols-2 gap-4 my-20">
         <div className="col-span-2 md:col-span-1 grid grid-rows-2 gap-4 relative">
-            <Link target="_blank" rel="noopener noreferrer" href="https://t.me/adscontrol_manager" className='h-fit min-h-[150px] relative col-span-1 bg-black overflow-hidden rounded-lg md:rounded-xl hover:shadow-lg hover:shadow-black transition-all flex items-center justify-center cursor-pointer'>
-                <p className="font-bold text-5xl ml-10">Telegram</p>
+            <Link target="_blank" rel="noopener noreferrer" href="https://t.me/adscontrol_manager" className='h-fit min-h-[100px] md:min-h-[150px] relative col-span-1 bg-black overflow-hidden rounded-lg md:rounded-xl hover:shadow-lg hover:shadow-black transition-all flex items-center justify-center cursor-pointer'>
                 <img src="/telegram.gif" alt="telegram link image" className="h-full w-full object-cover object-center absolute" />
-                <img src="/telegram.png" alt="telegram link image" className="h-full w-full object-cover object-center absolute hover:opacity-0" />
-
+                <img src="/telegram.png" alt="telegram link image" className="h-full w-full object-cover object-center absolute hover:opacity-0 bg-black" />
             </Link>
 
-            <Link target="_blank" rel="noopener noreferrer" href="https://calendly.com/adscontrolinfo/30min" className='h-fit min-h-[150px] relative col-span-1 bg-violet overflow-hidden rounded-lg md:rounded-xl hover:shadow-lg hover:shadow-[#7900ff] transition-all flex items-center justify-center cursor-pointer'>
-                <p className="font-bold text-5xl ml-10">Calendly</p>
-
+            <Link target="_blank" rel="noopener noreferrer" href="https://calendly.com/adscontrolinfo/30min" className='h-fit min-h-[100px] md:min-h-[150px] relative col-span-1 bg-violet overflow-hidden rounded-lg md:rounded-xl hover:shadow-lg hover:shadow-[#7900ff] transition-all flex items-center justify-center cursor-pointer'>
                 <img src="/calendly.gif" alt="calendly link image" className="h-full w-full object-contain object-center absolute" />
-                <img src="/calendly.png" alt="telegram link image" className=" w-full h-full object-contain object-center absolute hover:opacity-0" />
-
+                <img src="/calendly.png" alt="telegram link image" className=" w-full h-full object-contain object-center absolute hover:opacity-0 bg-violet" />
             </Link>
-
         </div>
 
         <div className="col-span-2 md:col-span-1 flex flex-col justify-between">
