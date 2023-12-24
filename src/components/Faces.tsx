@@ -96,7 +96,12 @@ const Left = () => <Face position={[cubeSize, 0, 0]} rotation={degreesToRadians(
         <div className="col-span-5">
             <img src="/faq.png" alt="faq" className='tile' draggable={false} />
         </div>
-        <div className="col-span-6">
+        <div className="col-span-6"
+            onClick={() => {
+                //@ts-ignore
+                Calendly.initPopupWidget({ url: 'https://calendly.com/adscontrolinfo/30min' });
+                return false;
+            }}>
             <img src="/bookACall.png" alt="bookACall" className='tile' draggable={false} />
         </div>
     </div>
