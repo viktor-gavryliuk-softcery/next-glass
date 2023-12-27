@@ -9,7 +9,7 @@ import { MotionValue, motion, useScroll, useTransform } from 'framer-motion';
 import { fontGrotesk, bebas_neue, montserrat } from '@/app/fonts';
 import { AppearWrapper } from './AppearWrapper';
 
-import casesData from './casesData';
+import casesData from '../../data/casesData';
 
 type caseType = {
     name: string,

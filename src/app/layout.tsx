@@ -9,7 +9,7 @@ import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'ADS CONTROL | MARKETING WEB 3.0',
-  description: 'Ads control website',
+  description: 'Your marketing under our control',
 }
 
 export default function RootLayout({

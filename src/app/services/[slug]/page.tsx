@@ -8,7 +8,7 @@ import FooterLinks from '@/components/FooterLinks';
 
 import { useServiceSlug } from './useServiceSlug';
 
-import type { iServiceItem } from '../serviceData';
+import type { iServiceItem } from '../../../data/serviceData';
 
 const ServiceCard = ({ name, details, number }: iServiceItem) => {
     return <div className="flex-1 flex flex-col justify-between bg-neutral-800 p-12 min-h-fit w-full lg:min-w-[49%] box-border ">

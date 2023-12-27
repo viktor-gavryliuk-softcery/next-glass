@@ -120,6 +120,24 @@ const casesData: caseProps[] = [
         services: ['Full marketing service']
     },
     {
+        name: 'Metabody',
+        slug: 'metabody',
+        img: '/cases/images/metabody.png',
+        avatar: '/cases/avatars/metabody.png',
+        left: `Enter a realm where reality seamlessly converges with the boundless possibilities of the metaverse. Welcome to METABODY, a unique project that not only embodies the metaverse but also places a strong emphasis on animation, achieving an unparalleled level of precision and smoothness in movement.`,
+        right: `Our role in this exciting venture involved advertising on Facebook and Instagram, amplifying METABODY's reach and inviting audiences into a world of remarkable animation artistry.`,
+        description: `Embark on an extraordinary journey with METABODY and witness the meeting of reality and the metaverse through animation like never before.`,
+        approach: `In our partnership with METABODY, we leveraged the power of Facebook and Instagram to bring this remarkable project to a broader audience. Our advertising campaigns were designed to captivate and draw in users who could appreciate the fine art of animation and the immersive potential of the metaverse.`,
+        results: `Our advertising efforts on Facebook and Instagram had a transformative impact on METABODY. The project witnessed an increase in visibility and engagement, capturing the attention of individuals who shared a deep appreciation for animation and metaverse experiences. The campaigns successfully conveyed METABODY's commitment to crafting a metaverse world like no other.`,
+
+        impact: `METABODY's journey serves as a testament to the fusion of artistry, technology, and marketing. It exemplifies how a responsible approach to a metaverse project can yield incredible results. METABODY invites users to explore a world where animation breathes life into the metaverse, creating a realm that is as close to reality as one can imagine.`,
+        duration: '2 months',
+        budget: '$3.000',
+        theme: 'Metaverse',
+        services: ['Social Media Management', 'Display/Target Advertisement']
+
+    },
+    {
         name: 'Metacossacs',
         slug: 'metacossacs',
         img: '/cases/images/metacossacs.png',
@@ -144,24 +162,7 @@ const casesData: caseProps[] = [
         services: ['Full marketing service']
 
     },
-    {
-        name: 'Metabody',
-        slug: 'metabody',
-        img: '/cases/images/metabody.png',
-        avatar: '/cases/avatars/metabody.png',
-        left: `Enter a realm where reality seamlessly converges with the boundless possibilities of the metaverse. Welcome to METABODY, a unique project that not only embodies the metaverse but also places a strong emphasis on animation, achieving an unparalleled level of precision and smoothness in movement.`,
-        right: `Our role in this exciting venture involved advertising on Facebook and Instagram, amplifying METABODY's reach and inviting audiences into a world of remarkable animation artistry.`,
-        description: `Embark on an extraordinary journey with METABODY and witness the meeting of reality and the metaverse through animation like never before.`,
-        approach: `In our partnership with METABODY, we leveraged the power of Facebook and Instagram to bring this remarkable project to a broader audience. Our advertising campaigns were designed to captivate and draw in users who could appreciate the fine art of animation and the immersive potential of the metaverse.`,
-        results: `Our advertising efforts on Facebook and Instagram had a transformative impact on METABODY. The project witnessed an increase in visibility and engagement, capturing the attention of individuals who shared a deep appreciation for animation and metaverse experiences. The campaigns successfully conveyed METABODY's commitment to crafting a metaverse world like no other.`,
 
-        impact: `METABODY's journey serves as a testament to the fusion of artistry, technology, and marketing. It exemplifies how a responsible approach to a metaverse project can yield incredible results. METABODY invites users to explore a world where animation breathes life into the metaverse, creating a realm that is as close to reality as one can imagine.`,
-        duration: '2 months',
-        budget: '$3.000',
-        theme: 'Metaverse',
-        services: ['Social Media Management', 'Display/Target Advertisement']
-
-    },
 ];
 
 export default casesData;

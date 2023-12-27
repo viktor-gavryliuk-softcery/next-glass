@@ -1,7 +1,9 @@
+'use client'
 import { ReactElement, useState, useEffect } from 'react';
 import { Html } from '@react-three/drei';
 import Link from 'next/link';
-
+import useRandomFace from "@/hooks/useRandomFace";
+import casesData, {caseProps} from "@/data/casesData";
 
 // backdrop-blur-lg bg-white/30
 
@@ -82,11 +84,29 @@ const Right = () => <Face position={[-cubeSize, 0, 0]} rotation={degreesToRadian
     </div>
 </Face>
 
-const Back = () => <Face position={[0, 0, cubeSize]} rotation={degreesToRadians(0)}>
-    <div className='py-10 justify-start pt-8 face'>
-        <img src="/1inch.png" alt="1inch" draggable="false" className='tile' /* width={250} height={250} */ />
-    </div>
-</Face>
+const Back = () => {
+    const [randomTile, setRandomTile] = useState<caseProps>(casesData[0]);
+
+    const {getRandomCase} = useRandomFace();
+
+    useEffect(() => {
+        let randomFaceId = setInterval(() => setRandomTile(getRandomCase), 8000)
+
+        return () => {
+            clearInterval(randomFaceId)
+        }
+    }, [])
+
+
+    return <Face position={[0, 0, cubeSize]} rotation={degreesToRadians(0)}>
+        <Link href={`/cases/${randomTile?.slug}`}>
+        <div className='py-10 justify-start pt-8 face'>
+            <img src={randomTile?.img} alt='1inch' draggable="false" className='tile object-contain w-full' /* width={250} height={250} */ />
+        </div>
+        </Link>
+
+    </Face>
+}
 
 const Left = () => <Face position={[cubeSize, 0, 0]} rotation={degreesToRadians(90)}>
     <div className='grid grid-cols-11 grid-rows-2 gap-2 py-10 justify-start pt-8 face'>
@@ -106,11 +126,5 @@ const Left = () => <Face position={[cubeSize, 0, 0]} rotation={degreesToRadians(
         </div>
     </div>
 </Face>
-
-
-
-
-
-
 
 export { Front, Right, Back, Left };

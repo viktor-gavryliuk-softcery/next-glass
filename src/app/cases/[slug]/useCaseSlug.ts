@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { usePathname, notFound } from "next/navigation";
 
-import casesData from "../casesData";
-import type { caseProps } from "../casesData";
+import casesData from "../../../data/casesData";
+import type { caseProps } from "../../../data/casesData";
 
 
 const useCaseSlug = () => {

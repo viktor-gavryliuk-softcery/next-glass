@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { usePathname, notFound } from "next/navigation";
 
-import serviceData from '../serviceData';
+import serviceData from '../../../data/serviceData';
 
-import type { iServiceData } from '../serviceData';
+import type { iServiceData } from '../../../data/serviceData';
 
 const useServiceSlug = () => {
     const pathname = usePathname()
