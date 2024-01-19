@@ -1,0 +1,24 @@
+.vacancy_card {
+  @apply bg-white rounded h-max w-32 flex flex-col p-3 pb-7 justify-center items-center gap-5;
+
+  h3 {
+    @apply text-neutral-800 text-2xl font-bold text-center;
+  }
+
+  p {
+    @apply text-neutral-900 text-sm text-center;
+  }
+
+  button {
+    @apply bg-lime rounded-md w-full p-2 text-black outline-lime outline-2 outline-offset-2 hover:shadow-lime;
+  }
+}
+
+.vacancy_bullet {
+  @apply h-20 w-20 rounded-md bg-neutral-900 text-neutral-500 text-xl uppercase flex items-center justify-center;
+  @apply hover:cursor-pointer hover:shadow-neutral-950 hover:shadow-lg disabled:cursor-not-allowed;
+
+  &__active {
+    @apply bg-neutral-50 text-neutral-950;
+  }
+}

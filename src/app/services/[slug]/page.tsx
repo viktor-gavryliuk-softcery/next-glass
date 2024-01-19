@@ -2,13 +2,13 @@
 
 import Link from 'next/link';
 import { bebas_neue, montserrat } from '@/app/fonts';
-import { Contact } from '@/components/Contact';
+import { ContactForm } from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 import FooterLinks from '@/components/FooterLinks';
 
 import { useServiceSlug } from './useServiceSlug';
 
-import type { iServiceItem } from '../../../data/serviceData';
+import type { iServiceItem } from '@/data/serviceData';
 
 const ServiceCard = ({ name, details, number }: iServiceItem) => {
     return <div className="flex-1 flex flex-col justify-between bg-neutral-800 p-12 min-h-fit w-full lg:min-w-[49%] box-border ">
@@ -59,7 +59,7 @@ export default function Page() {
             </div>
 
             <div className="max-w-6xl mx-auto p-4">
-                <Contact variant='dark' />
+                <ContactForm variant='dark' />
             </div>
 
             <div className="bg-my-bg py-6">
