@@ -3,7 +3,7 @@ import { ReactElement, useState, useEffect } from 'react';
 import { Html } from '@react-three/drei';
 import Link from 'next/link';
 import useRandomFace from "@/hooks/useRandomFace";
-import casesData, {caseProps} from "@/data/casesData";
+import casesData, { caseProps } from "@/data/casesData";
 
 // backdrop-blur-lg bg-white/30
 
@@ -52,10 +52,10 @@ const Front = () => <Face position={[0, 0, -cubeSize]} rotation={degreesToRadian
     <div className="flex flex-col gap-2 justify-start pt-8 face">
         <div className='flex gap-2'>
             <Link href='/cases'>
-                <img src="/cases.jpg" alt="cases" draggable="false" className='tile' /* width={250} height={250} */ />
+                <img src="/boxGifs/cases.gif" alt="cases" draggable="false" className='tile' /* width={250} height={250} */ />
             </Link>
             <Link href='/'>
-                <img src="/team.jpg" alt="team" draggable="false" className='tile' /* width={250} height={250} */ />
+                <img src="/boxGifs/team.gif" alt="team" draggable="false" className='tile' /* width={250} height={250} */ />
             </Link>
         </div>
 
@@ -69,17 +69,16 @@ const Front = () => <Face position={[0, 0, -cubeSize]} rotation={degreesToRadian
 const Right = () => <Face position={[-cubeSize, 0, 0]} rotation={degreesToRadians(270)}>
     <div className='grid grid-cols-12 grid-rows-2 gap-2 py-10 justify-start pt-8 face'>
         <div className="col-span-6">
-            <img src="/contacts.png" alt="contacts" draggable="false" className='tile' />
+            <img src="/boxGifs/contacts.gif" alt="contacts" draggable="false" className='tile' />
         </div>
         <div className="col-span-6">
-            <img src="/vacancies.png" alt="vacancies" draggable="false" className='tile' />
-
+            <img src="/vacancies.gif" alt="vacancies" draggable="false" className='tile bg-my-bg' />
         </div>
         <div className="col-span-7 ">
-            <img src="/nft.jpg" alt="nft" draggable="false" className='tile' /* width={250} height={250} */ />
+            <img src="/boxGifs/appearance.gif" alt="nft" draggable="false" className='tile' /* width={250} height={250} */ />
         </div>
         <div className="col-span-5 ">
-            <img src="/feedback.jpg" alt="nft" draggable="false" className='tile'/*  width={250} height={250} */ />
+            <img src="/boxGifs/feedback.gif" alt="nft" draggable="false" className='tile'/*  width={250} height={250} */ />
         </div>
     </div>
 </Face>
@@ -87,10 +86,10 @@ const Right = () => <Face position={[-cubeSize, 0, 0]} rotation={degreesToRadian
 const Back = () => {
     const [randomTile, setRandomTile] = useState<caseProps>(casesData[0]);
 
-    const {getRandomCase} = useRandomFace();
+    const { getRandomCase } = useRandomFace();
 
     useEffect(() => {
-        let randomFaceId = setInterval(() => setRandomTile(getRandomCase), 8000)
+        let randomFaceId = setInterval(() => setRandomTile(getRandomCase), 3000)
 
         return () => {
             clearInterval(randomFaceId)
@@ -100,9 +99,9 @@ const Back = () => {
 
     return <Face position={[0, 0, cubeSize]} rotation={degreesToRadians(0)}>
         <Link href={`/cases/${randomTile?.slug}`}>
-        <div className='py-10 justify-start pt-8 face'>
-            <img src={randomTile?.img} alt='1inch' draggable="false" className='tile object-contain w-full' /* width={250} height={250} */ />
-        </div>
+            <div className='py-10 justify-start pt-8 face'>
+                <img src={randomTile?.img} alt='1inch' draggable="false" className='tile object-contain w-full' /* width={250} height={250} */ />
+            </div>
         </Link>
 
     </Face>
@@ -111,10 +110,10 @@ const Back = () => {
 const Left = () => <Face position={[cubeSize, 0, 0]} rotation={degreesToRadians(90)}>
     <div className='grid grid-cols-11 grid-rows-2 gap-2 py-10 justify-start pt-8 face'>
         <div className="col-span-11 bg-[#6107c7] tile">
-            <img src="/partners.png" alt="partners" className='tile' draggable={false} />
+            <img src="/boxGifs/partners.gif" alt="partners" className='tile' draggable={false} />
         </div>
         <div className="col-span-5">
-            <img src="/faq.png" alt="faq" className='tile' draggable={false} />
+            <img src="/boxGifs/faq.gif" alt="faq" className='tile' draggable={false} />
         </div>
         <div className="col-span-6"
             onClick={() => {
@@ -122,7 +121,7 @@ const Left = () => <Face position={[cubeSize, 0, 0]} rotation={degreesToRadians(
                 Calendly.initPopupWidget({ url: 'https://calendly.com/adscontrolinfo/30min' });
                 return false;
             }}>
-            <img src="/bookACall.png" alt="bookACall" className='tile' draggable={false} />
+            <img src="/boxGifs/bookacall.gif" alt="bookACall" className='tile' draggable={false} />
         </div>
     </div>
 </Face>
