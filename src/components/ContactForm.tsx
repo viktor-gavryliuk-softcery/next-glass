@@ -18,7 +18,7 @@ const validationSchema = yup.object().shape({
 });
 
 
-export const Contact = (
+export const ContactForm = (
     { variant }: { variant: 'dark' | "light" }
 ) => {
     const color = variant === 'dark' ? 'white' : 'black';
@@ -58,24 +58,23 @@ export const Contact = (
     return <div className="grid grid-cols-2 gap-4 my-20">
         <div className="col-span-2 md:col-span-1 grid grid-rows-2 gap-4 relative">
             <Link target="_blank" rel="noopener noreferrer" href="https://t.me/adscontrol_manager" className='h-fit min-h-[100px] md:min-h-[150px] relative col-span-1 bg-black overflow-hidden rounded-lg md:rounded-xl hover:shadow-lg hover:shadow-black transition-all flex items-center justify-center cursor-pointer'>
-                <img src="/telegram.gif" alt="telegram link image" className="h-full w-full object-cover object-center absolute" />
-                <img src="/telegram.png" alt="telegram link image" className="h-full w-full object-cover object-center absolute hover:opacity-0 bg-black" />
+                <img src="/telegram.gif" alt="telegram link image" className="h-full w-full object-contain object-center absolute" />
+                <img src="/telegram.png" alt="telegram link image" className="h-full w-full object-contain object-center absolute hover:opacity-0 bg-black" />
             </Link>
 
             <Link target="_blank" rel="noopener noreferrer" href="https://calendly.com/adscontrolinfo/30min" className='h-fit min-h-[100px] md:min-h-[150px] relative col-span-1 bg-violet overflow-hidden rounded-lg md:rounded-xl hover:shadow-lg hover:shadow-[#7900ff] transition-all flex items-center justify-center cursor-pointer'>
                 <img src="/calendly.gif" alt="calendly link image" className="h-full w-full object-contain object-center absolute" />
-                <img src="/calendly.png" alt="telegram link image" className=" w-full h-full object-contain object-center absolute hover:opacity-0 bg-violet" />
+                <img src="/calendly.png" alt="telegram link image" className="w-full h-full object-contain object-center absolute hover:opacity-0 bg-violet" />
             </Link>
         </div>
 
-        <div className="col-span-2 md:col-span-1 flex flex-col justify-between">
-            {/* form sender block */}
+        <div className="col-span-2 md:col-span-1 flex flex-col justify-start">
 
-            <h3 className={`${bebas_neue.className} text-${color} text-6xl max-w-xs`}>Get in touch with us</h3>
-            <p className={`text-sm text-${color}`}>Talk to a web3 experts today and get featured as our next big SUCCESS!</p>
+            <h3 className={`${bebas_neue.className} text-${color} text-6xl max-w-xs leading-[0.9em]`}>Get in touch with us</h3>
+            <p className={`text-sm text-${color} mb-4`}>Talk to a web3 experts today and get featured as our next big SUCCESS!</p>
             {isFormSubmitted ?
                 <>
-                    <h4 className={`${bebas_neue.className} text-violet text-4xl h-20`}>We will contact You within 24 hours</h4>
+                    <h4 className={`${bebas_neue.className} text-violet text-4xl`}>We will contact You within 24 hours</h4>
                 </>
                 :
                 <>
