@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Footer from '@/components/Footer';
 
 import { bebas_neue, montserrat, fontGrotesk } from '@/app/fonts';
-import { Contact } from '@/components/Contact';
+import { ContactForm } from '@/components/ContactForm';
 import FooterLinks from '@/components/FooterLinks';
 import ServiceLink from '@/components/ServiceLink';
 
@@ -161,7 +161,7 @@ export default function Services() {
 
                 </div>
                 <div className="max-w-6xl mx-auto p-4 relative z-10">
-                    <Contact variant='light' />
+                    <ContactForm variant='light' />
                 </div>
 
             </div>
