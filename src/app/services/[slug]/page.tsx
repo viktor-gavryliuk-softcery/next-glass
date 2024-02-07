@@ -1,10 +1,12 @@
 'use client'
 
-import Link from 'next/link';
 import { bebas_neue, montserrat } from '@/app/fonts';
 import { ContactForm } from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 import FooterLinks from '@/components/FooterLinks';
+import Image from "next/image";
+import Link from 'next/link';
+
 
 import { useServiceSlug } from '../../../hooks/useServiceSlug';
 
@@ -31,7 +33,7 @@ export default function Page() {
                 <Link href='/services' className='text-neutral-600'>
                     Services
                 </Link>
-                <img src="/navArrow.svg" alt="arrow" />
+                <Image src="/navArrow.svg" alt="arrow" />
                 {ServiceData?.name}
             </div>
             <div className="flex items-center justify-center w-full h-screen absolute -z-10">

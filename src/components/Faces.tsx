@@ -2,10 +2,10 @@
 import casesData, { caseProps } from "@/data/casesData";
 import useRandomFace from "@/hooks/useRandomFace";
 import { Html } from '@react-three/drei';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ReactElement, useEffect, useState } from 'react';
 
-// backdrop-blur-lg bg-white/30
 
 // Define an interface for the props of Face component
 interface FaceProps {
@@ -52,15 +52,15 @@ const Front = () => <Face position={[0, 0, -cubeSize]} rotation={degreesToRadian
     <div className="flex flex-col gap-2 justify-start py-8 face">
         <div className='flex gap-2 h-full'>
             <Link href='/cases'>
-                <img src="/boxGifs/cases.gif" alt="cases" draggable="false" className='tile' />
+                <Image width={200} height={240} src="/boxGifs/cases.gif" alt="cases" draggable="false" className='tile' />
             </Link>
             <Link href='/team'>
-                <img src="/boxGifs/team.gif" alt="team" draggable="false" className='tile' />
+                <Image width={340} height={240} src="/boxGifs/team.gif" alt="team" draggable="false" className='tile' />
             </Link>
         </div>
 
         <Link href='/services' className='h-full'>
-            <img src="/boxGifs/services.gif" alt="services" draggable="false" className='tile' />
+            <Image width={540} height={240} src="/boxGifs/services.gif" alt="services" draggable="false" className='tile' />
         </Link>
     </div>
 </Face>
@@ -69,16 +69,16 @@ const Front = () => <Face position={[0, 0, -cubeSize]} rotation={degreesToRadian
 const Right = () => <Face position={[-cubeSize, 0, 0]} rotation={degreesToRadians(270)}>
     <div className='grid grid-cols-12 grid-rows-2 gap-2 py-10 justify-start pt-8 face'>
         <div className="col-span-6">
-            <img src="/boxGifs/contacts.gif" alt="contacts" draggable="false" className='tile' />
+            <Image src="/boxGifs/contacts.gif" alt="contacts" draggable="false" className='tile' width={270} height={230} />
         </div>
         <Link href={'/vacancies'} className="col-span-6">
-            <img src="/vacancies.gif" alt="vacancies" draggable="false" className='tile bg-my-bg' />
+            <Image src="/vacancies.gif" alt="vacancies" draggable="false" className='tile bg-my-bg' width={260} height={230} />
         </Link>
         <Link href={'/appearance'} className="col-span-7 ">
-            <img src="/boxGifs/appearance.gif" alt="nft" draggable="false" className='tile' />
+            <Image src="/boxGifs/appearance.gif" alt="nft" draggable="false" className='tile' width={308} height={226} />
         </Link>
         <Link href={'/'} className="col-span-5 ">
-            <img src="/boxGifs/feedback.gif" alt="nft" draggable="false" className='tile' />
+            <Image src="/boxGifs/feedback.gif" alt="nft" draggable="false" className='tile' width={217} height={226} />
         </Link>
     </div>
 </Face>
@@ -100,7 +100,7 @@ const Back = () => {
     return <Face position={[0, 0, cubeSize]} rotation={degreesToRadians(0)}>
         <Link href={`/cases/${randomTile?.slug}`}>
             <div className='py-10 justify-start pt-8 face'>
-                <img src={randomTile?.img} alt='1inch' draggable="false" className='tile object-contain w-full' />
+                <Image src={randomTile?.img} alt='1inch' draggable="false" className='tile object-contain w-full' width={555} height={480} />
             </div>
         </Link>
 
@@ -110,10 +110,10 @@ const Back = () => {
 const Left = () => <Face position={[cubeSize, 0, 0]} rotation={degreesToRadians(90)}>
     <div className='grid grid-cols-11 grid-rows-2 gap-2 py-10 justify-start pt-8 face'>
         <Link href={'/partners'} className="col-span-11 bg-[#6107c7] tile">
-            <img src="/boxGifs/partners.gif" alt="partners" className='tile' draggable={false} />
+            <Image src="/boxGifs/partners.gif" alt="partners" className='tile' draggable={false} width={280} height={255} />
         </Link>
         <Link href={'/'} className="col-span-5">
-            <img src="/boxGifs/faq.gif" alt="faq" className='tile' draggable={false} />
+            <Image src="/boxGifs/faq.gif" alt="faq" className='tile' draggable={false} width={240} height={230} />
         </Link>
         <div className="col-span-6"
             onClick={() => {
@@ -121,7 +121,7 @@ const Left = () => <Face position={[cubeSize, 0, 0]} rotation={degreesToRadians(
                 Calendly.initPopupWidget({ url: 'https://calendly.com/adscontrol_ceo/30min' });
                 return false;
             }}>
-            <img src="/boxGifs/bookacall.gif" alt="bookACall" className='tile' draggable={false} />
+            <Image src="/boxGifs/bookacall.gif" alt="bookACall" className='tile' draggable={false} width={290} height={230} />
         </div>
     </div>
 </Face>

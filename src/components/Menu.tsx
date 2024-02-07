@@ -1,7 +1,9 @@
 'use client'
 import * as Dialog from '@radix-ui/react-dialog';
 import { AnimatePresence, motion } from 'framer-motion';
+import Image from "next/image";
 import Link from 'next/link';
+
 import { useEffect } from 'react';
 
 const nav = [
@@ -79,7 +81,7 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
 
             >
                 <div className='fixed z-20 top-0 left-0 w-full h-screen  bg-neutral-300 flex items-stretch'>
-                    <img src="/octopus.gif" alt="octodaddy" className='min-h-full min-w-full fixed top-0 right-0 object-cover object-right hidden xl:block' />
+                    <Image src="/octopus.gif" alt="octodaddy" className='min-h-full min-w-full fixed top-0 right-0 object-cover object-right hidden xl:block' />
 
                     <div className='z-50  my-20 w-full flex items-center text-my-bg px-[7vw]'>
                         <ul className=' max-w-5xl flex flex-col items-start justify-start '>
@@ -118,7 +120,7 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
                                     key={i}
                                     href={link.href} target="_blank" rel="noopener noreferrer" className='uppercase mr-2 md:mr-4 text-md md:text-2xl text-black'>
                                     {/* {link.name} */}
-                                    <img src={`/social/${link.name}_black.svg`} alt={link.name} className='h-12 w-auto' />
+                                    <Image src={`/social/${link.name}_black.svg`} alt={link.name} className='h-12 w-auto' />
 
                                 </Link>
                             ))}

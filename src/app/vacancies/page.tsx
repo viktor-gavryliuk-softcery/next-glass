@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { bebas_neue, fontGrotesk } from "@/app/fonts";
 import FooterLinks from '@/components/FooterLinks';
 
+import Image from 'next/image';
 import { Swiper as SwiperType } from 'swiper/types';
 
 import VacanciesSwiper from "./VacanciesSwiper";
@@ -51,7 +52,7 @@ export default function Vacancies() {
             <div className="w-full relative z-10 overflow-hidden">
 
                 <div className="flex items-center justify-center w-full h-[80vh] md:h-screen max-w-screen overflow-hidden inner-element">
-                    <img src='/vacancies.gif' draggable="false" alt='cases octopus' className='w-full object-cover' />
+                    <Image src='/vacancies.gif' draggable="false" alt='cases octopus' className='w-full object-cover' />
                 </div>
 
 

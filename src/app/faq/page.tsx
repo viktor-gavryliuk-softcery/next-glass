@@ -1,16 +1,17 @@
 'use client'
-import Link from 'next/link';
 import Footer from '@/components/Footer';
 import FooterLinks from '@/components/FooterLinks';
+import Image from "next/image";
+import Link from 'next/link';
 
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 
-import { Provider } from 'react-redux';
 import store from '@/store/store';
+import { Provider } from 'react-redux';
 
 
-import './faq.scss';
 import { TabPanel } from './TabPanel';
+import './faq.scss';
 import FaqPickedDetails from './faqDetails';
 
 
@@ -21,7 +22,7 @@ function Faq() {
             <main className='w-full bg-my-bg overflow-hidden'>
 
                 <div className="w-full bg-my-bg  relative z-10 flex items-center justify-center lg:h-screen max-w-screen overflow-hidden mt-14 ">
-                    <img src='/faq.gif' draggable="false" alt='team octopus' className='h-full w-full lg:object-contain' />
+                    <Image src='/faq.gif' draggable="false" alt='team octopus' className='h-full w-full lg:object-contain' />
                 </div>
 
                 <div className="w-full">

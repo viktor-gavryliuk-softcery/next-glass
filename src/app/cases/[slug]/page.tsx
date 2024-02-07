@@ -1,9 +1,10 @@
 'use client'
-
-import Link from 'next/link';
-import { bebas_neue, montserrat } from '@/app/fonts';
+import { bebas_neue } from '@/app/fonts';
 import Footer from '@/components/Footer';
 import FooterLinks from '@/components/FooterLinks';
+import Image from "next/image";
+import Link from 'next/link';
+
 
 import { useCaseSlug } from '../../../hooks/useCaseSlug';
 
@@ -17,7 +18,7 @@ export default function Page() {
                 <Link href='/cases' className='text-neutral-600'>
                     Cases
                 </Link>
-                <img src="/navArrow.svg" alt="arrow" />
+                <Image src="/navArrow.svg" alt="arrow" />
                 {CaseData?.name}
 
             </div>
@@ -52,7 +53,7 @@ export default function Page() {
                         <div className="col-span-4 md:col-span-3 grid grid-cols-3 gap-5 rounded-l-[100px] rounded-r-[1.6rem]  md:border-2 border-black md:border-r-0 ">
 
                             <div className="col-span-3 md:col-span-2 md:p-8 w-full">
-                                <img src={CaseData?.img} alt={CaseData?.name} className='w-full rounded-3xl md:rounded-[70px]' />
+                                <Image src={CaseData?.img || ''} alt={CaseData?.name || ''} className='w-full rounded-3xl md:rounded-[70px]' />
                             </div>
 
                             <div className="col-span-3 md:col-span-1 grid grid-cols-1 gap-5">
