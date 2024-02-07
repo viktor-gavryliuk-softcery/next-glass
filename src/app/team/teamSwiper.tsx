@@ -1,12 +1,12 @@
-import { Swiper as SwiperType } from "swiper/types";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Keyboard } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper as SwiperType } from "swiper/types";
 
 import 'swiper/swiper-bundle.css';
 
 import { montserrat } from "@/app/fonts";
 
-import { mockTeamData } from "@/app/team/page";
+import { mockTeamData } from '@/data/teamData';
 
 const TeamMemberSlide = (
     { name, position, isActive, id }

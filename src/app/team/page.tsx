@@ -8,15 +8,8 @@ import { Swiper as SwiperType } from 'swiper/types';
 import { TeamMemberCard, TeamMemberDetails } from "@/app/team/MemberCard";
 import { TeamSwiper } from "@/app/team/teamSwiper";
 
+import { mockTeamData } from '@/data/teamData';
 import useSmoothScrollTo from "@/hooks/useSmoothScrollTo";
-
-const mockTeamData = [
-    { id: 1, name: 'John Doe', position: 'Founder & CEO', rewards: ['#1', '#2', '#3'] },
-    { id: 2, name: 'Jane Doe', position: 'CTO', rewards: ['#4', '#5', '#6'] },
-    { id: 3, name: 'Bob Smith', position: 'Lead Developer', rewards: ['#7', '#8', '#9'] },
-    { id: 4, name: 'Alice Johnson', position: 'Designer', rewards: ['#10', '#11', '#12'] },
-];
-
 
 function Team() {
     const [swiper, setSwiper] = useState<SwiperType>();
@@ -96,5 +89,4 @@ function Team() {
     )
 }
 
-export { mockTeamData };
 export default Team;
