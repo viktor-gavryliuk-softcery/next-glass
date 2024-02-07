@@ -1,7 +1,7 @@
 'use client';
-import { Swiper } from 'swiper/react';
-import { FreeMode, Autoplay, Keyboard, Scrollbar } from 'swiper/modules';
 import { ReactElement } from 'react';
+import { Autoplay, FreeMode, Keyboard, Scrollbar } from 'swiper/modules';
+import { Swiper } from 'swiper/react';
 
 import 'swiper/css';
 import 'swiper/css/free-mode';
@@ -35,15 +35,14 @@ const FreemodeSlider = ({
                 }}
                 spaceBetween={8}
                 slidesPerView={mobileSlides}
-                // centeredSlides={true}
+                autoHeight={true}
                 freeMode={true}
                 loop={true}
-                // autoplay={true}
+                autoplay={true}
                 keyboard={true}
                 grabCursor={true}
-                speed={300}
                 modules={[FreeMode, Autoplay, Keyboard, Scrollbar]}
-                className='w-full flex p-8  pb-2 customSlider'
+                className='w-full flex p-8 pb-2 h-full'
             >
                 {children}
 

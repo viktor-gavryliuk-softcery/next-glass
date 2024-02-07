@@ -2,9 +2,12 @@
 import { bebas_neue, fontGrotesk, montserrat } from "@/app/fonts";
 import { AppearWrapper } from "@/app/team/AppearWrapper";
 import { throttle } from "@/app/utils/throttle";
+import { ITeamMember } from "@/data/teamData";
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import { BsEnvelope, BsLinkedin, BsTelegram } from "react-icons/bs";
 
-export const TeamMemberDetails = ({ name, position, rewards }: { name: string, position: string, rewards: string[] }) => {
+export const TeamMemberDetails = ({ name, position, rewards, contacts, describe }: ITeamMember) => {
 
     const [isMobile, setIsMobile] = useState(true)
 
@@ -37,12 +40,12 @@ export const TeamMemberDetails = ({ name, position, rewards }: { name: string, p
         </AppearWrapper>
 
         <AppearWrapper xMin={-150} opacityMin={0} opacityMax={isMobile ? 1 : 0} yMax={isMobile ? 0 : -175} className={'relative'}>
-            <p className={`${montserrat.className} text-sm `}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
-                molestias laudantium unde, blanditiis accusamus praesentium obcaecati molestiae, maiores atque fuga ipsa.
-                Obcaecati veritatis commodi, eveniet aspernatur saepe voluptatum odit explicabo.</p>
+            <p className={`${montserrat.className} text-sm `}>
+                {describe}
+            </p>
         </AppearWrapper>
 
-        <AppearWrapper xMin={-200} opacityMin={0} opacityMax={isMobile ? 1 : 0} yMax={isMobile ? 0 : -150} className={'relative'}>
+        {/* <AppearWrapper xMin={-200} opacityMin={0} opacityMax={isMobile ? 1 : 0} yMax={isMobile ? 0 : -150} className={'relative'}>
             <h3 className={`${bebas_neue.className} text-6xl `}> Rewards</h3>
         </AppearWrapper>
 
@@ -54,16 +57,38 @@ export const TeamMemberDetails = ({ name, position, rewards }: { name: string, p
                     {r}
                 </div>
             ))}
+        </AppearWrapper> */}
+        <AppearWrapper xMin={-200} opacityMin={0} opacityMax={isMobile ? 1 : 0} yMax={isMobile ? 0 : -150} className={'relative'}>
+            <h3 className={`${bebas_neue.className} text-6xl `}> Contacts</h3>
+        </AppearWrapper>
+
+        <AppearWrapper yMin={250} opacityMin={0} opacityMax={isMobile ? 1 : 0} yMax={isMobile ? 0 : -165} className={'flex gap-4'}>
+            <Link
+                href={contacts.telegram}
+                className="h-20 w-20 bg-neutral-800 rounded-md text-violet flex items-center justify-center text-3xl font-semibold">
+                <BsTelegram />
+            </Link>
+            <Link
+                href={contacts.email}
+                className="h-20 w-20 bg-neutral-800 rounded-md text-violet flex items-center justify-center text-3xl font-semibold">
+                <BsEnvelope />
+            </Link>
+            <Link
+                href={contacts.linkedin}
+                className="h-20 w-20 bg-neutral-800 rounded-md text-violet flex items-center justify-center text-3xl font-semibold">
+                <BsLinkedin />
+            </Link>
         </AppearWrapper>
 
     </div>);
 }
 export const TeamMemberCard = (
-    { name, position, isActive, onClick, id }
+    { name, position, isActive, onClick, id, src }
         :
         {
             name: string,
-            id: number
+            src: string,
+            id: number,
             position: string,
             isActive: boolean,
             onClick: (id: number) => void
@@ -75,6 +100,7 @@ export const TeamMemberCard = (
             <button
                 onClick={() => onClick(id)}
                 className={`${isActive ? 'border-2 bg-neutral-800 border-lime shadow-md shadow-lime' : 'bg-neutral-900'} w-full col-span-1 rounded-xl h-96 relative  transition-all cursor-pointer focus:outline-violet focus:ring-0`}>
+                <img src={src} alt="" className="h-full w-full rounded-xl object-cover object-right" />
                 <div
                     className="rounded-md bg-neutral-800 h-12 absolute -bottom-2 left-[4.33%] w-11/12 z-10 grid grid-cols-2">
                     <p className={`${montserrat.className} h-full flex items-center text-center justify-center col-span-1 font-semibold bg-lime text-neutral-900 rounded-l-md`}>{name}</p>

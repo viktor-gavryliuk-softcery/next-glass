@@ -9,14 +9,6 @@ import { AppearOldWrapper } from '@/components/AppearOldWrapper';
 
 import casesData from '../../data/casesData';
 
-type caseType = {
-    name: string,
-    img: string,
-    description: string,
-    slug: string;
-
-}
-
 const offsets = ['top-[1rem]', 'top-[6rem]', 'top-[11rem]', 'top-[16rem]', 'top-[21rem]', 'top-[26rem]', 'top-[31rem]'];
 
 const MobileCaseCard = ({ offset, slug, name, img, isDark, descr }: { offset: string, img: string, slug: string, name: string, isDark: boolean, descr: string }) => {

@@ -61,9 +61,13 @@ const VacanciesSwiper = ({
             {
                 VacanciesData.map((vaccancy, i) => (
                     <SwiperSlide
+                        onClick={() => {
+                            swiper?.slideTo(i);
+                            setActiveSlide(i)
+                        }}
                         key={i}
                         className='vacancy_card'>
-                        <img src='/nft.jpg' />
+                        <img src={vaccancy.imageUrl} />
                         <h3>{vaccancy.name}</h3>
                     </SwiperSlide>)
                 )

@@ -1,9 +1,9 @@
 'use client'
-import { ReactElement, useState, useEffect } from 'react';
+import casesData, { caseProps } from "@/data/casesData";
+import useRandomFace from "@/hooks/useRandomFace";
 import { Html } from '@react-three/drei';
 import Link from 'next/link';
-import useRandomFace from "@/hooks/useRandomFace";
-import casesData, { caseProps } from "@/data/casesData";
+import { ReactElement, useEffect, useState } from 'react';
 
 // backdrop-blur-lg bg-white/30
 
@@ -74,10 +74,10 @@ const Right = () => <Face position={[-cubeSize, 0, 0]} rotation={degreesToRadian
         <Link href={'/vacancies'} className="col-span-6">
             <img src="/vacancies.gif" alt="vacancies" draggable="false" className='tile bg-my-bg' />
         </Link>
-        <Link href={'appearance'} className="col-span-7 ">
+        <Link href={'/appearance'} className="col-span-7 ">
             <img src="/boxGifs/appearance.gif" alt="nft" draggable="false" className='tile' />
         </Link>
-        <Link href={'/feedback'} className="col-span-5 ">
+        <Link href={'/'} className="col-span-5 ">
             <img src="/boxGifs/feedback.gif" alt="nft" draggable="false" className='tile' />
         </Link>
     </div>
@@ -112,13 +112,13 @@ const Left = () => <Face position={[cubeSize, 0, 0]} rotation={degreesToRadians(
         <Link href={'/partners'} className="col-span-11 bg-[#6107c7] tile">
             <img src="/boxGifs/partners.gif" alt="partners" className='tile' draggable={false} />
         </Link>
-        <Link href={'/faq'} className="col-span-5">
+        <Link href={'/'} className="col-span-5">
             <img src="/boxGifs/faq.gif" alt="faq" className='tile' draggable={false} />
         </Link>
         <div className="col-span-6"
             onClick={() => {
                 //@ts-ignore
-                Calendly.initPopupWidget({ url: 'https://calendly.com/adscontrolinfo/30min' });
+                Calendly.initPopupWidget({ url: 'https://calendly.com/adscontrol_ceo/30min' });
                 return false;
             }}>
             <img src="/boxGifs/bookacall.gif" alt="bookACall" className='tile' draggable={false} />
@@ -126,4 +126,4 @@ const Left = () => <Face position={[cubeSize, 0, 0]} rotation={degreesToRadians(
     </div>
 </Face>
 
-export { Front, Right, Back, Left };
+export { Back, Front, Left, Right };

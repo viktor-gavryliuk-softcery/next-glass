@@ -1,8 +1,7 @@
 'use client'
-import Image from 'next/image';
 import Footer from '@/components/Footer';
 
-import { bebas_neue, montserrat, fontGrotesk } from '@/app/fonts';
+import { bebas_neue, fontGrotesk, montserrat } from '@/app/fonts';
 import { ContactForm } from '@/components/ContactForm';
 import FooterLinks from '@/components/FooterLinks';
 import ServiceLink from '@/components/ServiceLink';
@@ -85,7 +84,7 @@ export default function Services() {
         <main className='w-full bg-[#f5f5f4] overflow-hidden'>
             <div className="w-full bg-my-bg rounded-b-3xl relative z-10 overflow-hidden">
 
-                {/* 
+                {/*
                 {tiltProps.map((props) => (
                     <Tilt
                         tiltReverse={true}
@@ -148,7 +147,7 @@ export default function Services() {
                     <h2 className={`${bebas_neue.className} text-black text-5xl md:text-7xl xl:mr-5 flex-1 text-center`}>FULL MARKETING SERVICE</h2>
                     <button onClick={() => {
                         //@ts-ignore
-                        Calendly.initPopupWidget({ url: 'https://calendly.com/adscontrolinfo/30min' });
+                        Calendly.initPopupWidget({ url: 'https://calendly.com/adscontrol_ceo/30min' });
                         return false;
                     }}
                         className={`${montserrat.className} rounded-md text-center bg-black hover:bg-lime hover:text-black hover:scale-105 transition-all hover:shadow-lg hover:shadow-[#8abd00] hover:font-semibold uppercase text-xl md:text-3xl md:p-4 p-3 flex-1`}>GET A PRICE</button>

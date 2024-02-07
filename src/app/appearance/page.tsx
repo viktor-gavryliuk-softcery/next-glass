@@ -20,17 +20,17 @@ export default function Appearance() {
 
             <img src='/appearance.gif' draggable="false" alt='cases octopus' className='lg:h-screen w-full  object-cover mt-20' />
 
-            <div className="w-full max-w-7xl mx-auto p-4 relative ">
+            <div className="w-full max-w-7xl mx-auto p-4 relative bottom-10">
 
                 <SliderDisplay />
 
                 <h2 className='text-neutral-950 uppercase text-4xl font-semibold leading-loose tracking-wide mt-10'>press releases</h2>
 
-                <FreemodeSlider desktopSlides={4} mobileSlides={2}>
+                <FreemodeSlider desktopSlides={3} mobileSlides={1.7}>
 
                     {releaseData.map((rd, i) => (
                         <SwiperSlide key={i}>
-                            <ReleaseCard data={rd} />
+                            <ReleaseCard imageSrc={rd.imageSrc} altText={rd.altText} date={rd.date} title={rd.title} description={rd.description} linkHref={rd.linkHref} thumbnail={rd.thumbnail} />
                         </SwiperSlide>
                     ))}
 

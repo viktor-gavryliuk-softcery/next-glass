@@ -73,7 +73,10 @@ export default function Vacancies() {
                         <ButtonWithKey
                             key={index}
                             className={`${bebas_neue.className} vacancy_bullet ${activeSlide === index ? 'vacancy_bullet__active' : ''}`}
-                            onClick={() => handleChangeSlide(index)}
+                            onClick={() => {
+                                handleChangeSlide(index)
+
+                            }}
                             disabled={index === activeSlide}
                         >
                             {label}

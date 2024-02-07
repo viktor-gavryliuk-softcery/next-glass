@@ -62,7 +62,7 @@ export const ContactForm = (
                 <img src="/telegram.png" alt="telegram link image" className="h-full w-full object-cover object-center absolute hover:opacity-0 bg-black" />
             </Link>
 
-            <Link target="_blank" rel="noopener noreferrer" href="https://calendly.com/adscontrolinfo/30min" className='h-fit min-h-[100px] md:min-h-[150px] relative col-span-1 bg-violet overflow-hidden rounded-lg md:rounded-xl hover:shadow-lg hover:shadow-[#7900ff] transition-all flex items-center justify-center cursor-pointer'>
+            <Link target="_blank" rel="noopener noreferrer" href="https://calendly.com/adscontrol_ceo/30min" className='h-fit min-h-[100px] md:min-h-[150px] relative col-span-1 bg-violet overflow-hidden rounded-lg md:rounded-xl hover:shadow-lg hover:shadow-[#7900ff] transition-all flex items-center justify-center cursor-pointer'>
                 <img src="/calendly.gif" alt="calendly link image" className="h-full w-full object-contain object-center absolute" />
                 <img src="/calendly.png" alt="telegram link image" className="w-full h-full object-contain object-center absolute hover:opacity-0 bg-violet" />
             </Link>

@@ -67,11 +67,11 @@ function Team() {
                         <TeamSwiper activePersonId={activePerson} setActiveSlide={setActivePerson} swiper={swiper} setSwiper={setSwiper} />
                     </div>
 
-                    <TeamMemberDetails name={activePersonData?.name} position={activePersonData?.position} rewards={activePersonData?.rewards} />
+                    <TeamMemberDetails id={activePersonData?.id} describe={activePersonData?.describe} image={activePersonData?.image} name={activePersonData?.name} position={activePersonData?.position} rewards={activePersonData?.rewards} contacts={activePersonData?.contacts} />
 
                     <div className='w-full h-full col-span-1 p-8 pt-24 hidden sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-4 gap-y-8'>
                         {mockTeamData.map((p, i) => (
-                            <TeamMemberCard key={i} name={p.name} position={p.position} isActive={activePerson === p.id} onClick={handlePersonClick} id={p.id} />
+                            <TeamMemberCard key={i} name={p.name} src={p.image} position={p.position} isActive={activePerson === p.id} onClick={handlePersonClick} id={p.id} />
                         ))}
                     </div>
 

@@ -10,9 +10,10 @@ import { Swiper as SwiperType } from 'swiper/types';
 
 import { releaseData } from '@/data/releaseData';
 
-import { ArrowRightIcon, ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons';
+import { ChevronLeftIcon, ChevronRightIcon, Link1Icon } from '@radix-ui/react-icons';
 
 import 'swiper/css';
+import { Autoplay } from 'swiper/modules';
 
 const SliderWrapper = () => {
     const [activeSlide, setActiveSlide] = useState<number>(0);
@@ -33,17 +34,23 @@ const SliderWrapper = () => {
     const displayedData = releaseData[activeSlide];
 
     return (
-        <div className="grid grid-rows-2 md:grid-rows-1 grid-col-1 md:grid-cols-2 w-full  bg-neutral-100 z-20 shadow-lg rounded-sm">
+        <div className="grid  grid-col-1 md:grid-cols-2 w-full h-auto lg:h-[420px] bg-neutral-100 z-20 shadow-lg rounded-sm ">
             <SliderDisplay activeSlide={activeSlide} swiper={swiper} setSwiper={setSwiper} setActiveSlide={setActiveSlide} />
 
-            <div className="col-span-1 p-10 pt-14 md:px-20 md:py-20 flex flex-col text-black justify-center align-middle h-full w-full row-span-1 relative">
+            <div className="col-span-1 p-4 px-6 lg:px-12 md:pt-14 flex flex-col text-black justify-start align-middle h-full w-full  relative">
 
                 <span className='mb-2'>{displayedData?.date}</span>
-                <h3 className='uppercase font-bold text-3xl'>{displayedData?.title}</h3>
-                <p className='text-md'>{displayedData?.description}</p>
-                <Link href={displayedData?.linkHref || '/'} className='flex gap-2 mt-2 align-middle items-center hover:text-violet focus:underline'>
-                    <ArrowRightIcon className='w-12 h-12' />
-                </Link>
+                <button>
+                    <Link target="_blank" rel="noopener noreferrer" href={displayedData?.linkHref || '/'} className='flex gap-2 mt-2 align-middle items-center hover:text-violet focus:underline'>
+                        <h3 className='uppercase font-bold text-start text-xl lg:text-3xl mb-2'>{displayedData?.title}</h3>
+                    </Link>
+                </button>
+                <p className='lg:text-md'>{displayedData?.description}</p>
+                <button>
+                    <Link target="_blank" rel="noopener noreferrer" href={displayedData?.linkHref || '/'} className='flex gap-2 mt-2 align-middle items-center hover:text-violet focus:underline'>
+                        <Link1Icon className='md:w-12 md:h-12 w-8 h-8' />
+                    </Link>
+                </button>
 
                 <div className="absolute bottom-4 right-4 md:top-8 md:right-8 gap-2 h-10 flex items-center align-middle justify-evenly">
                     <button
@@ -93,7 +100,12 @@ const SliderDisplay = ({
             grabCursor={true}
             spaceBetween={20}
             loop={true}
-            className="col-span-1 flex w-full row-span-1"
+            autoplay={{
+                delay: 7000,
+                disableOnInteraction: false
+            }}
+            modules={[Autoplay]}
+            className="col-span-1 flex w-full"
         >
             {
                 releaseData.map((rs, i) => (

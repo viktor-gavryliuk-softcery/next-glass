@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
-import { montserrat } from './fonts'
+import { montserrat } from './fonts';
+
 
 import Header from '@/components/Header';
 
-import './globals.css';
 import Script from 'next/script';
+import './globals.css';
 
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: 'ADS CONTROL | MARKETING WEB 3.0',
@@ -38,6 +40,7 @@ export default function RootLayout({
           gtag('config', 'G-1KXJE0CX7K');
         `}
         </Script>
+        <SpeedInsights />
       </body>
     </html>
   )
