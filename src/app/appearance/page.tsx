@@ -4,7 +4,6 @@ import Footer from '@/components/Footer';
 import Marquee from "react-fast-marquee";
 
 import { ContactForm } from '@/components/ContactForm';
-import Image from "next/image";
 
 import FooterLinks from '@/components/FooterLinks';
 import FreemodeSlider from '@/components/FreemodeSlider';
@@ -19,7 +18,7 @@ export default function Appearance() {
     return (
         <main className='w-screen bg-white'>
 
-            <Image src='/appearance.gif' draggable="false" alt='cases octopus' className='lg:h-screen w-full  object-cover mt-20' />
+            <img src='/appearance.gif' draggable="false" alt='cases octopus' className='lg:h-screen w-full  object-cover mt-20' />
 
             <div className="w-full max-w-7xl mx-auto p-4 relative bottom-10">
 

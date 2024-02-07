@@ -3,8 +3,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { Swiper as SwiperType } from 'swiper/types';
 
-import Image from "next/image";
-
 import VacanciesData from '../../data/vacancies';
 
 const VacanciesSwiper = ({
@@ -69,7 +67,7 @@ const VacanciesSwiper = ({
                         }}
                         key={i}
                         className='vacancy_card'>
-                        <Image src={vaccancy.imageUrl} alt='' />
+                        <img src={vaccancy.imageUrl} />
                         <h3>{vaccancy.name}</h3>
                     </SwiperSlide>)
                 )

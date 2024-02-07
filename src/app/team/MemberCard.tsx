@@ -3,9 +3,7 @@ import { bebas_neue, fontGrotesk, montserrat } from "@/app/fonts";
 import { AppearWrapper } from "@/app/team/AppearWrapper";
 import { throttle } from "@/app/utils/throttle";
 import { ITeamMember } from "@/data/teamData";
-import Image from "next/image";
 import Link from "next/link";
-
 import { useEffect, useState } from "react";
 import { BsEnvelope, BsLinkedin, BsTelegram } from "react-icons/bs";
 
@@ -102,7 +100,7 @@ export const TeamMemberCard = (
             <button
                 onClick={() => onClick(id)}
                 className={`${isActive ? 'border-2 bg-neutral-800 border-lime shadow-md shadow-lime' : 'bg-neutral-900'} w-full col-span-1 rounded-xl h-96 relative  transition-all cursor-pointer focus:outline-violet focus:ring-0`}>
-                <Image src={src} alt="" className="h-full w-full rounded-xl object-cover object-right" />
+                <img src={src} alt="" className="h-full w-full rounded-xl object-cover object-right" />
                 <div
                     className="rounded-md bg-neutral-800 h-12 absolute -bottom-2 left-[4.33%] w-11/12 z-10 grid grid-cols-2">
                     <p className={`${montserrat.className} h-full flex items-center text-center justify-center col-span-1 font-semibold bg-lime text-neutral-900 rounded-l-md`}>{name}</p>

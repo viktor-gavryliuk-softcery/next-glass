@@ -1,6 +1,5 @@
 'use client'
 import Footer from '@/components/Footer';
-import Image from "next/image";
 import Link from 'next/link';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -16,7 +15,7 @@ const MobileCaseCard = ({ offset, slug, name, img, isDark, descr }: { offset: st
     return (
         <div className={`case-mobile ${isDark ? 'bg-black' : 'bg-white'} sticky ${offset}`}>
             <div className="flex items gap-2">
-                <Image src={img} alt={slug} className='w-14 object-cover rounded-xl' />
+                <img src={img} alt={slug} className='w-14 object-cover rounded-xl' />
                 <h4 className={`${bebas_neue.className} ${isDark ? 'text-white' : 'text-black'}  text-3xl leading-relaxed`}>{name}</h4>
             </div>
 
@@ -33,7 +32,7 @@ const DesktopCaseCard = ({ isLeft, index }: { isLeft: boolean, index: number }) 
         <AppearOldWrapper isLeft={isLeft} className='relative'>
             <Link href={`/cases/${casesData[index].slug}`} className='min-h-[400px] h-fit w-full p-8 grid gap-4 cursor-pointer'>
                 <h3 className={`${bebas_neue.className} uppercase text-7xl hover:border-b-4 border-white  cursor-pointer transition-all duration-300 w-max`}>{casesData[index].name}</h3>
-                <Image src={casesData[index].img} alt={casesData[index].name} className={`w-full rounded-3xl hover:scale-95 ${isLeft ? 'hover:-rotate-3 ' : 'hover:rotate-3'} duration-500  transition-all`} />
+                <img src={casesData[index].img} alt={casesData[index].name} className={`w-full rounded-3xl hover:scale-95 ${isLeft ? 'hover:-rotate-3 ' : 'hover:rotate-3'} duration-500  transition-all`} />
                 <p className={`${montserrat.className} uppercase text-md`}>{casesData[index].description}</p>
             </Link>
         </AppearOldWrapper>
@@ -50,7 +49,7 @@ export default function Cases() {
     return (
         <main className='w-screen min-h-screen h-max bg-my-bg'>
             <div className="flex items-center justify-center w-full h-screen absolute max-w-screen overflow-hidden inner-element">
-                <Image src='/cases.gif' draggable="false" alt='cases octopus' className='h-screen object-cover' />
+                <img src='/cases.gif' draggable="false" alt='cases octopus' className='h-screen object-cover' />
             </div>
 
             <motion.div className="flex w-full h-screen justify-center relative items-center inner-element" style={{ y }}>

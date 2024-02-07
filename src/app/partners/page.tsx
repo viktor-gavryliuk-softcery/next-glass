@@ -1,11 +1,10 @@
 'use client'
-import { bebas_neue } from '@/app/fonts';
 import Footer from '@/components/Footer';
+import {bebas_neue} from '@/app/fonts';
 import FooterLinks from '@/components/FooterLinks';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import {motion, useScroll, useTransform} from 'framer-motion';
 
 import PartnersLogos from "@/app/partners/PartnersLogos";
-import Image from "next/image";
 
 export default function Partners() {
     const { scrollYProgress } = useScroll({});
@@ -22,11 +21,11 @@ export default function Partners() {
                 </motion.div>
             </div>
 
-            <motion.div className="absolute top-0 h-screen w-full z-20 pointer-events-none" style={{ y }}>
-                <Image src='/partners.gif' alt='partners' className='h-full w-full object-contain' />
+            <motion.div className="absolute top-0 h-screen w-full z-20 pointer-events-none" style={{y}}>
+                <img src='/partners.gif' alt='partners' className='h-full w-full object-contain' />
             </motion.div>
 
-            <PartnersLogos />
+        <PartnersLogos/>
 
             <div className=" py-6 relative z-10">
                 <FooterLinks />

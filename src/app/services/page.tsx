@@ -5,7 +5,6 @@ import { bebas_neue, fontGrotesk, montserrat } from '@/app/fonts';
 import { ContactForm } from '@/components/ContactForm';
 import FooterLinks from '@/components/FooterLinks';
 import ServiceLink from '@/components/ServiceLink';
-import Image from "next/image";
 
 import Marquee from "react-fast-marquee";
 
@@ -112,7 +111,7 @@ export default function Services() {
 
 
                 <div className="flex items-center justify-center w-full h-screen absolute max-w-screen overflow-hidden inner-element">
-                    <Image src='/services.gif' draggable="false" alt='cases octopus' className='h-screen object-cover' />
+                    <img src='/services.gif' draggable="false" alt='cases octopus' className='h-screen object-cover' />
                 </div>
 
                 <motion.div className="flex w-full h-screen justify-center relative items-center inner-element" style={{ y }}>

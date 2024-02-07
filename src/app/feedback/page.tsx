@@ -1,6 +1,5 @@
 'use client'
 import Footer from '@/components/Footer';
-import Image from "next/image";
 
 import Marquee from "react-fast-marquee";
 
@@ -16,7 +15,7 @@ export default function Services() {
     return (
         <main className='w-screen bg-white'>
             <div className="w-full h-screen bg-[#0E0E0E] rounded-b-[36px]">
-                <Image src='/feedback.gif' draggable="false" alt='cases octopus' className='h-screen object-contain' />
+                <img src='/feedback.gif' draggable="false" alt='cases octopus' className='h-screen object-contain' />
             </div>
 
             <div className="w-full max-w-7xl mx-auto p-4">
