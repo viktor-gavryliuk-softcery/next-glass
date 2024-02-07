@@ -7,7 +7,9 @@ import Header from '@/components/Header';
 import Script from 'next/script';
 import './globals.css';
 
+import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/next";
+
 
 export const metadata: Metadata = {
   title: 'ADS CONTROL | MARKETING WEB 3.0',
@@ -41,6 +43,7 @@ export default function RootLayout({
         `}
         </Script>
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   )
