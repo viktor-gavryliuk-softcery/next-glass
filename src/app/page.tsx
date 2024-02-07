@@ -1,15 +1,13 @@
-import dynamic from 'next/dynamic'
-import Loading from "@/app/loading";
-import PageTitle from '@/components/PageTitle'
+import Loading from '@/app/loading';
 import Footer from '@/components/Footer';
+import PageTitle from '@/components/PageTitle';
+import dynamic from 'next/dynamic';
 
 const Scene = dynamic(() => import('@/components/Scene'), {
-  loading: () => <Loading />
+  loading: () => <Loading />,
 });
 
-
 import { fontGrotesk } from './fonts';
-
 
 export default function Home() {
   return (
@@ -22,9 +20,9 @@ export default function Home() {
           for <span className='text-lime'>web3</span>
         </h1>
       </PageTitle>
-      <div className="fixed w-screen bottom-0">
+      <div className='fixed w-screen bottom-0'>
         <Footer />
       </div>
     </main>
-  )
+  );
 }

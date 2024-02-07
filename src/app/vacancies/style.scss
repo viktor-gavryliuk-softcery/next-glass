@@ -27,20 +27,23 @@
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.05);
     @apply shadow-lg shadow-neutral-700;
 
   }
+
   100% {
     transform: scale(1);
   }
 }
 
 .apply-btn {
-  @apply mb-6 md:w-64 md:self-end rounded-xl text-center bg-neutral-100  text-black transition-all uppercase text-xl md:text-3xl md:p-4 p-3 flex-1;
-  @apply hover:bg-lime hover:scale-105  hover:shadow-md hover:shadow-[#8abd00] hover:font-semibold;
+  @apply mb-6 md:w-64 md:self-end rounded-xl text-center bg-neutral-100 text-black transition-all uppercase text-xl md:text-3xl md:p-4 p-3 flex-1;
+  @apply hover:bg-lime hover:scale-105 hover:shadow-md hover:shadow-[#8abd00] hover:font-semibold;
 
-  animation: pulse 1s infinite; /* Apply the pulse animation */
+  animation: pulse 1s infinite;
+  /* Apply the pulse animation */
 
 }

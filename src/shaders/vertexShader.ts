@@ -12,6 +12,6 @@ void main() {
   worldNormal = normalize(modelMatrix * vec4(normal, 0.0)).xyz;
   eyeVector =  normalize(worldPos.xyz - cameraPosition);
 }
-`
+`;
 
-export default vertexShader
+export default vertexShader;

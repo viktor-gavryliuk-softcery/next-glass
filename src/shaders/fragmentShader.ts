@@ -29,7 +29,7 @@ vec3 sat(vec3 rgb, float adjustment) {
 float fresnel(vec3 eyeVector, vec3 worldNormal, float power) {
   float fresnelFactor = abs(dot(eyeVector, worldNormal));
   float inversefresnelFactor = 1.0 - fresnelFactor;
-  
+
   return pow(inversefresnelFactor, power);
 }
 
@@ -79,7 +79,7 @@ void main() {
     float c = (texture2D(uTexture, uv + refractVecC.xy * (uRefractPower + slide * 2.5) * uChromaticAberration).y * 2.0 +
                 texture2D(uTexture, uv + refractVecC.xy * (uRefractPower + slide * 2.5) * uChromaticAberration).z * 2.0 -
                 texture2D(uTexture, uv + refractVecC.xy * (uRefractPower + slide * 2.5) * uChromaticAberration).x) / 6.0;
-          
+
     float b = texture2D(uTexture, uv + refractVecB.xy * (uRefractPower + slide * 3.0) * uChromaticAberration).z * 0.5;
 
     float p = (texture2D(uTexture, uv + refractVecP.xy * (uRefractPower + slide * 1.0) * uChromaticAberration).z * 2.0 +
@@ -110,6 +110,6 @@ void main() {
 
   gl_FragColor = vec4(color, 1.0);
 }
-`
+`;
 
-export default fragmentShader
+export default fragmentShader;

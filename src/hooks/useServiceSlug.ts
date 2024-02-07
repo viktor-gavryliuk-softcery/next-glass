@@ -1,30 +1,28 @@
-import { useState, useEffect } from "react";
-import { usePathname, notFound } from "next/navigation";
+import { notFound, usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 import serviceData from '../data/serviceData';
 
 import type { iServiceData } from '../data/serviceData';
 
 const useServiceSlug = () => {
-    const pathname = usePathname()
+  const pathname = usePathname();
 
-    const [sData, SetSPData] = useState<iServiceData | undefined>({} as iServiceData);
+  const [sData, SetSPData] = useState<iServiceData | undefined>({} as iServiceData);
 
-    const extractKey = (path: string) => path.split('/').reverse()[0];
+  const extractKey = (path: string) => path.split('/').reverse()[0];
 
-    const isSlugValid = () => serviceData.some((data) => data.key === extractKey(pathname));
+  const isSlugValid = () => serviceData.some((data) => data.key === extractKey(pathname));
 
-    useEffect(() => {
-        if (!isSlugValid()) {
-            notFound();
-        }
-        else {
-            SetSPData(serviceData.find(sd => sd.key === extractKey(pathname)));
-        }
+  useEffect(() => {
+    if (!isSlugValid()) {
+      notFound();
+    } else {
+      SetSPData(serviceData.find((sd) => sd.key === extractKey(pathname)));
+    }
+  }, [sData]);
 
-    }, [sData])
-
-    return sData;
-}
+  return sData;
+};
 
 export { useServiceSlug };
