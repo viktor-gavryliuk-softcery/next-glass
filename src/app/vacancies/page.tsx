@@ -1,10 +1,9 @@
 'use client'
-import { useState, useEffect } from "react";
-import Link from "next/link";
 import Footer from '@/components/Footer';
+import { useEffect, useState } from "react";
 
+import { bebas_neue, fontGrotesk } from "@/app/fonts";
 import FooterLinks from '@/components/FooterLinks';
-import { bebas_neue, montserrat } from "@/app/fonts";
 
 import { Swiper as SwiperType } from 'swiper/types';
 
@@ -16,7 +15,7 @@ import 'swiper/css/pagination';
 
 import './style.scss';
 
-import VacanciesData from "./vacancies";
+import VacanciesData from "../../data/vacancies";
 
 const buttonLabels = Array.from(VacanciesData.map(v => v.label));
 
@@ -39,7 +38,6 @@ export default function Vacancies() {
 
 
     const handleChangeSlide = (slideIndex: number) => {
-        console.log(slideIndex);
         swiper?.slideTo(slideIndex);
         setActiveSlide(slideIndex)
     }
@@ -52,9 +50,10 @@ export default function Vacancies() {
         <main className='w-full bg-my-bg overflow-hidden'>
             <div className="w-full relative z-10 overflow-hidden">
 
-                <div className="flex items-center justify-center w-full h-screen max-w-screen overflow-hidden inner-element">
+                <div className="flex items-center justify-center w-full h-[80vh] md:h-screen max-w-screen overflow-hidden inner-element">
                     <img src='/vacancies.gif' draggable="false" alt='cases octopus' className='w-full object-cover' />
                 </div>
+
 
             </div>
 
@@ -66,10 +65,10 @@ export default function Vacancies() {
                 <VacanciesSwiper activeSlide={activeSlide} setActiveSlide={setActiveSlide} swiper={swiper} setSwiper={setSwiper} />
             </div >
 
-            <div className="max-w-6xl mx-auto p-4 relative z-10 grid  grid-cols-2 gap-4">
-                <h3 className='col-span-2 md:col-span-1 text-5xl'>{VacanciesData[activeSlide]?.name}</h3>
+            <div className="max-w-6xl mx-auto p-4 relative z-10 grid  grid-cols-2 gap-4 items-center">
+                <h3 className={`${fontGrotesk.className} col-span-2 md:col-span-1 text-4xl text-lime`}>{VacanciesData[activeSlide]?.name}</h3>
 
-                <div className='col-span-2 md:col-span-1 flex gap-4 md:justify-end'>
+                <div className='col-span-2 md:col-span-1 flex gap-4 md:justify-end self-start'>
                     {buttonLabels.map((label, index) => (
                         <ButtonWithKey
                             key={index}

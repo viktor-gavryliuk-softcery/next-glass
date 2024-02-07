@@ -1,8 +1,8 @@
 'use client'
-import { AnimatePresence, motion } from 'framer-motion';
-import { useEffect } from 'react';
-import Link from 'next/link';
 import * as Dialog from '@radix-ui/react-dialog';
+import { AnimatePresence, motion } from 'framer-motion';
+import Link from 'next/link';
+import { useEffect } from 'react';
 
 const nav = [
     {
@@ -18,8 +18,12 @@ const nav = [
         href: '/services'
     },
     {
-        name: 'nft (soon)',
-        href: '/nft'
+        name: 'partners',
+        href: '/partners'
+    },
+    {
+        name: 'vacancies',
+        href: '/vacancies'
     },
 ]
 
@@ -81,6 +85,7 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
                         <ul className=' max-w-5xl flex flex-col items-start justify-start '>
                             {nav.map((link, index, arr) => (
                                 <li className='relative'
+                                    key={index}
                                 >
                                     <Dialog.Close asChild>
                                         <Link
@@ -94,10 +99,11 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
                                                 transition={{ delay: 0.2, duration: 0.3 }}>
                                                 {link.name}
                                             </motion.span>
+
                                         </Link>
                                     </Dialog.Close>
                                     {index != arr.length - 1 ?
-                                        <div className={` bg-my-bg w-[2px] z-20 md:h-10 h-6 max-h-[5vh] rounded relative top-[0.1rem] left-1`} />
+                                        <div className={` bg-my-bg w-[2px] z-20 md:h-10 h-6 max-h-[3vh] rounded relative top-[0.1rem] left-1`} />
                                         :
                                         ''}
                                 </li>
@@ -107,8 +113,10 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
                         <div className="socials absolute bottom-[12vh] md:left-20 left-7 flex items-center">
                             <div className='bg-my-bg w-2 md:w-3 h-2 md:h-3 mr-3 md:mr-10' />
 
-                            {socials.map(link => (
-                                <Link href={link.href} target="_blank" rel="noopener noreferrer" className='uppercase mr-2 md:mr-4 text-md md:text-2xl text-black'>
+                            {socials.map((link, i) => (
+                                <Link
+                                    key={i}
+                                    href={link.href} target="_blank" rel="noopener noreferrer" className='uppercase mr-2 md:mr-4 text-md md:text-2xl text-black'>
                                     {/* {link.name} */}
                                     <img src={`/social/${link.name}_black.svg`} alt={link.name} className='h-12 w-auto' />
 
@@ -124,4 +132,4 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
     )
 }
 
-export default Menu; 
+export default Menu;

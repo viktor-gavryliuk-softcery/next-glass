@@ -1,0 +1,18 @@
+.swiper-scrollbar {
+    background: #dadada;
+    border-radius: 0;
+}
+
+.swiper-horizontal>.swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+    position: static;
+    margin-top: 6px;
+    height: 8px;
+}
+
+.swiper-scrollbar-drag {
+    background-color: black;
+    border-radius: 0;
+    border-right: 4px white solid;
+    border-left: 4px white solid;
+}

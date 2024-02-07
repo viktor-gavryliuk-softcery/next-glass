@@ -5,10 +5,10 @@ const FooterLinks = () => <div className="flex justify-between max-w-7xl mx-auto
         <span className='uppercase'>Contact us</span>
         <div className="icons flex gap-3 items-end">
             <Link target="_blank" rel="noopener noreferrer" href='https://t.me/adscontrol_manager'>
-                <img src="/social/Telegram_white.svg" alt="telegram" className='h-7 w-auto' />
+                <img src="/social/Telegram_white.svg" alt="telegram" className='h-8 w-auto' />
             </Link>
             <Link target="_blank" rel="noopener noreferrer" href='mailto:serhii_ceo@adscontrol.io'>
-                <img src="/social/Email_white.svg" alt="mail" className='h-7 w-auto' />
+                <img src="/social/Email_white.svg" alt="mail" className='h-8 w-auto' />
             </Link>
         </div>
     </div>

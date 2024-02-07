@@ -5,8 +5,7 @@ import { bebas_neue, montserrat } from '@/app/fonts';
 import Footer from '@/components/Footer';
 import FooterLinks from '@/components/FooterLinks';
 
-
-import { useCaseSlug } from './useCaseSlug';
+import { useCaseSlug } from '../../../hooks/useCaseSlug';
 
 export default function Page() {
 
@@ -50,18 +49,18 @@ export default function Page() {
                     </div>
                     <div className="w-full grid grid-cols-4 gap-5 mt-16 md:mt-32">
 
-                        <div className="col-span-4 md:col-span-3 grid grid-cols-3 gap-5 rounded-l-[100px] rounded-r-3xl  md:border-2 border-black md:border-r-0">
+                        <div className="col-span-4 md:col-span-3 grid grid-cols-3 gap-5 rounded-l-[100px] rounded-r-[1.6rem]  md:border-2 border-black md:border-r-0 ">
 
                             <div className="col-span-3 md:col-span-2 md:p-8 w-full">
                                 <img src={CaseData?.img} alt={CaseData?.name} className='w-full rounded-3xl md:rounded-[70px]' />
                             </div>
 
                             <div className="col-span-3 md:col-span-1 grid grid-cols-1 gap-5">
-                                <div className="col-span-1 bg-black hover:bg-white border-2 border-black hover:text-black transition-all duration-500 rounded-3xl rounded-tl-[70px] items-center justify-center flex flex-col p-4">
+                                <div className="col-span-1 bg-black hover:bg-white border-2 border-black hover:text-black transition-all duration-500 rounded-3xl rounded-tl-[70px] md:relative bottom-[2px] items-center justify-center flex flex-col p-4">
                                     <h4 className={`${bebas_neue.className} text-5xl md:text-[5vw] lg:text-7xl text-center`}>THEME</h4>
                                     <p className='text-xl text-center '>{CaseData?.theme}</p>
                                 </div>
-                                <Link href={'/services'} className="col-span-1 bg-black hover:bg-white border-2 border-black hover:text-black transition-all duration-500 rounded-3xl rounded-bl-[70px] flex flex-col items-center justify-center p-4 md:py-0 ">
+                                <Link href={'/services'} className="col-span-1 bg-black hover:bg-white border-2 border-black hover:text-black transition-all duration-500 rounded-3xl rounded-bl-[70px] md:relative top-[2px]  flex flex-col items-center justify-center p-4 md:py-0 ">
                                     <h4 className={`${bebas_neue.className} text-5xl md:text-[5vw] lg:text-7xl text-center `}>Services</h4>
                                     <p className='md:text-md'>
                                         {CaseData?.services?.map(service => (

@@ -1,13 +1,11 @@
 'use client'
 import Footer from '@/components/Footer';
 import Link from 'next/link';
-import Image from 'next/image';
-import React from 'react';
 
-import { MotionValue, motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
-import { fontGrotesk, bebas_neue, montserrat } from '@/app/fonts';
-import { AppearWrapper } from './AppearWrapper';
+import { bebas_neue, fontGrotesk, montserrat } from '@/app/fonts';
+import { AppearOldWrapper } from '@/components/AppearOldWrapper';
 
 import casesData from '../../data/casesData';
 
@@ -18,64 +16,6 @@ type caseType = {
     slug: string;
 
 }
-
-const cases: caseType[] = [
-    {
-        slug: '1inch',
-        name: '1inch',
-        img: '/cases/1inch.png',
-        description: '1INCH is an exchange aggregator that scans decentralized exchanges to find the lowest cryptocurrency prices for traders, and is powered by its 1INCH utility and governance token.'
-    },
-    {
-        slug: 'heroes-battle-arena',
-        name: 'Heroes Battle Arena',
-        img: '/cases/heroes-battle-arena.png',
-        description: 'The First Special Super-qualilty Avatars for the Metaverse'
-    },
-    {
-        slug: 'metabody',
-        name: 'Metabody',
-        img: '/cases/metabody.png',
-        description: 'The First Special Super-qualilty Avatars for the Metaverse'
-    },
-    {
-        slug: 'aptos',
-        name: 'aptos',
-        img: '/cases/aptos.png',
-        description: 'The First Special Super-qualilty Avatars for the Metaverse'
-    },
-    {
-        slug: 'metacossacs',
-        name: 'metacossacs',
-        img: '/cases/metacossacs.png',
-        description: 'The First Special Super-qualilty Avatars for the Metaverse'
-    },
-    {
-        slug: 'cryptoinfluencers',
-        name: 'cryptoinfluencers',
-        img: '/cases/cryptoinfluencers.png',
-        description: 'The First Special Super-qualilty Avatars for the Metaverse'
-    },
-    {
-        slug: 'whoman-civilization',
-        name: 'whoman civilization',
-        img: '/cases/whoman-civilization.png',
-        description: 'The First Special Super-qualilty Avatars for the Metaverse'
-    },
-    {
-        slug: 'bohemian-bulldogs',
-        name: 'bohemian bulldogs',
-        img: '/cases/bohemianBulldogs.png',
-        description: 'The First Special Super-qualilty Avatars for the Metaverse'
-    },
-    {
-        slug: 'nft-course',
-        name: 'nft course',
-        img: '/cases/nftCourse.png',
-        description: 'The First Special Super-qualilty Avatars for the Metaverse'
-    },
-
-]
 
 const offsets = ['top-[1rem]', 'top-[6rem]', 'top-[11rem]', 'top-[16rem]', 'top-[21rem]', 'top-[26rem]', 'top-[31rem]'];
 
@@ -97,13 +37,13 @@ const MobileCaseCard = ({ offset, slug, name, img, isDark, descr }: { offset: st
 
 const DesktopCaseCard = ({ isLeft, index }: { isLeft: boolean, index: number }) => {
     return (
-        <AppearWrapper isLeft={isLeft} className='relative'>
+        <AppearOldWrapper isLeft={isLeft} className='relative'>
             <Link href={`/cases/${casesData[index].slug}`} className='min-h-[400px] h-fit w-full p-8 grid gap-4 cursor-pointer'>
                 <h3 className={`${bebas_neue.className} uppercase text-7xl hover:border-b-4 border-white  cursor-pointer transition-all duration-300 w-max`}>{casesData[index].name}</h3>
-                <img src={casesData[index].img} alt={casesData[index].name} className={`w-auto rounded-3xl hover:scale-95 ${isLeft ? 'hover:-rotate-3 ' : 'hover:rotate-3'} duration-500  transition-all`} />
+                <img src={casesData[index].img} alt={casesData[index].name} className={`w-full rounded-3xl hover:scale-95 ${isLeft ? 'hover:-rotate-3 ' : 'hover:rotate-3'} duration-500  transition-all`} />
                 <p className={`${montserrat.className} uppercase text-md`}>{casesData[index].description}</p>
             </Link>
-        </AppearWrapper>
+        </AppearOldWrapper>
     )
 
 }
@@ -138,9 +78,9 @@ export default function Cases() {
                 </div>
 
                 <div className="col-span-6 h-full w-full gap-20 flex flex-col overflow-x-hidden">
-                    <AppearWrapper isLeft={false}>
+                    <AppearOldWrapper isLeft={false}>
                         <h3 className='text-6xl mb-24 txt-right'>Your marketing is under our control</h3>
-                    </AppearWrapper>
+                    </AppearOldWrapper>
 
                     <DesktopCaseCard isLeft={false} index={4} />
                     <DesktopCaseCard isLeft={false} index={5} />
@@ -156,6 +96,7 @@ export default function Cases() {
                 {
                     offsets.map((offset, index) => (
                         <MobileCaseCard
+                            key={index}
                             img={casesData[index].avatar}
                             slug={casesData[index].slug}
                             descr={casesData[index].description}
@@ -168,9 +109,7 @@ export default function Cases() {
 
             </div>
 
-            {/* <div className="absolute z-10 bottom-0 mx-auto w-full bg-my-bg"> */}
             <Footer />
-            {/* </div> */}
         </main>
     )
 }

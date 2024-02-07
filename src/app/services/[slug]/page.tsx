@@ -6,7 +6,7 @@ import { ContactForm } from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 import FooterLinks from '@/components/FooterLinks';
 
-import { useServiceSlug } from './useServiceSlug';
+import { useServiceSlug } from '../../../hooks/useServiceSlug';
 
 import type { iServiceItem } from '@/data/serviceData';
 

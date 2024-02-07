@@ -1,11 +1,11 @@
 'use client'
 import { bebas_neue } from "@/app/fonts";
-import { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { useForm, SubmitHandler } from "react-hook-form"
-import { yupResolver } from "@hookform/resolvers/yup"
-import * as yup from 'yup';
+import { yupResolver } from "@hookform/resolvers/yup";
 import Link from "next/link";
+import { useState } from 'react';
+import { SubmitHandler, useForm } from "react-hook-form";
+import * as yup from 'yup';
 
 type Inputs = {
     name: string
@@ -58,8 +58,8 @@ export const ContactForm = (
     return <div className="grid grid-cols-2 gap-4 my-20">
         <div className="col-span-2 md:col-span-1 grid grid-rows-2 gap-4 relative">
             <Link target="_blank" rel="noopener noreferrer" href="https://t.me/adscontrol_manager" className='h-fit min-h-[100px] md:min-h-[150px] relative col-span-1 bg-black overflow-hidden rounded-lg md:rounded-xl hover:shadow-lg hover:shadow-black transition-all flex items-center justify-center cursor-pointer'>
-                <img src="/telegram.gif" alt="telegram link image" className="h-full w-full object-contain object-center absolute" />
-                <img src="/telegram.png" alt="telegram link image" className="h-full w-full object-contain object-center absolute hover:opacity-0 bg-black" />
+                <img src="/telegram.gif" alt="telegram link image" className="h-full w-full object-cover object-center absolute" />
+                <img src="/telegram.png" alt="telegram link image" className="h-full w-full object-cover object-center absolute hover:opacity-0 bg-black" />
             </Link>
 
             <Link target="_blank" rel="noopener noreferrer" href="https://calendly.com/adscontrolinfo/30min" className='h-fit min-h-[100px] md:min-h-[150px] relative col-span-1 bg-violet overflow-hidden rounded-lg md:rounded-xl hover:shadow-lg hover:shadow-[#7900ff] transition-all flex items-center justify-center cursor-pointer'>

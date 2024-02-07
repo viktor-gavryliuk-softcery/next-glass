@@ -1,1 +1,11 @@
-<svg id="Шар_2" data-name="Шар 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.87 48.3"><defs><style>.cls-1{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:6px;}.cls-2{fill:#fff;}</style></defs><rect class="cls-1" x="3" y="3" width="53.87" height="42.3" rx="9.24"/><path class="cls-2" d="M54.92,17.09,32.15,30.93a3,3,0,0,1-3,0L6.38,17v6.89L6.08,8.19l1,0a3.06,3.06,0,0,0-.72,2L30.69,25,54.87,10.2C54.89,12.5,54.9,14.79,54.92,17.09Z" transform="translate(-0.56 -0.35)"/></svg>
+<svg width="597" height="513" viewBox="0 0 597 513" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_2411_2229)">
+<path d="M424.746 23H172.254C89.8232 23 23 79.636 23 149.5V363.5C23 433.364 89.8232 490 172.254 490H424.746C507.177 490 574 433.364 574 363.5V149.5C574 79.636 507.177 23 424.746 23Z" stroke="white" stroke-width="45"/>
+<path d="M552.94 177.825L315.094 325.7C310.385 328.517 305.043 330 299.606 330C294.168 330 288.827 328.517 284.118 325.7L42 173.795V249.853V101.535C42 101.535 46.9448 98.7322 46.2846 95.7229C45.2135 90.8402 45.1443 92.5947 45.2135 100.419L300.019 262.251L552.94 103.782C553.147 128.391 552.734 153.216 552.94 177.825Z" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_2411_2229">
+<rect width="597" height="513" fill="white"/>
+</clipPath>
+</defs>
+</svg>

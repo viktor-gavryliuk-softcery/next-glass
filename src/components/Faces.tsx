@@ -49,18 +49,18 @@ const Face = ({ children, position, rotation }: FaceProps) => {
 const degreesToRadians = (degrees: number): number => degrees * (Math.PI / 180);
 
 const Front = () => <Face position={[0, 0, -cubeSize]} rotation={degreesToRadians(180)} >
-    <div className="flex flex-col gap-2 justify-start pt-8 face">
-        <div className='flex gap-2'>
+    <div className="flex flex-col gap-2 justify-start py-8 face">
+        <div className='flex gap-2 h-full'>
             <Link href='/cases'>
-                <img src="/boxGifs/cases.gif" alt="cases" draggable="false" className='tile' /* width={250} height={250} */ />
+                <img src="/boxGifs/cases.gif" alt="cases" draggable="false" className='tile' />
             </Link>
-            <Link href='/'>
-                <img src="/boxGifs/team.gif" alt="team" draggable="false" className='tile' /* width={250} height={250} */ />
+            <Link href='/team'>
+                <img src="/boxGifs/team.gif" alt="team" draggable="false" className='tile' />
             </Link>
         </div>
 
-        <Link href='/services'>
-            <img src="/service.png" alt="services" draggable="false" className='tile' /* width={250} height={250} */ />
+        <Link href='/services' className='h-full'>
+            <img src="/boxGifs/services.gif" alt="services" draggable="false" className='tile' />
         </Link>
     </div>
 </Face>
@@ -71,15 +71,15 @@ const Right = () => <Face position={[-cubeSize, 0, 0]} rotation={degreesToRadian
         <div className="col-span-6">
             <img src="/boxGifs/contacts.gif" alt="contacts" draggable="false" className='tile' />
         </div>
-        <div className="col-span-6">
+        <Link href={'/vacancies'} className="col-span-6">
             <img src="/vacancies.gif" alt="vacancies" draggable="false" className='tile bg-my-bg' />
-        </div>
-        <div className="col-span-7 ">
-            <img src="/boxGifs/appearance.gif" alt="nft" draggable="false" className='tile' /* width={250} height={250} */ />
-        </div>
-        <div className="col-span-5 ">
-            <img src="/boxGifs/feedback.gif" alt="nft" draggable="false" className='tile'/*  width={250} height={250} */ />
-        </div>
+        </Link>
+        <Link href={'appearance'} className="col-span-7 ">
+            <img src="/boxGifs/appearance.gif" alt="nft" draggable="false" className='tile' />
+        </Link>
+        <Link href={'/feedback'} className="col-span-5 ">
+            <img src="/boxGifs/feedback.gif" alt="nft" draggable="false" className='tile' />
+        </Link>
     </div>
 </Face>
 
@@ -100,7 +100,7 @@ const Back = () => {
     return <Face position={[0, 0, cubeSize]} rotation={degreesToRadians(0)}>
         <Link href={`/cases/${randomTile?.slug}`}>
             <div className='py-10 justify-start pt-8 face'>
-                <img src={randomTile?.img} alt='1inch' draggable="false" className='tile object-contain w-full' /* width={250} height={250} */ />
+                <img src={randomTile?.img} alt='1inch' draggable="false" className='tile object-contain w-full' />
             </div>
         </Link>
 
@@ -109,12 +109,12 @@ const Back = () => {
 
 const Left = () => <Face position={[cubeSize, 0, 0]} rotation={degreesToRadians(90)}>
     <div className='grid grid-cols-11 grid-rows-2 gap-2 py-10 justify-start pt-8 face'>
-        <div className="col-span-11 bg-[#6107c7] tile">
+        <Link href={'/partners'} className="col-span-11 bg-[#6107c7] tile">
             <img src="/boxGifs/partners.gif" alt="partners" className='tile' draggable={false} />
-        </div>
-        <div className="col-span-5">
+        </Link>
+        <Link href={'/faq'} className="col-span-5">
             <img src="/boxGifs/faq.gif" alt="faq" className='tile' draggable={false} />
-        </div>
+        </Link>
         <div className="col-span-6"
             onClick={() => {
                 //@ts-ignore

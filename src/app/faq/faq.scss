@@ -1,0 +1,7 @@
+.tab_bullet {
+    @apply h-14 w-14 border-2 border-lime rounded-full transition-all duration-300 flex items-center justify-center;
+}
+
+h2 {
+    transition: all 150ms ease-in-out;
+}

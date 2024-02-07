@@ -8,7 +8,7 @@ import FooterLinks from '@/components/FooterLinks';
 import ServiceLink from '@/components/ServiceLink';
 
 import Marquee from "react-fast-marquee";
-import Tilt from 'react-parallax-tilt';
+
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 export type linkBgVariant = 'black' | 'violet' | 'lime';

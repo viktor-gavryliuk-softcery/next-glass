@@ -1,9 +1,9 @@
+import { Autoplay, EffectCoverflow, Keyboard, Mousewheel } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Autoplay, Keyboard, Mousewheel } from 'swiper/modules';
 
 import { Swiper as SwiperType } from 'swiper/types';
 
-import VacanciesData from './vacancies';
+import VacanciesData from '../../data/vacancies';
 
 const VacanciesSwiper = ({
     activeSlide,
@@ -59,13 +59,12 @@ const VacanciesSwiper = ({
         >
             {/* <SwiperInnerSlides /> */}
             {
-                VacanciesData.map(vaccancy => (
-                    <SwiperSlide className='vacancy_card'>
+                VacanciesData.map((vaccancy, i) => (
+                    <SwiperSlide
+                        key={i}
+                        className='vacancy_card'>
                         <img src='/nft.jpg' />
                         <h3>{vaccancy.name}</h3>
-                        <p>
-                            {vaccancy.greeting}
-                        </p>
                     </SwiperSlide>)
                 )
             }

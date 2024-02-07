@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'VACANCIES | ADS CONTROL ',
-  description: 'Ads control website services page',
+  description: 'Ads control website vacancies page',
 }
 
 
