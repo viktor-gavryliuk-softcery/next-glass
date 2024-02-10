@@ -102,7 +102,7 @@ const Right = () => (
         href={'/vacancies'}
         className='col-span-6'>
         <img
-          src='/vacancies.gif'
+          src='/boxGifs/vacancies.gif'
           alt='vacancies'
           draggable='false'
           className='tile bg-my-bg'

@@ -15,8 +15,8 @@ import FaqPickedDetails from './faqDetails';
 function Faq() {
   return (
     <Provider store={store}>
-      <main className='w-full bg-my-bg overflow-hidden'>
-        <div className='w-full bg-my-bg  relative z-10 flex items-center justify-center lg:h-screen max-w-screen overflow-hidden mt-14 '>
+      <main className='w-full bg-[#101010]  overflow-hidden'>
+        <div className='w-full relative z-10 flex items-center justify-center lg:h-screen max-w-screen overflow-hidden mt-14 '>
           <img
             src='/faq.gif'
             draggable='false'
@@ -41,7 +41,7 @@ function Faq() {
 
         <div className='w-full bg-neutral-100'></div>
 
-        <div className='bg-my-bg py-6 relative  z-10'>
+        <div className=' py-6 relative  z-10'>
           <FooterLinks />
 
           <Footer />
