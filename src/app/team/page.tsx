@@ -14,7 +14,7 @@ import useSmoothScrollTo from '@/hooks/useSmoothScrollTo';
 function Team() {
   const [swiper, setSwiper] = useState<SwiperType>();
 
-  const [activePerson, setActivePerson] = useState<number>(1);
+  const [activePerson, setActivePerson] = useState<number>(0);
 
   const [hasScrolled, setHasScrolled] = useState<boolean>(false);
 
@@ -28,7 +28,7 @@ function Team() {
   const activePersonData = mockTeamData.find((p) => p.id === activePerson) || mockTeamData[0];
 
   useEffect(() => {
-    setActivePerson(1);
+    setActivePerson(0);
   }, []);
 
   useEffect(() => {

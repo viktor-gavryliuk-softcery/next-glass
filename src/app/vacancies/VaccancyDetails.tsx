@@ -51,9 +51,8 @@ const VaccancyDetails = ({ activeSlide }: { activeSlide: number }) => {
           <div>
             <h4 className='text-lg font-bold mt-2 text-neutral-100'>Will Be a Plus:</h4>
             <ul className='list-disc ml-6 leading-7 text-neutral-100'>
-              {vacancyData?.requirements.willBeAPlus.map((skill, index) => (
-                <li key={index}>{skill}</li>
-              ))}
+              {vacancyData.requirements.willBeAPlus ??
+                [].map((skill, index) => <li key={index}>{skill}</li>)}
             </ul>
           </div>
         </HighlightActiveBlock>
@@ -62,7 +61,7 @@ const VaccancyDetails = ({ activeSlide }: { activeSlide: number }) => {
           target='_blank'
           rel='noopener noreferrer'
           href={vacancyData?.linkToForm as string}
-          className={`${montserrat.className} apply-btn`}>
+          className={`${montserrat.className} apply-btn `}>
           Apply Now
         </a>
       </div>

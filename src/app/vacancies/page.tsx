@@ -41,7 +41,7 @@ export default function Vacancies() {
 
   return (
     <main className='w-full bg-my-bg overflow-hidden'>
-      <div className='w-full relative z-10 overflow-hidden'>
+      <div className='w-full overflow-hidden'>
         <div className='flex items-center justify-center w-full h-[80vh] md:h-screen max-w-screen overflow-hidden inner-element'>
           <img
             src='/vacancies.gif'
@@ -65,12 +65,12 @@ export default function Vacancies() {
         />
       </div>
 
-      <div className='max-w-6xl mx-auto p-4 relative z-10 grid  grid-cols-2 gap-4 items-center'>
-        <h3 className={`${fontGrotesk.className} col-span-2 md:col-span-1 text-4xl text-lime`}>
+      <div className='max-w-6xl mx-auto p-4 relative z-10 grid  grid-cols-3 gap-4 items-center'>
+        <h3 className={`${fontGrotesk.className} col-span-3 md:col-span-1 text-4xl text-lime`}>
           {VacanciesData[activeSlide]?.name}
         </h3>
 
-        <div className='col-span-2 md:col-span-1 flex gap-4 md:justify-end self-start'>
+        <div className='col-span-3 md:col-span-2 flex gap-4 md:justify-end self-start'>
           {VacanciesData.map((v, index) => (
             <ButtonWithKey
               key={index}

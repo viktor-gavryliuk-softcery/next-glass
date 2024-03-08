@@ -10,8 +10,13 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
-  title: 'ADS CONTROL | MARKETING WEB 3.0',
-  description: 'Your marketing under our control',
+  title:
+    'ADS CONTROL | WEB3 Marketing Agency | Marketing for WEB3 | Full-cycle Marketing for WEB3 projects',
+  keywords:
+    'ads control, ads, web3, web3 marketing, web3 agency, web3 marketing agency, full cycle marketing, marketing agency for web3, web3 projects marketing, strategies for web3 projects, marketing strategy fro web3 project, marketing fro crypto projects, web3 crypto projects marketing',
+
+  description:
+    'ADS CONTROL | WEB3 Marketing Agency | Marketing for Crypto projects | Full-cycle Marketing for WEB3 projects | Crypto marketing | Strategy and marketing fro your WEB3 project',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
