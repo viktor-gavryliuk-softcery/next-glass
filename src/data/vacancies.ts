@@ -8,7 +8,7 @@ export interface iVacancy {
   requirements: {
     softSkills: string[];
     hardSkills: string[];
-    willBeAPlus: string[];
+    willBeAPlus?: string[];
   };
   linkToForm: string;
 }
@@ -20,7 +20,8 @@ const VacanciesData: VacanciesDataType = [
     name: 'HR Manager',
     imageUrl: '/vacancies/hr.gif',
     label: 'HR',
-    greeting: 'Hello! We are looking for an HR Manager to join our team.',
+    greeting: `Do you know people and read horoscopes? Do you know the best way to prevent burnout?
+    We are waiting for you on the position of HR Manager at ADS CONTROL 🐙`,
     conditions: [
       'Work location: Remote/Office (later)',
       'Language lessons within the team',
@@ -61,8 +62,7 @@ const VacanciesData: VacanciesDataType = [
   },
   {
     name: 'Media Buyer',
-    greeting:
-      'We are a team that provides marketing and PR services for projects in the web3/blockchain niche. Currently, we are looking for a Media Buyer for our ADS department who will become a part of our team!',
+    greeting: `The marketplace is teeming with bans, but everything runs perfectly for you because you are a Media Buyer in ADS CONTROL 🐙`,
     imageUrl: '/vacancies/buyer.gif',
     label: 'media buyer',
     conditions: [
@@ -107,7 +107,7 @@ const VacanciesData: VacanciesDataType = [
     name: 'Social Media Manager',
     imageUrl: '/vacancies/smm.gif',
     label: 'SMM',
-    greeting: 'Greetings! We are seeking a Marketing Specialist to join our dynamic team.',
+    greeting: 'Social Media Manager in ADS CONTROL 🐙 ',
     conditions: [
       'Work location: Remote/Office (later)',
       'Salary: Competitive',
@@ -190,6 +190,135 @@ const VacanciesData: VacanciesDataType = [
       willBeAPlus: ['Experience with crypto', 'Experience in a similar position'],
     },
     linkToForm: 'https://forms.gle/tSeHQnXRzJTCmeu96',
+  },
+  {
+    name: 'Lead Generation Manager',
+    imageUrl: '/vacancies/buyer.gif',
+    label: 'Lead Gen',
+    greeting:
+      'Lead Generation Manager at ADS CONTROL 🐙 is more than just a job. We have built a gamified motivation system with bonus grids and additional bonuses',
+    conditions: [
+      'Work location: Remote/Office (later)',
+      'Language lessons within the team',
+      'Salary: Linked to KPI (base rate + bonuses)',
+      'Additional features: Team events, Own merch',
+    ],
+    responsibilities: [
+      'Work with the existing lead database',
+      'Search for new leads and add them to the database',
+      'Optimization of existing and search for new sources of lead generation',
+      'Optimize existing scripts and write new ones',
+      'Proper project review',
+      'Arrange a meeting with the Sales Manager',
+      'Strong product presentation',
+      'Working with objections correctly',
+      'Writing reports and analyzing work',
+    ],
+    requirements: {
+      softSkills: [
+        'Communication skills',
+        'Multitasking',
+        'Stress resistance',
+        'Flexibility / Adaptability',
+        'Productivity',
+        'Attentiveness',
+      ],
+      hardSkills: [
+        'Experience in lead generation from 6 months',
+        'Experience with marketing',
+        'English language from B1 (Intermediate) level',
+      ],
+      willBeAPlus: ['Experience with crypto', 'Experience in a similar position'],
+    },
+    linkToForm: 'https://forms.gle/HYzhnQwGGbh5RDdF6',
+  },
+  {
+    name: 'DESIGNER',
+    imageUrl: '/vacancies/buyer.gif',
+    label: 'DESIGNER',
+    greeting:
+      'When you came to the conference to just say hello to all the partners because everyone already knows that you are Business Development Manager at ADS CONTROL 🐙',
+    conditions: [
+      'Work location: Remote/Office (later)',
+      'Language lessons within the team',
+      'Salary: Linked to KPI (base rate + bonuses)',
+      'Additional features: Team events, Own merch',
+    ],
+    responsibilities: [
+      'Market and competitor research',
+      'Working with the existing partner base',
+      'Searching and attracting new partners',
+      'Signing contracts with partners',
+      'Constant communication with partners',
+      'Optimization of existing and search for new sources of partner search',
+      'Optimization of existing and writing new scripts',
+      'Strong product presentation',
+      'Correct work with objections',
+      'Improving team reputation',
+      'Writing reports and analyzing work',
+    ],
+    requirements: {
+      softSkills: [
+        'Communicability',
+        'Multitasking',
+        'Stress resistance',
+        'Flexibility/Adaptability',
+        'Productivity',
+        'Attentiveness',
+      ],
+      hardSkills: [
+        'Experience in the position for at least 6 months',
+        'Experience with auxiliary tools',
+        'Minimal understanding of web3/blockchain technologies',
+        'English language from B1 (Intermediate) level',
+      ],
+    },
+    linkToForm:
+      'https://docs.google.com/forms/d/e/1FAIpQLSdJDfDtyie-KKdSENXBhtivfFB4FQQrrjaFf8i9I1zaCGkaGA/viewform',
+  },
+  {
+    name: 'BUSINESS DEVELOPMENT MANAGER',
+    imageUrl: '/vacancies/buyer.gif',
+    label: 'Biz dev',
+    greeting:
+      'When you came to the conference to just say hello to all the partners because everyone already knows that you are Business Development Manager at ADS CONTROL 🐙',
+    conditions: [
+      'Work location: Remote/Office (later)',
+      'Language lessons within the team',
+      'Salary: Linked to KPI (base rate + bonuses)',
+      'Additional features: Team events, Own merch',
+    ],
+    responsibilities: [
+      'Market and competitor research',
+      'Working with the existing partner base',
+      'Searching and attracting new partners',
+      'Signing contracts with partners',
+      'Constant communication with partners',
+      'Optimization of existing and search for new sources of partner search',
+      'Optimization of existing and writing new scripts',
+      'Strong product presentation',
+      'Correct work with objections',
+      'Improving team reputation',
+      'Writing reports and analyzing work',
+    ],
+    requirements: {
+      softSkills: [
+        'Communicability',
+        'Multitasking',
+        'Stress resistance',
+        'Flexibility/Adaptability',
+        'Productivity',
+        'Attentiveness',
+      ],
+      hardSkills: [
+        'Experience in the position for at least 6 months',
+        'Experience with auxiliary tools',
+        'Minimal understanding of web3/blockchain technologies',
+        'English language from B1 (Intermediate) level',
+      ],
+    },
+    linkToForm:
+      'https://docs.google.com/forms/d/e/1FAIpQLSdJDfDtyie-KKdSENXBhtivfFB4FQQrrjaFf8i9I1zaCGkaGA/viewform',
   },
 ];
 

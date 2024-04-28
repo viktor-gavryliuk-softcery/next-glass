@@ -4,6 +4,8 @@ import useRandomFace from '@/hooks/useRandomFace';
 import { Html } from '@react-three/drei';
 import Link from 'next/link';
 import { ReactElement, useEffect, useState } from 'react';
+import { Dialog, DialogTrigger } from './ui/dialog';
+import { ContactsDialog } from './ContactsDialog';
 
 // backdrop-blur-lg bg-white/30
 
@@ -91,12 +93,17 @@ const Right = () => (
     rotation={degreesToRadians(270)}>
     <div className='grid grid-cols-12 grid-rows-2 gap-2 py-10 justify-start pt-8 face'>
       <div className='col-span-6'>
-        <img
-          src='/boxGifs/contacts.gif'
-          alt='contacts'
-          draggable='false'
-          className='tile'
-        />
+        <Dialog>
+          <DialogTrigger>
+            <img
+              src='/boxGifs/contacts.gif'
+              alt='contacts'
+              draggable='false'
+              className='tile'
+            />
+          </DialogTrigger>
+          <ContactsDialog />
+        </Dialog>
       </div>
       <Link
         href={'/vacancies'}
