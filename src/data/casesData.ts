@@ -1,4 +1,4 @@
-export type caseProps = {
+export type CaseProps = {
   name: string;
   slug: string;
   img: string;
@@ -21,46 +21,7 @@ export type caseProps = {
   videos?: string[];
 };
 
-const casesData: caseProps[] = [
-  {
-    name: '1inch',
-    description: `Discover the story of 1INCH's crypto marketing success with ADS CONTROL, a partnership that exemplifies excellence in the crypto space.`,
-    left: 'Experience a compelling success story of crypto marketing as we delve into the strategic collaboration between 1INCH and ADS CONTROL, aimed at engaging the global cryptocurrency trading community.',
-    right:
-      '1INCH, a prominent exchange aggregator, specializes in scanning decentralized exchanges to secure the most competitive cryptocurrency prices for traders. This innovative platform is powered by the 1INCH utility and governance token, a vital element in its decentralized "instant governance" model and liquidity mining through token staking.',
-    slug: '1inch',
-    img: '/cases/images/1inch.png',
-    avatar: '/cases/avatars/1inch.png',
-    approach:
-      'ADS CONTROL and 1INCH joined forces to implement a robust influencer marketing strategy paired with precision targeting. Recognizing the need for authentic engagement and education, we carefully selected influencers capable of bridging the knowledge gap within the crypto space. In addition, our data-driven advertisements, tailored to specific demographics, were deployed to maximize campaign effectiveness.',
-    results: `Our collaboration with 1INCH led to a remarkable increase in user engagement and growth within the global cryptocurrency trading community. This campaign underscored the effectiveness of ADS CONTROL in driving crypto trends while warmly welcoming newcomers to the world of cryptocurrency trading.`,
-    impact: `The partnership between ADS CONTROL and 1INCH stands as a testament to the power of authentic and strategic crypto marketing. This case study showcases our ability to shape market perceptions and onboard new crypto enthusiasts, demonstrating how 1INCH continues to innovate and thrive in the competitive crypto landscape.
-
-        Discover the story of 1INCH's crypto marketing success with ADS CONTROL, a partnership that exemplifies excellence in the crypto space.`,
-    budget: '$20.000',
-    duration: '4 months',
-    theme: 'dex',
-    services: ['influencer marketing', 'target ads', 'PR'],
-  },
-  {
-    name: 'WhiteBit',
-    left: `WhiteBIT is one of the largest European centralized cryptocurrency exchanges, founded in 2018. `,
-    right:
-      'It offers spot, futures, and margin trading products with up to 100x leverage to 4+ million retail users worldwide.',
-    description:
-      'WhiteBIT is one of the largest European centralized cryptocurrency exchanges, founded in 2018. It offers spot, futures, and margin trading products with up to 100x leverage to 4+ million retail users worldwide.',
-    slug: 'white-bit',
-    img: '/cases/images/whiteBit.png',
-    avatar: '/cases/avatars/whiteBit.png',
-    approach:
-      'ADS CONTROL harnessed influencer marketing and precision targeting. Local influencers were chosen to bridge the crypto knowledge gap, fostering authenticity. Data-driven ads tailored to [GEO] demographics maximized campaign impact.',
-    results: `WhiteBit exchange experienced heightened engagement and user growth in [GEO]. The campaign spotlighted ADS CONTROL's expertise in driving crypto trends, while welcoming new users to the world of cryptocurrency.`,
-    impact: `The ADS CONTROL x WhiteBit partnership exemplifies effective crypto marketing, merging authenticity and strategy. This case serves as a testament to ADS CONTROL's ability to shape market perceptions and onboard new crypto enthusiasts.`,
-    budget: '$10.000',
-    duration: '3 months',
-    theme: 'Exchange',
-    services: ['influencer marketing', 'target ads', 'PR'],
-  },
+const casesData: CaseProps[] = [
   {
     name: 'Bohemian Bulldogs',
     slug: 'bohemian-bulldogs',
@@ -102,7 +63,7 @@ const casesData: caseProps[] = [
       title: 'Our Pioneering Role',
       data: `CRYPTOINFLUENCERS plays a pivotal role in the influencer marketing landscape, and we were honored to be their marketing partner. We assembled an extensive network of influencers, enabling us to guarantee fruitful partnerships that aligned with our client's project goals. We meticulously negotiated with top-tier influencers, ensuring that our client's brand received the visibility and impact it deserved.`,
     },
-    theme: 'PR Agency',
+    theme: 'PR Company',
     services: ['Social Media Management', 'Display/Target Advertisement'],
   },
   {
@@ -173,6 +134,45 @@ const casesData: caseProps[] = [
     },
     theme: 'NFT Collection',
     services: ['Full marketing service'],
+  },
+  {
+    name: 'NDA',
+    description: `Discover the story of NDA's crypto marketing success with ADS CONTROL, a partnership that exemplifies excellence in the crypto space.`,
+    left: 'Experience a compelling success story of crypto marketing as we delve into the strategic collaboration between NDA and ADS CONTROL, aimed at engaging the global cryptocurrency trading community.',
+    right:
+      'NDA, a prominent exchange aggregator, specializes in scanning decentralized exchanges to secure the most competitive cryptocurrency prices for traders. This innovative platform is powered by the NDA utility and governance token, a vital element in its decentralized "instant governance" model and liquidity mining through token staking.',
+    slug: 'nda1',
+    img: '/cases/images/nda1.png',
+    avatar: '/cases/avatars/nda1.png',
+    approach:
+      'ADS CONTROL and NDA joined forces to implement a robust influencer marketing strategy paired with precision targeting. Recognizing the need for authentic engagement and education, we carefully selected influencers capable of bridging the knowledge gap within the crypto space. In addition, our data-driven advertisements, tailored to specific demographics, were deployed to maximize campaign effectiveness.',
+    results: `Our collaboration with NDA led to a remarkable increase in user engagement and growth within the global cryptocurrency trading community. This campaign underscored the effectiveness of ADS CONTROL in driving crypto trends while warmly welcoming newcomers to the world of cryptocurrency trading.`,
+    impact: `The partnership between ADS CONTROL and NDA stands as a testament to the power of authentic and strategic crypto marketing. This case study showcases our ability to shape market perceptions and onboard new crypto enthusiasts, demonstrating how NDA continues to innovate and thrive in the competitive crypto landscape.
+
+        Discover the story of NDA's crypto marketing success with ADS CONTROL, a partnership that exemplifies excellence in the crypto space.`,
+    budget: '$20.000',
+    duration: '4 months',
+    theme: 'dex',
+    services: ['influencer marketing', 'target ads', 'PR'],
+  },
+  {
+    name: 'NDA',
+    left: `NDA is one of the largest European centralized cryptocurrency exchanges, founded in 2018. `,
+    right:
+      'It offers spot, futures, and margin trading products with up to 100x leverage to 4+ million retail users worldwide.',
+    description:
+      'NDA is one of the largest European centralized cryptocurrency exchanges, founded in 2018. It offers spot, futures, and margin trading products with up to 100x leverage to 4+ million retail users worldwide.',
+    slug: 'nda2',
+    img: '/cases/images/nda2.png',
+    avatar: '/cases/avatars/nda2.png',
+    approach:
+      'ADS CONTROL harnessed influencer marketing and precision targeting. Local influencers were chosen to bridge the crypto knowledge gap, fostering authenticity. Data-driven ads tailored to [GEO] demographics maximized campaign impact.',
+    results: `NDA exchange experienced heightened engagement and user growth in [GEO]. The campaign spotlighted ADS CONTROL's expertise in driving crypto trends, while welcoming new users to the world of cryptocurrency.`,
+    impact: `The ADS CONTROL x NDA partnership exemplifies effective crypto marketing, merging authenticity and strategy. This case serves as a testament to ADS CONTROL's ability to shape market perceptions and onboard new crypto enthusiasts.`,
+    budget: '$10.000',
+    duration: '3 months',
+    theme: 'Exchange',
+    services: ['influencer marketing', 'target ads', 'PR'],
   },
 ];
 

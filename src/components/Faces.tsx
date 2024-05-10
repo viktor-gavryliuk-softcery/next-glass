@@ -1,11 +1,18 @@
 'use client';
-import casesData, { caseProps } from '@/data/casesData';
-import useRandomFace from '@/hooks/useRandomFace';
+import casesData, { CaseProps } from '@/data/casesData';
 import { Html } from '@react-three/drei';
 import Link from 'next/link';
 import { ReactElement, useEffect, useState } from 'react';
+import { Dialog, DialogTrigger } from './ui/dialog';
+import { ContactsDialog } from './ContactsDialog';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-// backdrop-blur-lg bg-white/30
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+
+// import required modules
+import { EffectFade, Autoplay } from 'swiper/modules';
 
 // Define an interface for the props of Face component
 interface FaceProps {
@@ -91,12 +98,17 @@ const Right = () => (
     rotation={degreesToRadians(270)}>
     <div className='grid grid-cols-12 grid-rows-2 gap-2 py-10 justify-start pt-8 face'>
       <div className='col-span-6'>
-        <img
-          src='/boxGifs/contacts.gif'
-          alt='contacts'
-          draggable='false'
-          className='tile'
-        />
+        <Dialog>
+          <DialogTrigger className='h-full'>
+            <img
+              src='/boxGifs/contacts.gif'
+              alt='contacts'
+              draggable='false'
+              className='tile'
+            />
+          </DialogTrigger>
+          <ContactsDialog />
+        </Dialog>
       </div>
       <Link
         href={'/vacancies'}
@@ -133,32 +145,37 @@ const Right = () => (
 );
 
 const Back = () => {
-  const [randomTile, setRandomTile] = useState<caseProps>(casesData[0]);
-
-  const { getRandomCase } = useRandomFace();
-
-  useEffect(() => {
-    let randomFaceId = setInterval(() => setRandomTile(getRandomCase), 3000);
-
-    return () => {
-      clearInterval(randomFaceId);
-    };
-  }, []);
+  const [randomTile, setRandomTile] = useState<CaseProps>(casesData[0]);
 
   return (
     <Face
       position={[0, 0, cubeSize]}
       rotation={degreesToRadians(0)}>
-      <Link href={`/cases/${randomTile?.slug}`}>
-        <div className='py-10 justify-start pt-8 face'>
-          <img
-            src={randomTile?.img}
-            alt='1inch'
-            draggable='false'
-            className='tile object-contain w-full'
-          />
-        </div>
-      </Link>
+      <div className='w-full h-full py-8'>
+        <Swiper
+          spaceBetween={30}
+          effect={'fade'}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          className='bg-lime w-full h-full rounded'
+          modules={[EffectFade, Autoplay]}>
+          {casesData.map((tile, index) => (
+            <SwiperSlide key={index}>
+              <Link href={`/cases/${tile.name}`}>
+                <img
+                  src={tile.img}
+                  alt={tile.name}
+                  draggable='false'
+                  className='w-full h-full object-cover'
+                />
+              </Link>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </Face>
   );
 };

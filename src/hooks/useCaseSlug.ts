@@ -1,13 +1,13 @@
 import { notFound, usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-import type { caseProps } from '../data/casesData';
+import type { CaseProps } from '../data/casesData';
 import casesData from '../data/casesData';
 
 const useCaseSlug = () => {
   const pathname = usePathname();
 
-  const [sData, SetSPData] = useState<caseProps | undefined>({} as caseProps);
+  const [sData, SetSPData] = useState<CaseProps | undefined>({} as CaseProps);
 
   const extractKey = (path: string) => path.split('/').reverse()[0];
 
