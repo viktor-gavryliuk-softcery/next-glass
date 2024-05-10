@@ -3,6 +3,7 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
 import { useEffect } from 'react';
+import { FaTelegram, FaLinkedin, FaInstagram, FaXTwitter, FaTiktok } from 'react-icons/fa6';
 
 const nav = [
   {
@@ -31,22 +32,27 @@ const socials = [
   {
     name: 'LinkedIn',
     href: 'https://www.linkedin.com/company/adscontrol/',
+    Icon: FaLinkedin,
   },
   {
     name: 'Instagram',
     href: 'https://instagram.com/ads.control?igshid=YmMyMTA2M2Y=',
+    Icon: FaInstagram,
   },
   {
     name: 'X-Twitter',
     href: 'https://twitter.com/adscontrol?s=21&t=P7HYfqBbYDIO-55Aso148Q',
+    Icon: FaXTwitter,
   },
   {
     name: 'Telegram',
     href: 'https://t.me/adscontrol_manager',
+    Icon: FaTelegram,
   },
   {
     name: 'TikTok',
     href: 'https://www.tiktok.com/@ads.control?_t=8b4cfebxk05&_r=1',
+    Icon: FaTiktok,
   },
 ];
 
@@ -93,7 +99,7 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
                     <Dialog.Close asChild>
                       <Link
                         href={link.href}
-                        className='flex items-center gap-3 uppercase text-4xl sm:text-5xl lg:text-6xl  transition-all overflow-hidden'>
+                        className='flex items-center gap-3 uppercase text-4xl sm:text-5xl lg:text-6xl overflow-hidden hover:scale-105 hover:text-violet transition-all duration-300'>
                         <div className='bg-my-bg w-2 md:w-3 h-2 md:h-3 rounded-full' />
 
                         <motion.span
@@ -125,10 +131,10 @@ const Menu = ({ isMenuOpen }: MenuProps) => {
                     rel='noopener noreferrer'
                     className='uppercase mr-2 md:mr-4 text-md md:text-2xl text-black'>
                     {/* {link.name} */}
-                    <img
-                      src={`/social/${link.name}_black.svg`}
-                      alt={link.name}
-                      className='h-12 w-auto'
+
+                    <link.Icon
+                      className='p-2 rounded text-black hover:scale-105 hover:text-lime hover:bg-my-bg transition-all duration-700'
+                      size={48}
                     />
                   </Link>
                 ))}

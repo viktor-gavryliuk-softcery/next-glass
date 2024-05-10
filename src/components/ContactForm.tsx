@@ -3,6 +3,8 @@ import { bebas_neue } from '@/app/fonts';
 import emailjs from '@emailjs/browser';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Link from 'next/link';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import * as yup from 'yup';
@@ -17,6 +19,24 @@ const validationSchema = yup.object().shape({
   email: yup.string().email('Invalid email').required('Email is required'),
 });
 
+const onSubmit: SubmitHandler<Inputs> = async (data) => {
+  const templateParams = {
+    from_name: data.name,
+    from_email: data.email,
+  };
+  try {
+    const response = await emailjs.send(
+      process.env.NEXT_PUBLIC_SERVICE_ID as string,
+      process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
+      templateParams,
+      process.env.NEXT_PUBLIC_PUBLIC_KEY as string,
+    );
+    console.log(response.text);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 export const ContactForm = ({ variant }: { variant: 'dark' | 'light' }) => {
   const color = variant === 'dark' ? 'white' : 'black';
 
@@ -30,31 +50,6 @@ export const ContactForm = ({ variant }: { variant: 'dark' | 'light' }) => {
   } = useForm<Inputs>({
     resolver: yupResolver(validationSchema),
   });
-
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    const templateParams = {
-      from_name: data.name,
-      from_email: data.email,
-    };
-
-    emailjs
-      .send(
-        process.env.NEXT_PUBLIC_SERVICE_ID as string,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
-        templateParams,
-        process.env.NEXT_PUBLIC_PUBLIC_KEY as string,
-      )
-      .then(
-        (response) => {
-          console.log('SUCCESS!', response.status, response.text);
-          setIsFormSubmitted(true);
-        },
-        (err) => {
-          console.log('FAILED...', err);
-        },
-      )
-      .finally(() => reset());
-  };
 
   return (
     <div className='grid grid-cols-2 gap-4 my-20'>
@@ -110,7 +105,10 @@ export const ContactForm = ({ variant }: { variant: 'dark' | 'light' }) => {
         ) : (
           <>
             <form
-              onSubmit={handleSubmit(onSubmit)}
+              onSubmit={() => {
+                handleSubmit(onSubmit);
+                reset();
+              }}
               className='flex flex-col md:flex-row gap-6 items-stretch py-2'>
               <div className='flex flex-col flex-1 md:w-1/3 '>
                 <input
@@ -144,5 +142,79 @@ export const ContactForm = ({ variant }: { variant: 'dark' | 'light' }) => {
         </p>
       </div>
     </div>
+  );
+};
+
+export const DialogContactForm = () => {
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<Inputs>({
+    resolver: yupResolver(validationSchema),
+  });
+
+  return (
+    <div className='w-full h-fullgrid grid-cols-12 gap-2'>
+      {isFormSubmitted ? (
+        <>
+          <h4 className={`${bebas_neue.className} text-violet text-4xl`}>
+            We will contact You within 24 hours
+          </h4>
+        </>
+      ) : (
+        <div className='flex flex-col justify-between'>
+          <form
+            onSubmit={() => {
+              handleSubmit(onSubmit);
+              reset();
+            }}
+            className='flex items-center gap-2'>
+            <div className='flex flex-col flex-1'>
+              <Input
+                {...register('email')}
+                type='email'
+                placeholder='Email'
+                className='h-16 p-4 rounded-md text-neutral-700'
+              />
+              <p className='text-red-500  p-1'>{errors.email?.message}</p>
+            </div>
+
+            <div className='flex flex-col flex-1'>
+              <Input
+                {...register('name')}
+                placeholder='Name'
+                className='h-16 p-4 rounded-md text-neutral-700'
+              />
+              <p className='text-red-500 p-1'>{errors.name?.message}</p>
+            </div>
+
+            <Button className='flex-1 h-16 mb-2 bg-violet hover:bg-lime hover:text-black hover:scale-105 transition-all '>
+              Contact us
+            </Button>
+          </form>
+          <p className={`text-neutral-200 opacity-70 hidden md:block`}>
+            Launch Your success journey now
+            <br />
+            Join our growing list of happy clients
+          </p>
+        </div>
+      )}
+    </div>
+
+    /*   <div className='w-full h-full border border-neutral-50 rounded grid grid-cols-12 p-2 gap-2'>
+      <div className='col-span-9 border border-neutral-50 rounded flex items-center gap-2'>
+        <Input placeholder='Email' />
+        <Input placeholder='Name' />
+      </div>
+      <div className='col-span-3 border border-neutral-50 rounded flex items-center justify-center '>
+        <Button className='bg-violet hover:bg-lime hover:text-black hover:scale-105 transition-all '>
+          Contact us
+        </Button>
+      </div>
+    </div> */
   );
 };

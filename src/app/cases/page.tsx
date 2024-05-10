@@ -7,38 +7,24 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { bebas_neue, fontGrotesk, montserrat } from '@/app/fonts';
 import { AppearOldWrapper } from '@/components/AppearOldWrapper';
 
-import casesData from '../../data/casesData';
-
-const offsets = [
-  'top-[1rem]',
-  'top-[6rem]',
-  'top-[11rem]',
-  'top-[16rem]',
-  'top-[21rem]',
-  'top-[26rem]',
-  'top-[31rem]',
-];
+import casesData, { CaseProps } from '../../data/casesData';
+import { cn } from '@/lib/utils';
 
 const MobileCaseCard = ({
-  offset,
-  slug,
-  name,
-  img,
-  isDark,
-  descr,
+  caseItem: { slug, name, avatar, description },
+  index,
 }: {
-  offset: string;
-  img: string;
-  slug: string;
-  name: string;
-  isDark: boolean;
-  descr: string;
+  caseItem: CaseProps;
+  index: number;
 }) => {
+  const isDark = index % 2 == 1;
+  const offset = 'top-[' + (index * 5 + 1) + 'rem]';
+
   return (
-    <div className={`case-mobile ${isDark ? 'bg-black' : 'bg-white'} sticky ${offset}`}>
+    <div className={cn('case-mobile sticky', offset, isDark ? 'bg-black' : 'bg-white')}>
       <div className='flex items gap-2'>
         <img
-          src={img}
+          src={avatar}
           alt={slug}
           className='w-14 object-cover rounded-xl'
         />
@@ -54,7 +40,7 @@ const MobileCaseCard = ({
         className={`${montserrat.className} ${
           isDark ? 'text-white' : 'text-black'
         } text-sm leading-relaxed`}>
-        {descr}
+        {description}
       </p>
       <Link
         href={`/cases/${slug}`}
@@ -76,7 +62,11 @@ const DesktopCaseCard = ({ isLeft, index }: { isLeft: boolean; index: number }) 
         href={`/cases/${casesData[index].slug}`}
         className='min-h-[400px] h-fit w-full p-8 grid gap-4 cursor-pointer'>
         <h3
-          className={`${bebas_neue.className} uppercase text-7xl hover:border-b-4 border-white  cursor-pointer transition-all duration-300 w-max`}>
+          className={cn(
+            `uppercase text-7xl hover:border-b-4 border-white  cursor-pointer transition-all duration-300`,
+            isLeft ? 'text-left' : 'text-right',
+            bebas_neue.className,
+          )}>
           {casesData[index].name}
         </h3>
         <img
@@ -86,9 +76,9 @@ const DesktopCaseCard = ({ isLeft, index }: { isLeft: boolean; index: number }) 
             isLeft ? 'hover:-rotate-3 ' : 'hover:rotate-3'
           } duration-500  transition-all`}
         />
-        <p className={`${montserrat.className} uppercase text-md`}>
+        {/* <p className={`${montserrat.className} uppercase text-md`}>
           {casesData[index].description}
-        </p>
+        </p> */}
       </Link>
     </AppearOldWrapper>
   );
@@ -98,6 +88,9 @@ export default function Cases() {
   const { scrollYProgress } = useScroll({});
 
   const y = useTransform(scrollYProgress, [0, 1], [0, -800]);
+
+  const leftCases = casesData.filter((_, index) => index % 2 === 0);
+  const rightCases = casesData.filter((_, index) => index % 2 === 1);
 
   return (
     <main className='w-screen min-h-screen h-max bg-my-bg'>
@@ -118,22 +111,12 @@ export default function Cases() {
 
       <div className='mx-auto max-w-7xl w-full hidden lg:grid grid-cols-12 h-full gap-20 px-5 mb-5 mt-20'>
         <div className='col-span-6 w-full gap-20 flex flex-col'>
-          <DesktopCaseCard
-            isLeft={true}
-            index={0}
-          />
-          <DesktopCaseCard
-            isLeft={true}
-            index={1}
-          />
-          <DesktopCaseCard
-            isLeft={true}
-            index={2}
-          />
-          <DesktopCaseCard
-            isLeft={true}
-            index={3}
-          />
+          {leftCases.map((_, index) => (
+            <DesktopCaseCard
+              isLeft={true}
+              index={index}
+            />
+          ))}
         </div>
 
         <div className='col-span-6 h-full w-full gap-20 flex flex-col overflow-x-hidden'>
@@ -141,18 +124,12 @@ export default function Cases() {
             <h3 className='text-6xl mb-24 txt-right'>Your marketing is under our control</h3>
           </AppearOldWrapper>
 
-          <DesktopCaseCard
-            isLeft={false}
-            index={4}
-          />
-          <DesktopCaseCard
-            isLeft={false}
-            index={5}
-          />
-          <DesktopCaseCard
-            isLeft={false}
-            index={6}
-          />
+          {rightCases.map((_, index) => (
+            <DesktopCaseCard
+              isLeft={false}
+              index={index + leftCases.length}
+            />
+          ))}
         </div>
       </div>
 
@@ -162,15 +139,11 @@ export default function Cases() {
           The projects we worked on | Your marketing is under our control
         </p>
 
-        {offsets.map((offset, index) => (
+        {casesData.map((caseItem, index) => (
           <MobileCaseCard
             key={index}
-            img={casesData[index].avatar}
-            slug={casesData[index].slug}
-            descr={casesData[index].description}
-            isDark={index % 2 == 1}
-            name={casesData[index].name}
-            offset={offset}
+            index={index}
+            caseItem={caseItem}
           />
         ))}
       </div>
