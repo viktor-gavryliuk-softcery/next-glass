@@ -27,12 +27,12 @@ const css = `.legal { background:#101010; color:#e6e6e6; min-height:100vh;
 @media (max-width:600px) { .legal { padding-top:88px; } }`;
 
 const content = `<h1>Terms of Use</h1>
-<p class="updated">Last updated: <span class="fill">01.10.2026</span></p>
+<p class="updated">Last updated: 01.10.2026</p>
 
 <p>
 These Terms govern your use of the website <a href="https://adscontrol.io">adscontrol.io</a>
 and the materials published on it, operated by
-<span class="fill">BARSHCHUK SERHII RUSLANOVYCH</span> (&ldquo;ADS CONTROL&rdquo;, &ldquo;we&rdquo;).
+BARSHCHUK SERHII RUSLANOVYCH (&ldquo;ADS CONTROL&rdquo;, &ldquo;we&rdquo;).
 By using this website you accept these Terms. If you do not accept them, please do not
 use the website.
 </p>
@@ -123,16 +123,16 @@ use of the website after a change means you accept the updated Terms.
 
 <h2>11. Governing law</h2>
 <p>
-These Terms are governed by the laws of <span class="fill">UKRAINE</span>, and the
-courts of <span class="fill">UKRAINE</span> have exclusive jurisdiction, without
+These Terms are governed by the laws of UKRAINE , and the
+courts of UKRAINE have exclusive jurisdiction, without
 prejudice to any mandatory consumer protections available to you locally.
 </p>
 
 <h2>12. Contact</h2>
 <p>
-<span class="fill">BARSHCHUK SERHII RUSLANOVYCH</span><br>
-<span class="fill">Ukraine, Kyiv, Metalistiv 3, 00350</span><br>
-<span class="fill">serhii_ceo@adscontrol.io</span>
+BARSHCHUK SERHII RUSLANOVYCH <br>
+Ukraine, Kyiv, Metalistiv 3, 00350 <br>
+serhii_ceo@adscontrol.io
 </p>
 
 <footer>
