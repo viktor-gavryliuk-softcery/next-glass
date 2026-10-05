@@ -27,10 +27,10 @@ const css = `.legal { background:#101010; color:#e6e6e6; min-height:100vh;
 @media (max-width:600px) { .legal { padding-top:88px; } }`;
 
 const content = `<h1>Privacy Policy</h1>
-<p class="updated">Last updated: <span class="fill">[DATE]</span></p>
+<p class="updated">Last updated: 01.10.2026</p>
 
 <p>
-This Privacy Policy explains how <span class="fill">Barshchuk Serhii Ruslanovych</span>
+This Privacy Policy explains how   Barshchuk Serhii Ruslanovych 
 (&ldquo;ADS CONTROL&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;), operating the website
 <a href="https://adscontrol.io">adscontrol.io</a>, collects, uses, stores and shares
 information. It also describes how our internal advertising management tool handles
@@ -43,9 +43,9 @@ We are an advertising agency. We plan, launch and optimise paid advertising camp
 for our clients in their own advertising accounts.
 </p>
 <ul>
-  <li>Legal entity: <span class="fill">Barshchuk Serhii Ruslanovych, 2010350000000853769</span></li>
-  <li>Registered address: <span class="fill">Ukraine, Kyiv, Metalistiv 3, 00350</span></li>
-  <li>Contact for privacy questions: <span class="fill">privacy@adscontrol.io</span></li>
+  <li>Legal entity:   Barshchuk Serhii Ruslanovych, 2010350000000853769 </li>
+  <li>Registered address:  Ukraine, Kyiv, Metalistiv 3, 00350 </li>
+  <li>Contact for privacy questions:  privacy@adscontrol.io </li>
 </ul>
 <p>
 For personal data processed on behalf of a client, the client is the data controller
@@ -173,7 +173,7 @@ member of our staff before it is submitted to Google.
 
 <h2>6. International transfers</h2>
 <p>
-Where data is transferred outside the <span class="fill">UKRAINE</span>, we
+Where data is transferred outside the   UKRAINE , we
 rely on an appropriate transfer mechanism, such as the European Commission's Standard
 Contractual Clauses.
 </p>
@@ -190,7 +190,7 @@ earlier on request.
 Subject to applicable law, you may request access to your personal data, correction,
 deletion, restriction or portability, and you may object to processing based on
 legitimate interests. Where processing is based on consent, you may withdraw it at any
-time. Write to <span class="fill">privacy@adscontrol.io</span>.
+time. Write to   privacy@adscontrol.io .
 </p>
 <p>
 You also have the right to complain to your local data protection authority.
@@ -214,9 +214,9 @@ changes will be communicated to affected clients.
 
 <h2>12. Contact</h2>
 <p>
-<span class="fill">Barshchuk Serhii Ruslanovych</span><br>
-<span class="fill">Ukraine, Kyiv, Metalistiv 3, 00350</span><br>
-<span class="fill">privacy@adscontrol.io</span>
+  Barshchuk Serhii Ruslanovych <br>
+  Ukraine, Kyiv, Metalistiv 3, 00350 <br>
+  privacy@adscontrol.io 
 </p>
 
 <footer>
