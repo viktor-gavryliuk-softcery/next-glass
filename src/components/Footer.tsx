@@ -10,12 +10,12 @@ export default function Footer() {
         </div>
         <div className='uppercase flex gap-4 text-center justify-center align-middle'>
           <Link
-            href='http://adscontrol.io/terms'
+            href='/terms'
             className='flex items-center'>
             terms of use
           </Link>
           <Link
-            href='http://adscontrol.io/privacy'
+            href='/privacy'
             className='flex items-center'>
             privacy policy
           </Link>
